@@ -29,12 +29,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.profilePictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // loginButton
+            // 
+            this.loginButton.Location = new System.Drawing.Point(31, 12);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(81, 28);
+            this.loginButton.TabIndex = 0;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
+            // profilePictureBox
+            // 
+            this.profilePictureBox.Location = new System.Drawing.Point(31, 60);
+            this.profilePictureBox.Name = "profilePictureBox";
+            this.profilePictureBox.Size = new System.Drawing.Size(171, 138);
+            this.profilePictureBox.TabIndex = 1;
+            this.profilePictureBox.TabStop = false;
+            // 
+            // MainWindow
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Controls.Add(this.profilePictureBox);
+            this.Controls.Add(this.loginButton);
+            this.Name = "MainWindow";
+            this.Text = "Facebook APP";
+            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.PictureBox profilePictureBox;
     }
 }

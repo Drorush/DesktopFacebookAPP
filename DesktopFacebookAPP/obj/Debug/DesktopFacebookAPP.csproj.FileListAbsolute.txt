@@ -2,7 +2,6 @@ C:\Users\Droriko\Documents\Visual Studio 2017\Projects\A19 Ex01 Dror 307968339 O
 C:\Users\Droriko\Documents\Visual Studio 2017\Projects\A19 Ex01 Dror 307968339 Omer 205882855\DesktopFacebookAPP\bin\Debug\DesktopFacebookAPP.exe
 C:\Users\Droriko\Documents\Visual Studio 2017\Projects\A19 Ex01 Dror 307968339 Omer 205882855\DesktopFacebookAPP\bin\Debug\DesktopFacebookAPP.pdb
 C:\Users\Droriko\Documents\Visual Studio 2017\Projects\A19 Ex01 Dror 307968339 Omer 205882855\DesktopFacebookAPP\bin\Debug\Facebook.dll
-C:\Users\Droriko\Documents\Visual Studio 2017\Projects\A19 Ex01 Dror 307968339 Omer 205882855\DesktopFacebookAPP\bin\Debug\FbGraphApiWrapper.dll
 C:\Users\Droriko\Documents\Visual Studio 2017\Projects\A19 Ex01 Dror 307968339 Omer 205882855\DesktopFacebookAPP\obj\Debug\DesktopFacebookAPP.csprojResolveAssemblyReference.cache
 C:\Users\Droriko\Documents\Visual Studio 2017\Projects\A19 Ex01 Dror 307968339 Omer 205882855\DesktopFacebookAPP\obj\Debug\DesktopFacebookAPP.Properties.Resources.resources
 C:\Users\Droriko\Documents\Visual Studio 2017\Projects\A19 Ex01 Dror 307968339 Omer 205882855\DesktopFacebookAPP\obj\Debug\DesktopFacebookAPP.csproj.GenerateResource.cache
@@ -10,3 +9,4 @@ C:\Users\Droriko\Documents\Visual Studio 2017\Projects\A19 Ex01 Dror 307968339 O
 C:\Users\Droriko\Documents\Visual Studio 2017\Projects\A19 Ex01 Dror 307968339 Omer 205882855\DesktopFacebookAPP\obj\Debug\DesktopFacebookAPP.csproj.CopyComplete
 C:\Users\Droriko\Documents\Visual Studio 2017\Projects\A19 Ex01 Dror 307968339 Omer 205882855\DesktopFacebookAPP\obj\Debug\DesktopFacebookAPP.exe
 C:\Users\Droriko\Documents\Visual Studio 2017\Projects\A19 Ex01 Dror 307968339 Omer 205882855\DesktopFacebookAPP\obj\Debug\DesktopFacebookAPP.pdb
+C:\Users\Droriko\Documents\Visual Studio 2017\Projects\A19 Ex01 Dror 307968339 Omer 205882855\DesktopFacebookAPP\obj\Debug\DesktopFacebookAPP.MainWindow.resources

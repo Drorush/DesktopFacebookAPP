@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using FacebookWrapper;
-using Facebook;
 using FacebookWrapper.ObjectModel;
 
 namespace DesktopFacebookAPP
@@ -22,7 +13,6 @@ namespace DesktopFacebookAPP
         public MainWindow()
         {
             InitializeComponent();
-            loginAndInit();
         }
 
         private void loginAndInit()
@@ -42,6 +32,12 @@ namespace DesktopFacebookAPP
             {
                 MessageBox.Show(result.ErrorMessage);
             }
+        }
+
+        private void loginButton_Click(object sender, System.EventArgs e)
+        {
+            loginAndInit();
+            profilePictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL);
         }
     }
 }
