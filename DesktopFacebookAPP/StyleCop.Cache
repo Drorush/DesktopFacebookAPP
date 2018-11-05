@@ -10,7 +10,7 @@
       <sourceFile>2018/11/02 14:34:31.475</sourceFile>
       <parser>2018/03/20 14:36:19.254</parser>
       <StyleCop.CSharp.DocumentationRules>2018/03/20 14:36:19.254</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-647606768</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-625501023</StyleCop.CSharp.DocumentationRules.FilesHashCode>
       <StyleCop.CSharp.LayoutRules>2018/03/20 14:36:19.254</StyleCop.CSharp.LayoutRules>
       <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
       <StyleCop.CSharp.MaintainabilityRules>2018/03/20 14:36:19.254</StyleCop.CSharp.MaintainabilityRules>
@@ -33,7 +33,7 @@
       <sourceFile>2018/11/02 13:16:29.150</sourceFile>
       <parser>2018/03/20 14:36:19.254</parser>
       <StyleCop.CSharp.DocumentationRules>2018/03/20 14:36:19.254</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-647606768</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-625501023</StyleCop.CSharp.DocumentationRules.FilesHashCode>
       <StyleCop.CSharp.LayoutRules>2018/03/20 14:36:19.254</StyleCop.CSharp.LayoutRules>
       <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
       <StyleCop.CSharp.MaintainabilityRules>2018/03/20 14:36:19.254</StyleCop.CSharp.MaintainabilityRules>
@@ -53,10 +53,10 @@
     <timestamps>
       <styleCop>2018/03/20 14:36:19.254</styleCop>
       <settingsFile>2018/03/21 23:30:24.238</settingsFile>
-      <sourceFile>2018/11/02 13:40:18.771</sourceFile>
+      <sourceFile>2018/11/05 13:02:49.970</sourceFile>
       <parser>2018/03/20 14:36:19.254</parser>
       <StyleCop.CSharp.DocumentationRules>2018/03/20 14:36:19.254</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-647606768</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-625501023</StyleCop.CSharp.DocumentationRules.FilesHashCode>
       <StyleCop.CSharp.LayoutRules>2018/03/20 14:36:19.254</StyleCop.CSharp.LayoutRules>
       <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
       <StyleCop.CSharp.MaintainabilityRules>2018/03/20 14:36:19.254</StyleCop.CSharp.MaintainabilityRules>
@@ -76,10 +76,10 @@
     <timestamps>
       <styleCop>2018/03/20 14:36:19.254</styleCop>
       <settingsFile>2018/03/21 23:30:24.238</settingsFile>
-      <sourceFile>2018/11/02 14:38:27.284</sourceFile>
+      <sourceFile>2018/11/05 16:52:15.729</sourceFile>
       <parser>2018/03/20 14:36:19.254</parser>
       <StyleCop.CSharp.DocumentationRules>2018/03/20 14:36:19.254</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-647606768</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-625501023</StyleCop.CSharp.DocumentationRules.FilesHashCode>
       <StyleCop.CSharp.LayoutRules>2018/03/20 14:36:19.254</StyleCop.CSharp.LayoutRules>
       <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
       <StyleCop.CSharp.MaintainabilityRules>2018/03/20 14:36:19.254</StyleCop.CSharp.MaintainabilityRules>
@@ -93,16 +93,63 @@
       <StyleCop.CSharp.SpacingRules>2018/03/20 14:36:19.254</StyleCop.CSharp.SpacingRules>
       <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
     </timestamps>
-    <violations />
+    <violations>
+      <violation namespace="StyleCop.CSharp.MaintainabilityRules" rule="AccessModifierMustBeDeclared" ruleCheckId="SA1400">
+        <context>The enum must have an access modifier.</context>
+        <line>12</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="CodeMustNotContainMultipleBlankLinesInARow" ruleCheckId="SA1507">
+        <context>The code must not contain multiple blank lines in a row.</context>
+        <line>67</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="ClosingParenthesisMustBeOnLineOfLastParameter" ruleCheckId="SA1111">
+        <context>The closing parenthesis or bracket must be placed on the same line as the last parameter in the parameter list.</context>
+        <line>46</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="SplitParametersMustStartOnLineAfterDeclaration" ruleCheckId="SA1116">
+        <context>If the method parameters are on separate lines, the first parameter must begin on the line beneath the name of the method.</context>
+        <line>41</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>143</line>
+        <index>3747</index>
+        <endIndex>3817</endIndex>
+        <startLine>143</startLine>
+        <startColumn>13</startColumn>
+        <endLine>143</endLine>
+        <endColumn>83</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="OpeningCurlyBracketsMustNotBeFollowedByBlankLine" ruleCheckId="SA1505">
+        <context>An opening curly bracket must not be followed by a blank line.</context>
+        <line>216</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
+        <context>A closing curly bracket must not be preceded by a blank line.</context>
+        <line>218</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="SplitParametersMustStartOnLineAfterDeclaration" ruleCheckId="SA1116">
+        <context>If the method parameters are on separate lines, the first parameter must begin on the line beneath the name of the method.</context>
+        <line>245</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
   </sourcecode>
   <sourcecode name="MainWindow.Designer.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2018/03/20 14:36:19.254</styleCop>
       <settingsFile>2018/03/21 23:30:24.238</settingsFile>
-      <sourceFile>2018/11/02 14:34:31.464</sourceFile>
+      <sourceFile>2018/11/05 16:44:21.424</sourceFile>
       <parser>2018/03/20 14:36:19.254</parser>
       <StyleCop.CSharp.DocumentationRules>2018/03/20 14:36:19.254</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-647606768</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-625501023</StyleCop.CSharp.DocumentationRules.FilesHashCode>
       <StyleCop.CSharp.LayoutRules>2018/03/20 14:36:19.254</StyleCop.CSharp.LayoutRules>
       <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
       <StyleCop.CSharp.MaintainabilityRules>2018/03/20 14:36:19.254</StyleCop.CSharp.MaintainabilityRules>
@@ -125,7 +172,7 @@
       <sourceFile>2018/11/02 13:40:19.383</sourceFile>
       <parser>2018/03/20 14:36:19.254</parser>
       <StyleCop.CSharp.DocumentationRules>2018/03/20 14:36:19.254</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-647606768</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-625501023</StyleCop.CSharp.DocumentationRules.FilesHashCode>
       <StyleCop.CSharp.LayoutRules>2018/03/20 14:36:19.254</StyleCop.CSharp.LayoutRules>
       <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
       <StyleCop.CSharp.MaintainabilityRules>2018/03/20 14:36:19.254</StyleCop.CSharp.MaintainabilityRules>

@@ -88,5 +88,17 @@
   <ItemGroup>
     <None Include="second.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\welcomeScreen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mainScreen.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
