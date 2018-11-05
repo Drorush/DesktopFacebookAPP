@@ -59,7 +59,7 @@ namespace DesktopFacebookAPP
 
         private void loginButton_Click(object sender, System.EventArgs e)
         {
-           // loginAndInit();
+            loginAndInit();
             m_CurrentState = eState.MainState;
             handleState();
         }
@@ -123,7 +123,7 @@ namespace DesktopFacebookAPP
         private void handleMainState()
         {
             this.BackgroundImage = Properties.Resources.mainScreen;
-           // profilePictureBox.LoadAsync(LoggedInUser.PictureNormalURL);
+            profilePictureBox.LoadAsync(LoggedInUser.PictureNormalURL);
 
             List<Control> controlsToShow = new List<Control>()
             {
@@ -141,7 +141,7 @@ namespace DesktopFacebookAPP
                 ctrl.Visible = true;
             }
 
-          //  welcomeLabel.Text = string.Format("Logged in as: {0}", LoggedInUser.Name);
+            welcomeLabel.Text = string.Format("Logged in as: {0}", LoggedInUser.Name);
         }
 
         private void loginButton_MouseEnter(object sender, System.EventArgs e)
