@@ -203,6 +203,7 @@ namespace DesktopFacebookAPP
             this.fansListBox.Name = "fansListBox";
             this.fansListBox.Size = new System.Drawing.Size(154, 147);
             this.fansListBox.TabIndex = 43;
+            this.fansListBox.Visible = false;
             // 
             // MainWindow
             // 
