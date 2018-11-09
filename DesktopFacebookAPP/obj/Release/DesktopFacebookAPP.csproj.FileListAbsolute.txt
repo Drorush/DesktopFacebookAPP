@@ -1,0 +1,5 @@
+C:\Users\Omer's PC\Desktop\DesktopFacebookAPP\DesktopFacebookAPP\obj\Release\DesktopFacebookAPP.MainWindow.resources
+C:\Users\Omer's PC\Desktop\DesktopFacebookAPP\DesktopFacebookAPP\obj\Release\DesktopFacebookAPP.Properties.Resources.resources
+C:\Users\Omer's PC\Desktop\DesktopFacebookAPP\DesktopFacebookAPP\obj\Release\DesktopFacebookAPP.csproj.GenerateResource.cache
+C:\Users\Omer's PC\Desktop\DesktopFacebookAPP\DesktopFacebookAPP\obj\Release\DesktopFacebookAPP.csproj.CoreCompileInputs.cache
+C:\Users\Omer's PC\Desktop\DesktopFacebookAPP\DesktopFacebookAPP\obj\Release\DesktopFacebookAPP.csprojResolveAssemblyReference.cache

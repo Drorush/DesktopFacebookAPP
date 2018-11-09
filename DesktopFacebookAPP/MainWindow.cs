@@ -34,20 +34,25 @@ namespace DesktopFacebookAPP
         {
             InitializeComponent();
             m_CurrentState = eState.Login;
+            this.AutoScaleMode = AutoScaleMode.Dpi;
         }
-
+        
         private void loginAndInit()
-        {
-            LoginResult result = FacebookService.Login(r_AppID,
-                "public_profile",
+        { 
+           LoginResult result = FacebookService.Login(r_GuyAppID,
+               "email",
+                "user_posts",
+                "user_friends",
+                "user_likes",
+                "user_photos",
+                "user_events",
                 "user_birthday",
-                "user_email",
-                "user_friends"
-            );
+                "user_location",
+                "user_gender");
 
             if (!string.IsNullOrEmpty(result.AccessToken))
             {
-                LoggedInUser = result.LoggedInUser;
+               LoggedInUser = result.LoggedInUser;
 
                 // do something with user info
             }
@@ -55,6 +60,7 @@ namespace DesktopFacebookAPP
             {
                 MessageBox.Show(result.ErrorMessage);
             }
+            
         }
 
         private void loginButton_Click(object sender, System.EventArgs e)
@@ -273,7 +279,7 @@ namespace DesktopFacebookAPP
         {
             handleState();
 
-            List<Post> todayPosts = LoggedInUser.Posts
+            List<Post> todayPosts = LoggedInUser.WallPosts
                 .Where(post =>
                     post.CreatedTime.GetValueOrDefault(DateTime.MinValue).Date == DateTime.Today)
                 .ToList();
@@ -282,6 +288,61 @@ namespace DesktopFacebookAPP
             {
                 post.Comment(commentBackTextBox.Text);
             }
+        }
+
+        private void postButton_MouseHover(object sender, EventArgs e)
+        {
+            postButton.BackgroundImage = Properties.Resources.optionButton2;
+        }
+
+        private void postButton_MouseLeave(object sender, EventArgs e)
+        {
+            postButton.BackgroundImage = Properties.Resources.optionButton1;
+        }
+
+        private void upcomingEventsButton_MouseHover(object sender, EventArgs e)
+        {
+            upcomingEventsButton.BackgroundImage = Properties.Resources.optionButton2;
+        }
+
+        private void upcomingEventsButton_MouseLeave(object sender, EventArgs e)
+        {
+            upcomingEventsButton.BackgroundImage = Properties.Resources.optionButton1;
+        }
+
+        private void likedPagesButton_MouseHover(object sender, EventArgs e)
+        {
+            likedPagesButton.BackgroundImage = Properties.Resources.optionButton2;
+        }
+
+        private void likedPagesButton_MouseLeave(object sender, EventArgs e)
+        {
+            likedPagesButton.BackgroundImage = Properties.Resources.optionButton1;
+        }
+
+        private void fansButton_MouseHover(object sender, EventArgs e)
+        {
+            fansButton.BackgroundImage = Properties.Resources.optionButton2;
+        }
+
+        private void fansButton_MouseLeave(object sender, EventArgs e)
+        {
+            fansButton.BackgroundImage = Properties.Resources.optionButton1;
+        }
+
+        private void secondFeatureButton_MouseHover(object sender, EventArgs e)
+        {
+            secondFeatureButton.BackgroundImage = Properties.Resources.optionButton2;
+        }
+
+        private void secondFeatureButton_MouseLeave(object sender, EventArgs e)
+        {
+            secondFeatureButton.BackgroundImage = Properties.Resources.optionButton1;
+        }
+
+        private void welcomeLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
