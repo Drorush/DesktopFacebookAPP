@@ -179,9 +179,11 @@ namespace DesktopFacebookAPP
                     MessageBox.Show("No liked pages");
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Couldn't show liked pages");
+                MessageBox.Show(string.Format("Couldn't show liked pages{0}{1}",
+                    Environment.NewLine,
+                    ex.Message));
             }
         }
 
@@ -204,9 +206,11 @@ namespace DesktopFacebookAPP
                     MessageBox.Show("No events found");
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Couldn't show events");
+                MessageBox.Show(string.Format("Couldn't show events{0}{1}",
+                    Environment.NewLine,
+                    ex.Message));
             }
         }
 
@@ -267,9 +271,11 @@ namespace DesktopFacebookAPP
                 Status postedStatus = LoggedInUser.PostStatus(postTextBox.Text);
                 MessageBox.Show("Status Posted! ID: " + postedStatus.Id);
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Couldn't post for some reason");
+                MessageBox.Show(string.Format("Couldn't post{0}{1}",
+                    Environment.NewLine,
+                    ex.Message));
             }
 
         }
