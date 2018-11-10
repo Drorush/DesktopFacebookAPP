@@ -34,11 +34,6 @@ namespace DesktopFacebookAPP
             this.loginButton = new System.Windows.Forms.Button();
             this.profilePictureBox = new System.Windows.Forms.PictureBox();
             this.welcomeLabel = new System.Windows.Forms.Label();
-            this.postButton = new System.Windows.Forms.Button();
-            this.upcomingEventsButton = new System.Windows.Forms.Button();
-            this.likedPagesButton = new System.Windows.Forms.Button();
-            this.fansButton = new System.Windows.Forms.Button();
-            this.secondFeatureButton = new System.Windows.Forms.Button();
             this.postTextBox = new System.Windows.Forms.TextBox();
             this.sendPostButton = new System.Windows.Forms.Button();
             this.cancelPostButton = new System.Windows.Forms.Button();
@@ -47,6 +42,11 @@ namespace DesktopFacebookAPP
             this.fansListBox = new System.Windows.Forms.ListBox();
             this.commentBackTextBox = new System.Windows.Forms.TextBox();
             this.commentButton = new System.Windows.Forms.Button();
+            this.secondFeatureButton = new DesktopFacebookAPP.RoundButton();
+            this.fansButton = new DesktopFacebookAPP.RoundButton();
+            this.likedPagesButton = new DesktopFacebookAPP.RoundButton();
+            this.upcomingEventsButton = new DesktopFacebookAPP.RoundButton();
+            this.postButton = new DesktopFacebookAPP.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,9 +58,9 @@ namespace DesktopFacebookAPP
             this.loginButton.FlatAppearance.BorderSize = 0;
             this.loginButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginButton.Location = new System.Drawing.Point(44, 400);
+            this.loginButton.Location = new System.Drawing.Point(58, 467);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(202, 57);
+            this.loginButton.Size = new System.Drawing.Size(216, 54);
             this.loginButton.TabIndex = 0;
             this.loginButton.TabStop = false;
             this.loginButton.UseVisualStyleBackColor = true;
@@ -71,86 +71,33 @@ namespace DesktopFacebookAPP
             // 
             // profilePictureBox
             // 
-            this.profilePictureBox.Location = new System.Drawing.Point(21, 282);
+            this.profilePictureBox.Location = new System.Drawing.Point(58, 354);
             this.profilePictureBox.Name = "profilePictureBox";
-            this.profilePictureBox.Size = new System.Drawing.Size(141, 142);
+            this.profilePictureBox.Size = new System.Drawing.Size(178, 164);
             this.profilePictureBox.TabIndex = 1;
             this.profilePictureBox.TabStop = false;
             this.profilePictureBox.Visible = false;
+            this.profilePictureBox.Click += new System.EventHandler(this.profilePictureBox_Click);
             // 
             // welcomeLabel
             // 
             this.welcomeLabel.BackColor = System.Drawing.Color.Transparent;
             this.welcomeLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.welcomeLabel.ForeColor = System.Drawing.Color.White;
-            this.welcomeLabel.Location = new System.Drawing.Point(28, 430);
+            this.welcomeLabel.Location = new System.Drawing.Point(88, 524);
             this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(148, 27);
+            this.welcomeLabel.Size = new System.Drawing.Size(158, 26);
             this.welcomeLabel.TabIndex = 2;
             this.welcomeLabel.Text = "Welcome !!!";
             this.welcomeLabel.Visible = false;
-            // 
-            // postButton
-            // 
-            this.postButton.Location = new System.Drawing.Point(115, 12);
-            this.postButton.Name = "postButton";
-            this.postButton.Size = new System.Drawing.Size(75, 31);
-            this.postButton.TabIndex = 3;
-            this.postButton.Text = "post";
-            this.postButton.UseVisualStyleBackColor = true;
-            this.postButton.Visible = false;
-            this.postButton.Click += new System.EventHandler(this.postButton_Click);
-            // 
-            // upcomingEventsButton
-            // 
-            this.upcomingEventsButton.Location = new System.Drawing.Point(208, 10);
-            this.upcomingEventsButton.Name = "upcomingEventsButton";
-            this.upcomingEventsButton.Size = new System.Drawing.Size(75, 31);
-            this.upcomingEventsButton.TabIndex = 4;
-            this.upcomingEventsButton.Text = "events";
-            this.upcomingEventsButton.UseVisualStyleBackColor = true;
-            this.upcomingEventsButton.Visible = false;
-            this.upcomingEventsButton.Click += new System.EventHandler(this.upcomingEventsButton_Click);
-            // 
-            // likedPagesButton
-            // 
-            this.likedPagesButton.Location = new System.Drawing.Point(323, 10);
-            this.likedPagesButton.Name = "likedPagesButton";
-            this.likedPagesButton.Size = new System.Drawing.Size(75, 31);
-            this.likedPagesButton.TabIndex = 5;
-            this.likedPagesButton.Text = "pages";
-            this.likedPagesButton.UseVisualStyleBackColor = true;
-            this.likedPagesButton.Visible = false;
-            this.likedPagesButton.Click += new System.EventHandler(this.likedPagesButton_Click);
-            // 
-            // fansButton
-            // 
-            this.fansButton.Location = new System.Drawing.Point(430, 10);
-            this.fansButton.Name = "fansButton";
-            this.fansButton.Size = new System.Drawing.Size(75, 31);
-            this.fansButton.TabIndex = 6;
-            this.fansButton.Text = "Fans";
-            this.fansButton.UseVisualStyleBackColor = true;
-            this.fansButton.Visible = false;
-            this.fansButton.Click += new System.EventHandler(this.fansButton_Click);
-            // 
-            // secondFeatureButton
-            // 
-            this.secondFeatureButton.Location = new System.Drawing.Point(554, 10);
-            this.secondFeatureButton.Name = "secondFeatureButton";
-            this.secondFeatureButton.Size = new System.Drawing.Size(75, 31);
-            this.secondFeatureButton.TabIndex = 7;
-            this.secondFeatureButton.Text = "2nd Feature";
-            this.secondFeatureButton.UseVisualStyleBackColor = true;
-            this.secondFeatureButton.Visible = false;
-            this.secondFeatureButton.Click += new System.EventHandler(this.secondFeatureButton_Click);
+            this.welcomeLabel.Click += new System.EventHandler(this.welcomeLabel_Click);
             // 
             // postTextBox
             // 
-            this.postTextBox.Location = new System.Drawing.Point(180, 97);
+            this.postTextBox.Location = new System.Drawing.Point(222, 180);
             this.postTextBox.Multiline = true;
             this.postTextBox.Name = "postTextBox";
-            this.postTextBox.Size = new System.Drawing.Size(434, 153);
+            this.postTextBox.Size = new System.Drawing.Size(463, 146);
             this.postTextBox.TabIndex = 9;
             this.postTextBox.Text = "whats on your";
             this.postTextBox.Visible = false;
@@ -158,9 +105,9 @@ namespace DesktopFacebookAPP
             // 
             // sendPostButton
             // 
-            this.sendPostButton.Location = new System.Drawing.Point(261, 256);
+            this.sendPostButton.Location = new System.Drawing.Point(336, 332);
             this.sendPostButton.Name = "sendPostButton";
-            this.sendPostButton.Size = new System.Drawing.Size(75, 31);
+            this.sendPostButton.Size = new System.Drawing.Size(80, 30);
             this.sendPostButton.TabIndex = 10;
             this.sendPostButton.Text = "post";
             this.sendPostButton.UseVisualStyleBackColor = true;
@@ -169,13 +116,14 @@ namespace DesktopFacebookAPP
             // 
             // cancelPostButton
             // 
-            this.cancelPostButton.Location = new System.Drawing.Point(375, 256);
+            this.cancelPostButton.Location = new System.Drawing.Point(430, 332);
             this.cancelPostButton.Name = "cancelPostButton";
-            this.cancelPostButton.Size = new System.Drawing.Size(75, 31);
+            this.cancelPostButton.Size = new System.Drawing.Size(80, 30);
             this.cancelPostButton.TabIndex = 11;
             this.cancelPostButton.Text = "cancel";
             this.cancelPostButton.UseVisualStyleBackColor = true;
             this.cancelPostButton.Visible = false;
+            this.cancelPostButton.Click += new System.EventHandler(this.cancelPostButton_Click);
             // 
             // eventsListBox
             // 
@@ -183,9 +131,9 @@ namespace DesktopFacebookAPP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.eventsListBox.DisplayMember = "name";
             this.eventsListBox.FormattingEnabled = true;
-            this.eventsListBox.Location = new System.Drawing.Point(154, 97);
+            this.eventsListBox.Location = new System.Drawing.Point(194, 180);
             this.eventsListBox.Name = "eventsListBox";
-            this.eventsListBox.Size = new System.Drawing.Size(345, 95);
+            this.eventsListBox.Size = new System.Drawing.Size(480, 82);
             this.eventsListBox.TabIndex = 41;
             this.eventsListBox.Visible = false;
             // 
@@ -195,47 +143,136 @@ namespace DesktopFacebookAPP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.likePagedListBox.DisplayMember = "name";
             this.likePagedListBox.FormattingEnabled = true;
-            this.likePagedListBox.Location = new System.Drawing.Point(154, 97);
+            this.likePagedListBox.Location = new System.Drawing.Point(194, 142);
             this.likePagedListBox.Name = "likePagedListBox";
-            this.likePagedListBox.Size = new System.Drawing.Size(345, 134);
+            this.likePagedListBox.Size = new System.Drawing.Size(480, 173);
             this.likePagedListBox.TabIndex = 42;
             this.likePagedListBox.Visible = false;
             // 
             // fansListBox
             // 
             this.fansListBox.FormattingEnabled = true;
-            this.fansListBox.Location = new System.Drawing.Point(296, 97);
+            this.fansListBox.Location = new System.Drawing.Point(346, 180);
             this.fansListBox.Name = "fansListBox";
-            this.fansListBox.Size = new System.Drawing.Size(154, 147);
+            this.fansListBox.Size = new System.Drawing.Size(164, 134);
             this.fansListBox.TabIndex = 43;
             this.fansListBox.Visible = false;
             // 
             // commentBackTextBox
             // 
-            this.commentBackTextBox.Location = new System.Drawing.Point(154, 133);
+            this.commentBackTextBox.Location = new System.Drawing.Point(194, 214);
             this.commentBackTextBox.Multiline = true;
             this.commentBackTextBox.Name = "commentBackTextBox";
-            this.commentBackTextBox.Size = new System.Drawing.Size(444, 59);
+            this.commentBackTextBox.Size = new System.Drawing.Size(473, 56);
             this.commentBackTextBox.TabIndex = 44;
             this.commentBackTextBox.Text = "Write something ";
             this.commentBackTextBox.Visible = false;
             // 
             // commentButton
             // 
-            this.commentButton.Location = new System.Drawing.Point(481, 256);
+            this.commentButton.Location = new System.Drawing.Point(543, 332);
             this.commentButton.Name = "commentButton";
-            this.commentButton.Size = new System.Drawing.Size(81, 59);
+            this.commentButton.Size = new System.Drawing.Size(86, 56);
             this.commentButton.TabIndex = 45;
             this.commentButton.Text = "Comment!";
             this.commentButton.UseVisualStyleBackColor = true;
             this.commentButton.Visible = false;
+            this.commentButton.Click += new System.EventHandler(this.commentButton_Click);
+            // 
+            // secondFeatureButton
+            // 
+            this.secondFeatureButton.BackgroundImage = global::DesktopFacebookAPP.Properties.Resources.optionButton1;
+            this.secondFeatureButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.secondFeatureButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.secondFeatureButton.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondFeatureButton.Location = new System.Drawing.Point(692, 16);
+            this.secondFeatureButton.Name = "secondFeatureButton";
+            this.secondFeatureButton.Size = new System.Drawing.Size(120, 120);
+            this.secondFeatureButton.TabIndex = 7;
+            this.secondFeatureButton.Text = "Reply all";
+            this.secondFeatureButton.UseVisualStyleBackColor = true;
+            this.secondFeatureButton.Visible = false;
+            this.secondFeatureButton.Click += new System.EventHandler(this.secondFeatureButton_Click);
+            this.secondFeatureButton.MouseLeave += new System.EventHandler(this.secondFeatureButton_MouseLeave);
+            this.secondFeatureButton.MouseHover += new System.EventHandler(this.secondFeatureButton_MouseHover);
+            // 
+            // fansButton
+            // 
+            this.fansButton.BackgroundImage = global::DesktopFacebookAPP.Properties.Resources.optionButton1;
+            this.fansButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.fansButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fansButton.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fansButton.Location = new System.Drawing.Point(528, 16);
+            this.fansButton.Name = "fansButton";
+            this.fansButton.Size = new System.Drawing.Size(120, 120);
+            this.fansButton.TabIndex = 6;
+            this.fansButton.Text = "Fans";
+            this.fansButton.UseVisualStyleBackColor = true;
+            this.fansButton.Visible = false;
+            this.fansButton.Click += new System.EventHandler(this.fansButton_Click);
+            this.fansButton.MouseLeave += new System.EventHandler(this.fansButton_MouseLeave);
+            this.fansButton.MouseHover += new System.EventHandler(this.fansButton_MouseHover);
+            // 
+            // likedPagesButton
+            // 
+            this.likedPagesButton.BackgroundImage = global::DesktopFacebookAPP.Properties.Resources.optionButton1;
+            this.likedPagesButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.likedPagesButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.likedPagesButton.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.likedPagesButton.Location = new System.Drawing.Point(364, 16);
+            this.likedPagesButton.Name = "likedPagesButton";
+            this.likedPagesButton.Size = new System.Drawing.Size(120, 120);
+            this.likedPagesButton.TabIndex = 5;
+            this.likedPagesButton.Text = "pages";
+            this.likedPagesButton.UseVisualStyleBackColor = true;
+            this.likedPagesButton.Visible = false;
+            this.likedPagesButton.Click += new System.EventHandler(this.likedPagesButton_Click);
+            this.likedPagesButton.MouseLeave += new System.EventHandler(this.likedPagesButton_MouseLeave);
+            this.likedPagesButton.MouseHover += new System.EventHandler(this.likedPagesButton_MouseHover);
+            // 
+            // upcomingEventsButton
+            // 
+            this.upcomingEventsButton.BackgroundImage = global::DesktopFacebookAPP.Properties.Resources.optionButton1;
+            this.upcomingEventsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.upcomingEventsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.upcomingEventsButton.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upcomingEventsButton.Location = new System.Drawing.Point(200, 16);
+            this.upcomingEventsButton.Name = "upcomingEventsButton";
+            this.upcomingEventsButton.Size = new System.Drawing.Size(120, 120);
+            this.upcomingEventsButton.TabIndex = 4;
+            this.upcomingEventsButton.Text = "events";
+            this.upcomingEventsButton.UseVisualStyleBackColor = true;
+            this.upcomingEventsButton.Visible = false;
+            this.upcomingEventsButton.Click += new System.EventHandler(this.upcomingEventsButton_Click);
+            this.upcomingEventsButton.MouseLeave += new System.EventHandler(this.upcomingEventsButton_MouseLeave);
+            this.upcomingEventsButton.MouseHover += new System.EventHandler(this.upcomingEventsButton_MouseHover);
+            // 
+            // postButton
+            // 
+            this.postButton.BackgroundImage = global::DesktopFacebookAPP.Properties.Resources.optionButton1;
+            this.postButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.postButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.postButton.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.postButton.Location = new System.Drawing.Point(36, 16);
+            this.postButton.Name = "postButton";
+            this.postButton.Size = new System.Drawing.Size(120, 120);
+            this.postButton.TabIndex = 3;
+            this.postButton.Text = "post";
+            this.postButton.UseVisualStyleBackColor = true;
+            this.postButton.Visible = false;
+            this.postButton.Click += new System.EventHandler(this.postButton_Click);
+            this.postButton.MouseLeave += new System.EventHandler(this.postButton_MouseLeave);
+            this.postButton.MouseHover += new System.EventHandler(this.postButton_MouseHover);
             // 
             // MainWindow
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::DesktopFacebookAPP.Properties.Resources.welcomeScreen;
-            this.ClientSize = new System.Drawing.Size(679, 472);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(837, 566);
+            this.Controls.Add(this.loginButton);
             this.Controls.Add(this.commentButton);
             this.Controls.Add(this.commentBackTextBox);
             this.Controls.Add(this.fansListBox);
@@ -251,8 +288,7 @@ namespace DesktopFacebookAPP
             this.Controls.Add(this.postButton);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.profilePictureBox);
-            this.Controls.Add(this.loginButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "MainWindow";
             this.Text = "Facebook APP";
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
@@ -266,11 +302,11 @@ namespace DesktopFacebookAPP
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.PictureBox profilePictureBox;
         private System.Windows.Forms.Label welcomeLabel;
-        private System.Windows.Forms.Button postButton;
-        private System.Windows.Forms.Button upcomingEventsButton;
-        private System.Windows.Forms.Button likedPagesButton;
-        private System.Windows.Forms.Button fansButton;
-        private System.Windows.Forms.Button secondFeatureButton;
+        private RoundButton postButton;
+        private RoundButton upcomingEventsButton;
+        private RoundButton likedPagesButton;
+        private RoundButton fansButton;
+        private RoundButton secondFeatureButton;
         private System.Windows.Forms.TextBox postTextBox;
         private System.Windows.Forms.Button sendPostButton;
         private System.Windows.Forms.Button cancelPostButton;

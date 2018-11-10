@@ -100,5 +100,11 @@
   <ItemGroup>
     <None Include="Resources\mainScreen.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\optionButton11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\optionButton21.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
