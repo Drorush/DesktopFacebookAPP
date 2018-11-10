@@ -232,8 +232,7 @@ namespace DesktopFacebookAPP
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::DesktopFacebookAPP.Properties.Resources.welcomeScreen;
             this.ClientSize = new System.Drawing.Size(679, 472);

@@ -34,6 +34,7 @@ namespace DesktopFacebookAPP
         {
             InitializeComponent();
             m_CurrentState = eState.Login;
+
         }
 
         private void loginAndInit()

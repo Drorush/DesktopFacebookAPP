@@ -1,0 +1,5 @@
+C:\Users\Droriko\Documents\Visual Studio 2017\Projects\A19 Ex01 Dror 307968339 Omer 205882855\DesktopFacebookAPP\obj\Release\DesktopFacebookAPP.csprojResolveAssemblyReference.cache
+C:\Users\Droriko\Documents\Visual Studio 2017\Projects\A19 Ex01 Dror 307968339 Omer 205882855\DesktopFacebookAPP\obj\Release\DesktopFacebookAPP.MainWindow.resources
+C:\Users\Droriko\Documents\Visual Studio 2017\Projects\A19 Ex01 Dror 307968339 Omer 205882855\DesktopFacebookAPP\obj\Release\DesktopFacebookAPP.Properties.Resources.resources
+C:\Users\Droriko\Documents\Visual Studio 2017\Projects\A19 Ex01 Dror 307968339 Omer 205882855\DesktopFacebookAPP\obj\Release\DesktopFacebookAPP.csproj.GenerateResource.cache
+C:\Users\Droriko\Documents\Visual Studio 2017\Projects\A19 Ex01 Dror 307968339 Omer 205882855\DesktopFacebookAPP\obj\Release\DesktopFacebookAPP.csproj.CoreCompileInputs.cache
