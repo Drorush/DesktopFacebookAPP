@@ -40,7 +40,7 @@ namespace DesktopFacebookAPP
         
         private void loginAndInit()
         { 
-           LoginResult result = FacebookService.Login(r_GuyAppID,
+           LoginResult result = FacebookService.Login(r_AppID,
                "email",
                 "user_posts",
                 "user_friends",
