@@ -106,5 +106,17 @@
   <ItemGroup>
     <None Include="Resources\optionButton21.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\post1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\post21.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
