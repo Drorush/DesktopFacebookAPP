@@ -62,7 +62,7 @@
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -100,37 +100,52 @@
     <None Include="Resources\welcomeScreen.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mainScreen.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\optionButton11.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\optionButton21.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\post1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancel1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancel21.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\post21.jpg" />
+    <None Include="Resources\login11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel211.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mainScreen.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mainWindow1.jpeg" />
   </ItemGroup>
-<<<<<<< HEAD
+  <ItemGroup>
+    <None Include="Resources\optionButton21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\optionButton111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\post1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\post21.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\V.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\welcomeScreen1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\X.jpg" />
   </ItemGroup>
-=======
->>>>>>> f6226097531ae9d7ec056c17d4e1ece05d315e62
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

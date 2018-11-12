@@ -321,12 +321,12 @@ namespace DesktopFacebookAPP
             this.loginButton.FlatAppearance.BorderSize = 0;
             this.loginButton.FlatStyle = FlatStyle.Flat;
             this.loginButton.TabStop = false;
-            loginButton.BackgroundImage = Properties.Resources.login2;
+            loginButton.BackgroundImage = Properties.Resources.login21;
         }
 
         private void loginButton_MouseLeave(object sender, System.EventArgs e)
         {
-            loginButton.BackgroundImage = Properties.Resources.login1;
+            loginButton.BackgroundImage = Properties.Resources.login111;
         }
 
         private void postButton_Click(object sender, System.EventArgs e)
@@ -419,52 +419,52 @@ namespace DesktopFacebookAPP
 
         private void postButton_MouseHover(object sender, EventArgs e)
         {
-            postButton.BackgroundImage = Properties.Resources.optionButton2;
+            postButton.BackgroundImage = Properties.Resources.optionButton21;
         }
 
         private void postButton_MouseLeave(object sender, EventArgs e)
         {
-            postButton.BackgroundImage = Properties.Resources.optionButton1;
+            postButton.BackgroundImage = Properties.Resources.optionButton111;
         }
 
         private void upcomingEventsButton_MouseHover(object sender, EventArgs e)
         {
-            upcomingEventsButton.BackgroundImage = Properties.Resources.optionButton2;
+            upcomingEventsButton.BackgroundImage = Properties.Resources.optionButton21;
         }
 
         private void upcomingEventsButton_MouseLeave(object sender, EventArgs e)
         {
-            upcomingEventsButton.BackgroundImage = Properties.Resources.optionButton1;
+            upcomingEventsButton.BackgroundImage = Properties.Resources.optionButton111;
         }
 
         private void likedPagesButton_MouseHover(object sender, EventArgs e)
         {
-            likedPagesButton.BackgroundImage = Properties.Resources.optionButton2;
+            likedPagesButton.BackgroundImage = Properties.Resources.optionButton21;
         }
 
         private void likedPagesButton_MouseLeave(object sender, EventArgs e)
         {
-            likedPagesButton.BackgroundImage = Properties.Resources.optionButton1;
+            likedPagesButton.BackgroundImage = Properties.Resources.optionButton111;
         }
 
         private void fansButton_MouseHover(object sender, EventArgs e)
         {
-            fansButton.BackgroundImage = Properties.Resources.optionButton2;
+            fansButton.BackgroundImage = Properties.Resources.optionButton21;
         }
 
         private void fansButton_MouseLeave(object sender, EventArgs e)
         {
-            fansButton.BackgroundImage = Properties.Resources.optionButton1;
+            fansButton.BackgroundImage = Properties.Resources.optionButton111;
         }
 
         private void secondFeatureButton_MouseHover(object sender, EventArgs e)
         {
-            secondFeatureButton.BackgroundImage = Properties.Resources.optionButton2;
+            secondFeatureButton.BackgroundImage = Properties.Resources.optionButton21;
         }
 
         private void secondFeatureButton_MouseLeave(object sender, EventArgs e)
         {
-            secondFeatureButton.BackgroundImage = Properties.Resources.optionButton1;
+            secondFeatureButton.BackgroundImage = Properties.Resources.optionButton111;
         }
 
         private void cancelPostButton_MouseHover(object sender, EventArgs e)
@@ -474,31 +474,23 @@ namespace DesktopFacebookAPP
 
         private void cancelPostButton_MouseLeave(object sender, EventArgs e)
         {
-            cancelPostButton.BackgroundImage = Properties.Resources.cancel2;
+            cancelPostButton.BackgroundImage = Properties.Resources.cancel211;
         }
 
 
         private void sendPostButton_MouseHover(object sender, EventArgs e)
-<<<<<<< HEAD
-=======
         {
             sendPostButton.BackgroundImage = Properties.Resources.post1;
         }
 
         private void sendPostButton_MouseLeave(object sender, EventArgs e)
         {
-            sendPostButton.BackgroundImage = Properties.Resources.post2;
+            sendPostButton.BackgroundImage = Properties.Resources.post21;
         }
 
         private void welcomeLabel_Click(object sender, EventArgs e)
->>>>>>> f6226097531ae9d7ec056c17d4e1ece05d315e62
         {
             sendPostButton.BackgroundImage = Properties.Resources.post1;
-        }
-
-        private void sendPostButton_MouseLeave(object sender, EventArgs e)
-        {
-            sendPostButton.BackgroundImage = Properties.Resources.post2;
         }
 
         private void cancelPostButton_Click(object sender, EventArgs e)
@@ -602,11 +594,6 @@ namespace DesktopFacebookAPP
             questionOneResultPictureBox.Visible = false;
             questionTwoResultPictureBox.Visible = false;
             questionThreeResultPictureBox.Visible = false;
-        }
-
-        private void questionOneResultPictureBox_Click(object sender, EventArgs e)
-        {
-
         }
     }
 
