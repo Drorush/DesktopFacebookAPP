@@ -133,7 +133,7 @@ namespace DesktopFacebookAPP
             this.eventsListBox.FormattingEnabled = true;
             this.eventsListBox.Location = new System.Drawing.Point(194, 180);
             this.eventsListBox.Name = "eventsListBox";
-            this.eventsListBox.Size = new System.Drawing.Size(480, 82);
+            this.eventsListBox.Size = new System.Drawing.Size(524, 82);
             this.eventsListBox.TabIndex = 41;
             this.eventsListBox.Visible = false;
             // 
@@ -145,7 +145,7 @@ namespace DesktopFacebookAPP
             this.likePagedListBox.FormattingEnabled = true;
             this.likePagedListBox.Location = new System.Drawing.Point(194, 142);
             this.likePagedListBox.Name = "likePagedListBox";
-            this.likePagedListBox.Size = new System.Drawing.Size(480, 173);
+            this.likePagedListBox.Size = new System.Drawing.Size(524, 173);
             this.likePagedListBox.TabIndex = 42;
             this.likePagedListBox.Visible = false;
             // 
@@ -271,7 +271,7 @@ namespace DesktopFacebookAPP
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::DesktopFacebookAPP.Properties.Resources.welcomeScreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(837, 566);
+            this.ClientSize = new System.Drawing.Size(881, 556);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.commentButton);
             this.Controls.Add(this.commentBackTextBox);

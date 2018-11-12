@@ -113,8 +113,9 @@ namespace DesktopFacebookAPP
 
         private void handleFirstFeature()
         {
+            fansListBox.Items.Clear();
             fansListBox.Visible = true;
-
+            
             try
             {
                 new Thread(findFans).Start();
