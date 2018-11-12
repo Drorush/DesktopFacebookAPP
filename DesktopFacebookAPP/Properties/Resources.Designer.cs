@@ -113,6 +113,16 @@ namespace DesktopFacebookAPP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mainWindow1 {
+            get {
+                object obj = ResourceManager.GetObject("mainWindow1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap optionButton1 {
             get {
                 object obj = ResourceManager.GetObject("optionButton1", resourceCulture);

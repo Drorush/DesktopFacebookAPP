@@ -130,7 +130,7 @@ namespace DesktopFacebookAPP
 
         private void handleMainState()
         {
-            this.BackgroundImage = Properties.Resources.mainScreen;
+            this.BackgroundImage = Properties.Resources.mainWindow1;
             profilePictureBox.LoadAsync(LoggedInUser.PictureNormalURL);
 
             List<Control> controlsToShow = new List<Control>()
