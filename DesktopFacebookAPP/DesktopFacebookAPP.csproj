@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NotEnoughFriendsException.cs" />
+    <Compile Include="HowWellDoYouKnowYourFriendsGame.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +107,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\optionButton21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\post1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\post21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mainWindow1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\V.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.ExceptionServices;
@@ -8,6 +9,7 @@ using System.Threading;
 using System.Windows.Forms;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
+using static DesktopFacebookAPP.HowWellDoYouKnowYourFriendsGame;
 
 namespace DesktopFacebookAPP
 {
@@ -19,7 +21,7 @@ namespace DesktopFacebookAPP
         Events,
         LikedPages,
         FirstFeature,
-        SecondFeature
+        HowWellDoYouKnowYourFriendsGame
     }
 
     public partial class MainWindow : Form
@@ -32,6 +34,8 @@ namespace DesktopFacebookAPP
 
         private eState m_CurrentState;
 
+        private HowWellDoYouKnowYourFriendsGame m_Game;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -41,7 +45,8 @@ namespace DesktopFacebookAPP
 
         private void loginAndInit()
         {
-            LoginResult result = FacebookService.Login("1450160541956417",
+            LoginResult result = FacebookService.Login(r_GuyAppID,
+                "publish_to_groups",
                 "public_profile",
                 "user_birthday",
                 "user_friends",
@@ -54,13 +59,12 @@ namespace DesktopFacebookAPP
                 "user_tagged_places",
                 "user_videos",
                 "read_page_mailboxes",
-                "manage_pages"
-            );
+                "manage_pages",
+                "publish_pages");
 
             if (!string.IsNullOrEmpty(result.AccessToken))
             {
                 LoggedInUser = result.LoggedInUser;
-
                 // do something with user info
             }
             else
@@ -99,16 +103,76 @@ namespace DesktopFacebookAPP
                 case eState.FirstFeature:
                     handleFirstFeature();
                     break;
-                case eState.SecondFeature:
-                    handleSecondFeature();
+                case eState.HowWellDoYouKnowYourFriendsGame:
+                    handleGameState();
                     break;
             }
         }
 
-        private void handleSecondFeature()
+        private void handleGameState()
         {
-            commentBackTextBox.Visible = true;
-            commentButton.Visible = true;
+            try
+            {
+                new Thread(() =>
+                {
+                    uiThreadInvoke(clearGamePanel);
+                    startGame();
+                    uiThreadInvoke(() => gamePanel.Visible = true);
+                }).Start();
+            }
+            catch (NotEnoughFriendsException e)
+            {
+                MessageBox.Show("You don't have enough friends to play the game, sorry :'(");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void startGame()
+        {
+            m_Game = new HowWellDoYouKnowYourFriendsGame(LoggedInUser);
+            uiThreadInvoke(() =>
+            {
+                initFirstQuestion();
+                initSecondQuestion();
+                initThirdQuestion();
+            });
+        }
+
+        private void initThirdQuestion()
+        {
+            Question question = m_Game.ThirdQuestion;
+
+            thirdQuestionLabel.Text = question.QuestionContent;
+
+            thirdQuestionFirstOptionRadioButton.Text = question.PossibleAnswers[0];
+            thirdQuestionSecondOptionRadioButton.Text = question.PossibleAnswers[1];
+            thirdQuestionThirdOptionRadioButton.Text = question.PossibleAnswers[2];
+        }
+
+        private void initSecondQuestion()
+        {
+            Question question = m_Game.SecondQuestion;
+
+            secondQuestionLabel.Text = question.QuestionContent;
+
+            secondQuestionFirstOptionRadioButton.Text = question.PossibleAnswers[0];
+            secondQuestionSecondOptionRadioButton.Text = question.PossibleAnswers[1];
+            secondQuestionThirdOptionRadioButton.Text = question.PossibleAnswers[2];
+        }
+
+        private void initFirstQuestion()
+        {
+            Question question = m_Game.FirstQuestion;
+
+            firstQuestionLabel.Text = question.QuestionContent;
+            firstQuestionPictureBox.LoadAsync(question.Answer.PictureNormalURL);
+
+            firstQuestionFirstOptionRadioButton.Text = question.PossibleAnswers[0];
+            firstQuestionSecondOptionRadioButton.Text = question.PossibleAnswers[1];
+            firstQuestionThirdOptionRadioButton.Text = question.PossibleAnswers[2];
         }
 
         private void handleFirstFeature()
@@ -128,13 +192,17 @@ namespace DesktopFacebookAPP
 
         private void findFans()
         {
+                uiThreadInvoke(() => loadingLabel.Visible = true);
                 FacebookObjectCollection<Album> albums = LoggedInUser.Albums;
                 List<Photo> photos = new List<Photo>();
                 foreach (Album album in albums)
                 {
                     foreach (Photo photo in album.Photos)
                     {
+                        if (photo.LikedBy.Count > 0)
+                        {
                         photos.Add(photo);
+                        }
                     }
                 }
 
@@ -153,6 +221,8 @@ namespace DesktopFacebookAPP
                     uiThreadInvoke(() =>
                         fansListBox.Items.Add(string.Format("{0} - {1} Likes", pair.Key, pair.Value)));
                 }
+
+            uiThreadInvoke(() => loadingLabel.Visible = false);
         }
 
         private void uiThreadInvoke(Action action)
@@ -224,7 +294,7 @@ namespace DesktopFacebookAPP
 
         private void handleMainState()
         {
-            this.BackgroundImage = Properties.Resources.mainScreen;
+            this.BackgroundImage = Properties.Resources.mainWindow1;
             profilePictureBox.LoadAsync(LoggedInUser.PictureNormalURL);
 
             List<Control> controlsToShow = new List<Control>()
@@ -343,7 +413,7 @@ namespace DesktopFacebookAPP
 
         private void secondFeatureButton_Click(object sender, System.EventArgs e)
         {
-            m_CurrentState = eState.SecondFeature;
+            m_CurrentState = eState.HowWellDoYouKnowYourFriendsGame;
             handleState();
         }
 
@@ -397,9 +467,25 @@ namespace DesktopFacebookAPP
             secondFeatureButton.BackgroundImage = Properties.Resources.optionButton1;
         }
 
-        private void welcomeLabel_Click(object sender, EventArgs e)
+        private void cancelPostButton_MouseHover(object sender, EventArgs e)
         {
+            cancelPostButton.BackgroundImage = Properties.Resources.cancel1;
+        }
 
+        private void cancelPostButton_MouseLeave(object sender, EventArgs e)
+        {
+            cancelPostButton.BackgroundImage = Properties.Resources.cancel2;
+        }
+
+
+        private void sendPostButton_MouseHover(object sender, EventArgs e)
+        {
+            sendPostButton.BackgroundImage = Properties.Resources.post1;
+        }
+
+        private void sendPostButton_MouseLeave(object sender, EventArgs e)
+        {
+            sendPostButton.BackgroundImage = Properties.Resources.post2;
         }
 
         private void cancelPostButton_Click(object sender, EventArgs e)
@@ -407,30 +493,107 @@ namespace DesktopFacebookAPP
             clearScreen();
         }
 
-        private void profilePictureBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void commentButton_Click(object sender, EventArgs e)
+        private void checkGameResultsButton_Click(object sender, EventArgs e)
         {
             try
             {
-                List<Post> todayPosts = LoggedInUser.WallPosts
-                    .Where(post =>
-                        post.CreatedTime.GetValueOrDefault(DateTime.MinValue).Date == DateTime.Today)
-                    .ToList();
+                showAnswerFeedbackPictures();
+                colorAllAnswers();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("You must answer all the questions!");
+            }
 
-                foreach (Post post in todayPosts)
+        }
+
+        private void showAnswerFeedbackPictures()
+        {
+            string firstAnswer = getUserAnswer(firstQuestionPanel);
+            string secondAnswer = getUserAnswer(secondQuestionPanel);
+            string thirdAnswer = getUserAnswer(thirdQuestionPanel);
+
+            ShowAnswerFeedback(questionOneResultPictureBox, firstAnswer, m_Game.FirstQuestion.Answer);
+            ShowAnswerFeedback(questionTwoResultPictureBox, secondAnswer, m_Game.SecondQuestion.Answer);
+            ShowAnswerFeedback(questionThreeResultPictureBox, thirdAnswer, m_Game.ThirdQuestion.Answer);
+        }
+
+        private void colorAllAnswers()
+        {
+            colorQuestionAnswers(firstQuestionPanel, m_Game.FirstQuestion.Answer);
+            colorQuestionAnswers(secondQuestionPanel, m_Game.SecondQuestion.Answer);
+            colorQuestionAnswers(thirdQuestionPanel, m_Game.ThirdQuestion.Answer);
+        }
+
+        private void colorQuestionAnswers(Panel i_QuestionPanel, User i_Answer)
+        {
+            foreach (Control control in i_QuestionPanel.Controls)
+            {
+                if (control is RadioButton)
                 {
-                    post.Comment(commentBackTextBox.Text);
+                    control.ForeColor = control.Text.Equals(i_Answer.Name)
+                        ? Color.Green
+                        : Color.Red;
                 }
             }
-            catch (Exception ex)
+        }
+
+        private void ShowAnswerFeedback(PictureBox i_PictureBox, string i_UserAnswer, User i_ExpectedAnswer)
+        {
+            i_PictureBox.Image = (i_UserAnswer.Equals(i_ExpectedAnswer.Name))
+                ? Properties.Resources.V
+                : Properties.Resources.X;
+
+            i_PictureBox.Visible = true;
+        }
+
+        private string getUserAnswer(Panel i_QuestionPanel)
+        {
+            foreach (Control control in i_QuestionPanel.Controls)
             {
-                MessageBox.Show(string.Format("Couldn't comment on friends' posts:{0}{1}",
-                    Environment.NewLine, ex.Message));
+                if (control is RadioButton)
+                {
+                    if ((control as RadioButton).Checked)
+                    {
+                        return control.Text;
+                    }
+                }
             }
+
+            throw new Exception();
+        }
+
+        private void PlayAgainButton_Click(object sender, EventArgs e)
+        {
+            clearGamePanel();
+            handleGameState();
+        }
+
+        private void clearGamePanel()
+        {
+            foreach (Control control in gamePanel.Controls)
+            {
+                if (control is Panel)
+                {
+                    foreach (Control ctrl in control.Controls)
+                    {
+                        if (ctrl is RadioButton)
+                        {
+                            (ctrl as RadioButton).Checked = false;
+                            ctrl.ForeColor = Color.Black;
+                        }
+                    }
+                }
+            }
+
+            questionOneResultPictureBox.Visible = false;
+            questionTwoResultPictureBox.Visible = false;
+            questionThreeResultPictureBox.Visible = false;
+        }
+
+        private void questionOneResultPictureBox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
@@ -442,6 +605,42 @@ namespace DesktopFacebookAPP
             grPath.AddEllipse(1, 1, this.Width - 4 , this.Height - 4);
             this.Region = new System.Drawing.Region(grPath);
             base.OnPaint(e);
+        }
+    }
+
+    public class RoundedEdgeButton : Button
+    {
+        GraphicsPath GetRoundPath(RectangleF Rect, int radius)
+        {
+            float r2 = radius / 2f;
+            GraphicsPath GraphPath = new GraphicsPath();
+
+            GraphPath.AddArc(Rect.X, Rect.Y, radius, radius, 180, 90);
+            GraphPath.AddLine(Rect.X + r2, Rect.Y, Rect.Width - r2, Rect.Y);
+            GraphPath.AddArc(Rect.X + Rect.Width - radius, Rect.Y, radius, radius, 270, 90);
+            GraphPath.AddLine(Rect.Width, Rect.Y + r2, Rect.Width, Rect.Height - r2);
+            GraphPath.AddArc(Rect.X + Rect.Width - radius,
+                             Rect.Y + Rect.Height - radius, radius, radius, 0, 90);
+            GraphPath.AddLine(Rect.Width - r2, Rect.Height, Rect.X + r2, Rect.Height);
+            GraphPath.AddArc(Rect.X, Rect.Y + Rect.Height - radius, radius, radius, 90, 90);
+            GraphPath.AddLine(Rect.X, Rect.Height - r2, Rect.X, Rect.Y + r2);
+
+            GraphPath.CloseFigure();
+            return GraphPath;
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            RectangleF Rect = new RectangleF(0, 0, this.Width, this.Height);
+            GraphicsPath GraphPath = GetRoundPath(Rect, 50);
+
+            this.Region = new Region(GraphPath);
+            using (Pen pen = new Pen(Color.WhiteSmoke, 3f))
+            {
+                pen.Alignment = PenAlignment.Inset;
+                e.Graphics.DrawPath(pen, GraphPath);
+            }
         }
     }
 }
