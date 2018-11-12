@@ -479,6 +479,19 @@ namespace DesktopFacebookAPP
 
 
         private void sendPostButton_MouseHover(object sender, EventArgs e)
+<<<<<<< HEAD
+=======
+        {
+            sendPostButton.BackgroundImage = Properties.Resources.post1;
+        }
+
+        private void sendPostButton_MouseLeave(object sender, EventArgs e)
+        {
+            sendPostButton.BackgroundImage = Properties.Resources.post2;
+        }
+
+        private void welcomeLabel_Click(object sender, EventArgs e)
+>>>>>>> f6226097531ae9d7ec056c17d4e1ece05d315e62
         {
             sendPostButton.BackgroundImage = Properties.Resources.post1;
         }

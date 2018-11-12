@@ -151,10 +151,13 @@
   <data name="mainWindow1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mainWindow1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="V" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\V.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="X" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\X.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+=======
+>>>>>>> f6226097531ae9d7ec056c17d4e1ece05d315e62
 </root>
