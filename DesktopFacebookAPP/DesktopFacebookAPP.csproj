@@ -150,5 +150,20 @@
   <ItemGroup>
     <None Include="Resources\GameBackground.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homeIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homeIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homeIcon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebookback.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebookBG.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

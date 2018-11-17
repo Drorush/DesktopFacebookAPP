@@ -17,6 +17,7 @@ namespace DesktopFacebookAPP
     {
         Login,
         MainState,
+        Home,
         Post,
         Events,
         LikedPages,
@@ -91,6 +92,9 @@ namespace DesktopFacebookAPP
                 case eState.MainState:
                     handleMainState();
                     break;
+                case eState.Home:
+                    handleHomeState();
+                    break;
                 case eState.Post:
                     handlePostState();
                     break;
@@ -107,6 +111,11 @@ namespace DesktopFacebookAPP
                     handleGameState();
                     break;
             }
+        }
+
+        private void handleHomeState()
+        {
+            clearScreen();
         }
 
         private void handleGameState()
@@ -178,7 +187,7 @@ namespace DesktopFacebookAPP
         private void handleFirstFeature()
         {
             fansListBox.Items.Clear();
-            fansListBox.Visible = true;
+            fansPanel.Visible = true;
             
             try
             {
@@ -233,7 +242,7 @@ namespace DesktopFacebookAPP
 
         private void handleLikedPagesState()
         {
-            likePagedListBox.Visible = true;
+            likedPagesPanel.Visible = true;
 
             try
             {
@@ -260,7 +269,7 @@ namespace DesktopFacebookAPP
 
         private void handleEventsState()
         {
-            eventsListBox.Visible = true;
+            eventsPanel.Visible = true;
 
             try
             {
@@ -287,25 +296,20 @@ namespace DesktopFacebookAPP
 
         private void handlePostState()
         {
-            postTextBox.Visible = true;
-            sendPostButton.Visible = true;
-            cancelPostButton.Visible = true;
+            postPanel.Visible = true;
+
         }
 
         private void handleMainState()
         {
-            this.BackgroundImage = Properties.Resources.mainWindow1;
+
             profilePictureBox.LoadAsync(LoggedInUser.PictureNormalURL);
 
             List<Control> controlsToShow = new List<Control>()
             {
-                profilePictureBox,
-                welcomeLabel,
-                postButton,
-                upcomingEventsButton,
-                likedPagesButton,
-                fansButton,
-                secondFeatureButton
+                upperLinePanel,
+                profilePicturePanel,
+                optionsPanel
             };
 
             foreach (Control ctrl in controlsToShow)
@@ -313,7 +317,7 @@ namespace DesktopFacebookAPP
                 ctrl.Visible = true;
             }
 
-            welcomeLabel.Text = string.Format("Logged in as: {0}", LoggedInUser.Name);
+            welcomeLabel.Text = string.Format("Welcome {0}!", LoggedInUser.Name);
         }
 
         private void loginButton_MouseEnter(object sender, System.EventArgs e)
@@ -332,6 +336,8 @@ namespace DesktopFacebookAPP
         private void postButton_Click(object sender, System.EventArgs e)
         {
             m_CurrentState = eState.Post;
+            sidePanel.Height = postButton.Height;
+            sidePanel.Top = postButton.Top;
             handleState();
         }
 
@@ -354,6 +360,8 @@ namespace DesktopFacebookAPP
         private void upcomingEventsButton_Click(object sender, System.EventArgs e)
         {
             m_CurrentState = eState.Events;
+            sidePanel.Height = upcomingEventsButton.Height;
+            sidePanel.Top = upcomingEventsButton.Top;
             handleState();
         }
 
@@ -365,13 +373,9 @@ namespace DesktopFacebookAPP
             List<Control> controlsToShow = new List<Control>()
             {
                 this,
-                profilePictureBox,
-                welcomeLabel,
-                postButton,
-                upcomingEventsButton,
-                likedPagesButton,
-                fansButton,
-                secondFeatureButton
+                upperLinePanel,
+                profilePicturePanel,
+                optionsPanel
             };
 
             foreach (Control ctrl in this.Controls)
@@ -386,12 +390,16 @@ namespace DesktopFacebookAPP
         private void likedPagesButton_Click(object sender, System.EventArgs e)
         {
             m_CurrentState = eState.LikedPages;
+            sidePanel.Height = likedPagesButton.Height;
+            sidePanel.Top = likedPagesButton.Top;
             handleState();
         }
 
         private void fansButton_Click(object sender, System.EventArgs e)
         {
             m_CurrentState = eState.FirstFeature;
+            sidePanel.Height = fansButton.Height;
+            sidePanel.Top = fansButton.Top;
             handleState();
         }
 
@@ -411,82 +419,14 @@ namespace DesktopFacebookAPP
             }
         }
 
-        private void secondFeatureButton_Click(object sender, System.EventArgs e)
+        private void friendsGameButton_Click(object sender, System.EventArgs e)
         {
             m_CurrentState = eState.HowWellDoYouKnowYourFriendsGame;
+            sidePanel.Height = friendsGameButton.Height;
+            sidePanel.Top = friendsGameButton.Top;
             handleState();
         }
 
-        private void postButton_MouseHover(object sender, EventArgs e)
-        {
-            postButton.BackgroundImage = Properties.Resources.optionButton21;
-        }
-
-        private void postButton_MouseLeave(object sender, EventArgs e)
-        {
-            postButton.BackgroundImage = Properties.Resources.optionButton111;
-        }
-
-        private void upcomingEventsButton_MouseHover(object sender, EventArgs e)
-        {
-            upcomingEventsButton.BackgroundImage = Properties.Resources.optionButton21;
-        }
-
-        private void upcomingEventsButton_MouseLeave(object sender, EventArgs e)
-        {
-            upcomingEventsButton.BackgroundImage = Properties.Resources.optionButton111;
-        }
-
-        private void likedPagesButton_MouseHover(object sender, EventArgs e)
-        {
-            likedPagesButton.BackgroundImage = Properties.Resources.optionButton21;
-        }
-
-        private void likedPagesButton_MouseLeave(object sender, EventArgs e)
-        {
-            likedPagesButton.BackgroundImage = Properties.Resources.optionButton111;
-        }
-
-        private void fansButton_MouseHover(object sender, EventArgs e)
-        {
-            fansButton.BackgroundImage = Properties.Resources.optionButton21;
-        }
-
-        private void fansButton_MouseLeave(object sender, EventArgs e)
-        {
-            fansButton.BackgroundImage = Properties.Resources.optionButton111;
-        }
-
-        private void secondFeatureButton_MouseHover(object sender, EventArgs e)
-        {
-            secondFeatureButton.BackgroundImage = Properties.Resources.optionButton21;
-        }
-
-        private void secondFeatureButton_MouseLeave(object sender, EventArgs e)
-        {
-            secondFeatureButton.BackgroundImage = Properties.Resources.optionButton111;
-        }
-
-        private void cancelPostButton_MouseHover(object sender, EventArgs e)
-        {
-            cancelPostButton.BackgroundImage = Properties.Resources.cancel1;
-        }
-
-        private void cancelPostButton_MouseLeave(object sender, EventArgs e)
-        {
-            cancelPostButton.BackgroundImage = Properties.Resources.cancel211;
-        }
-
-
-        private void sendPostButton_MouseHover(object sender, EventArgs e)
-        {
-            sendPostButton.BackgroundImage = Properties.Resources.post1;
-        }
-
-        private void sendPostButton_MouseLeave(object sender, EventArgs e)
-        {
-            sendPostButton.BackgroundImage = Properties.Resources.post21;
-        }
 
         private void welcomeLabel_Click(object sender, EventArgs e)
         {
@@ -599,6 +539,79 @@ namespace DesktopFacebookAPP
         private void gamePanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void welcomeLabel_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelPostButton_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelPostButton_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sendPostButton_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sendPostButton_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void secondFeatureButton_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void secondFeatureButton_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fansButton_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fansButton_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void likedPagesButton_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void likedPagesButton_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void homeButton_Click(object sender, EventArgs e)
+        {
+            sidePanel.Top = homeButton.Top;
+            sidePanel.Height = homeButton.Height;
+            m_CurrentState = eState.Home;
+            handleState();
         }
     }
 
