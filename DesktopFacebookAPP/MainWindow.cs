@@ -595,6 +595,11 @@ namespace DesktopFacebookAPP
             questionTwoResultPictureBox.Visible = false;
             questionThreeResultPictureBox.Visible = false;
         }
+
+        private void gamePanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
     public class RoundButton : Button

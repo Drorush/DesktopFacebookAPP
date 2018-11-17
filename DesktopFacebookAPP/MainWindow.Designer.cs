@@ -83,10 +83,10 @@ namespace DesktopFacebookAPP
             // profilePictureBox
             // 
             this.profilePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.profilePictureBox.Location = new System.Drawing.Point(64, 383);
-            this.profilePictureBox.Margin = new System.Windows.Forms.Padding(1);
+            this.profilePictureBox.Location = new System.Drawing.Point(160, 958);
+            this.profilePictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.profilePictureBox.Name = "profilePictureBox";
-            this.profilePictureBox.Size = new System.Drawing.Size(80, 80);
+            this.profilePictureBox.Size = new System.Drawing.Size(200, 200);
             this.profilePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.profilePictureBox.TabIndex = 1;
             this.profilePictureBox.TabStop = false;
@@ -97,21 +97,21 @@ namespace DesktopFacebookAPP
             this.welcomeLabel.BackColor = System.Drawing.Color.Transparent;
             this.welcomeLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.welcomeLabel.ForeColor = System.Drawing.Color.White;
-            this.welcomeLabel.Location = new System.Drawing.Point(60, 495);
-            this.welcomeLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.welcomeLabel.Location = new System.Drawing.Point(150, 1238);
+            this.welcomeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(227, 26);
+            this.welcomeLabel.Size = new System.Drawing.Size(568, 65);
             this.welcomeLabel.TabIndex = 2;
             this.welcomeLabel.Text = "Welcome !!!";
             this.welcomeLabel.Visible = false;
             // 
             // postTextBox
             // 
-            this.postTextBox.Location = new System.Drawing.Point(254, 218);
-            this.postTextBox.Margin = new System.Windows.Forms.Padding(1);
+            this.postTextBox.Location = new System.Drawing.Point(635, 545);
+            this.postTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.postTextBox.Multiline = true;
             this.postTextBox.Name = "postTextBox";
-            this.postTextBox.Size = new System.Drawing.Size(296, 75);
+            this.postTextBox.Size = new System.Drawing.Size(734, 182);
             this.postTextBox.TabIndex = 9;
             this.postTextBox.Text = "whats on your";
             this.postTextBox.Visible = false;
@@ -123,10 +123,11 @@ namespace DesktopFacebookAPP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.eventsListBox.DisplayMember = "name";
             this.eventsListBox.FormattingEnabled = true;
-            this.eventsListBox.Location = new System.Drawing.Point(186, 193);
-            this.eventsListBox.Margin = new System.Windows.Forms.Padding(1);
+            this.eventsListBox.ItemHeight = 31;
+            this.eventsListBox.Location = new System.Drawing.Point(465, 482);
+            this.eventsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.eventsListBox.Name = "eventsListBox";
-            this.eventsListBox.Size = new System.Drawing.Size(536, 134);
+            this.eventsListBox.Size = new System.Drawing.Size(1334, 314);
             this.eventsListBox.TabIndex = 41;
             this.eventsListBox.Visible = false;
             // 
@@ -136,35 +137,38 @@ namespace DesktopFacebookAPP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.likePagedListBox.DisplayMember = "name";
             this.likePagedListBox.FormattingEnabled = true;
-            this.likePagedListBox.Location = new System.Drawing.Point(222, 218);
-            this.likePagedListBox.Margin = new System.Windows.Forms.Padding(1);
+            this.likePagedListBox.ItemHeight = 31;
+            this.likePagedListBox.Location = new System.Drawing.Point(555, 545);
+            this.likePagedListBox.Margin = new System.Windows.Forms.Padding(2);
             this.likePagedListBox.Name = "likePagedListBox";
-            this.likePagedListBox.Size = new System.Drawing.Size(474, 95);
+            this.likePagedListBox.Size = new System.Drawing.Size(1179, 221);
             this.likePagedListBox.TabIndex = 42;
             this.likePagedListBox.Visible = false;
             // 
             // fansListBox
             // 
             this.fansListBox.FormattingEnabled = true;
-            this.fansListBox.Location = new System.Drawing.Point(276, 218);
-            this.fansListBox.Margin = new System.Windows.Forms.Padding(1);
+            this.fansListBox.ItemHeight = 31;
+            this.fansListBox.Location = new System.Drawing.Point(690, 545);
+            this.fansListBox.Margin = new System.Windows.Forms.Padding(2);
             this.fansListBox.Name = "fansListBox";
-            this.fansListBox.Size = new System.Drawing.Size(248, 134);
+            this.fansListBox.Size = new System.Drawing.Size(614, 314);
             this.fansListBox.TabIndex = 43;
             this.fansListBox.Visible = false;
             // 
             // loadingLabel
             // 
-            this.loadingLabel.Location = new System.Drawing.Point(758, 255);
-            this.loadingLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.loadingLabel.Location = new System.Drawing.Point(1895, 638);
+            this.loadingLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.loadingLabel.Name = "loadingLabel";
-            this.loadingLabel.Size = new System.Drawing.Size(77, 38);
+            this.loadingLabel.Size = new System.Drawing.Size(192, 95);
             this.loadingLabel.TabIndex = 46;
             this.loadingLabel.Text = "Loading Fans...";
             this.loadingLabel.Visible = false;
             // 
             // firstQuestionPanel
             // 
+            this.firstQuestionPanel.BackColor = System.Drawing.Color.White;
             this.firstQuestionPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.firstQuestionPanel.Controls.Add(this.questionOneResultPictureBox);
             this.firstQuestionPanel.Controls.Add(this.firstQuestionPictureBox);
@@ -172,19 +176,18 @@ namespace DesktopFacebookAPP
             this.firstQuestionPanel.Controls.Add(this.firstQuestionThirdOptionRadioButton);
             this.firstQuestionPanel.Controls.Add(this.firstQuestionSecondOptionRadioButton);
             this.firstQuestionPanel.Controls.Add(this.firstQuestionFirstOptionRadioButton);
-            this.firstQuestionPanel.Location = new System.Drawing.Point(5, 8);
-            this.firstQuestionPanel.Margin = new System.Windows.Forms.Padding(1);
+            this.firstQuestionPanel.Location = new System.Drawing.Point(13, 199);
+            this.firstQuestionPanel.Margin = new System.Windows.Forms.Padding(2);
             this.firstQuestionPanel.Name = "firstQuestionPanel";
-            this.firstQuestionPanel.Size = new System.Drawing.Size(317, 132);
+            this.firstQuestionPanel.Size = new System.Drawing.Size(850, 320);
             this.firstQuestionPanel.TabIndex = 47;
             // 
             // questionOneResultPictureBox
             // 
-            this.questionOneResultPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.questionOneResultPictureBox.Location = new System.Drawing.Point(273, 34);
-            this.questionOneResultPictureBox.Margin = new System.Windows.Forms.Padding(1);
+            this.questionOneResultPictureBox.Location = new System.Drawing.Point(756, 114);
+            this.questionOneResultPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.questionOneResultPictureBox.Name = "questionOneResultPictureBox";
-            this.questionOneResultPictureBox.Size = new System.Drawing.Size(34, 33);
+            this.questionOneResultPictureBox.Size = new System.Drawing.Size(80, 80);
             this.questionOneResultPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.questionOneResultPictureBox.TabIndex = 3;
             this.questionOneResultPictureBox.TabStop = false;
@@ -192,29 +195,32 @@ namespace DesktopFacebookAPP
             // firstQuestionPictureBox
             // 
             this.firstQuestionPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.firstQuestionPictureBox.Location = new System.Drawing.Point(110, 29);
-            this.firstQuestionPictureBox.Margin = new System.Windows.Forms.Padding(1);
+            this.firstQuestionPictureBox.Location = new System.Drawing.Point(522, 44);
+            this.firstQuestionPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.firstQuestionPictureBox.Name = "firstQuestionPictureBox";
-            this.firstQuestionPictureBox.Size = new System.Drawing.Size(70, 70);
+            this.firstQuestionPictureBox.Size = new System.Drawing.Size(213, 198);
             this.firstQuestionPictureBox.TabIndex = 2;
             this.firstQuestionPictureBox.TabStop = false;
             // 
             // firstQuestionLabel
             // 
-            this.firstQuestionLabel.Location = new System.Drawing.Point(2, 2);
-            this.firstQuestionLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.firstQuestionLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstQuestionLabel.Location = new System.Drawing.Point(5, 5);
+            this.firstQuestionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.firstQuestionLabel.Name = "firstQuestionLabel";
-            this.firstQuestionLabel.Size = new System.Drawing.Size(305, 26);
+            this.firstQuestionLabel.Size = new System.Drawing.Size(487, 237);
             this.firstQuestionLabel.TabIndex = 1;
             this.firstQuestionLabel.Text = "firsttttquestionnnnnnnnnnnnn";
+            this.firstQuestionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // firstQuestionThirdOptionRadioButton
             // 
             this.firstQuestionThirdOptionRadioButton.AutoSize = true;
-            this.firstQuestionThirdOptionRadioButton.Location = new System.Drawing.Point(208, 104);
-            this.firstQuestionThirdOptionRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.firstQuestionThirdOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstQuestionThirdOptionRadioButton.Location = new System.Drawing.Point(550, 259);
+            this.firstQuestionThirdOptionRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.firstQuestionThirdOptionRadioButton.Name = "firstQuestionThirdOptionRadioButton";
-            this.firstQuestionThirdOptionRadioButton.Size = new System.Drawing.Size(85, 17);
+            this.firstQuestionThirdOptionRadioButton.Size = new System.Drawing.Size(250, 54);
             this.firstQuestionThirdOptionRadioButton.TabIndex = 0;
             this.firstQuestionThirdOptionRadioButton.TabStop = true;
             this.firstQuestionThirdOptionRadioButton.Text = "radioButton1";
@@ -223,10 +229,11 @@ namespace DesktopFacebookAPP
             // firstQuestionSecondOptionRadioButton
             // 
             this.firstQuestionSecondOptionRadioButton.AutoSize = true;
-            this.firstQuestionSecondOptionRadioButton.Location = new System.Drawing.Point(109, 104);
-            this.firstQuestionSecondOptionRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.firstQuestionSecondOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstQuestionSecondOptionRadioButton.Location = new System.Drawing.Point(277, 259);
+            this.firstQuestionSecondOptionRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.firstQuestionSecondOptionRadioButton.Name = "firstQuestionSecondOptionRadioButton";
-            this.firstQuestionSecondOptionRadioButton.Size = new System.Drawing.Size(85, 17);
+            this.firstQuestionSecondOptionRadioButton.Size = new System.Drawing.Size(250, 54);
             this.firstQuestionSecondOptionRadioButton.TabIndex = 0;
             this.firstQuestionSecondOptionRadioButton.TabStop = true;
             this.firstQuestionSecondOptionRadioButton.Text = "radioButton1";
@@ -235,10 +242,11 @@ namespace DesktopFacebookAPP
             // firstQuestionFirstOptionRadioButton
             // 
             this.firstQuestionFirstOptionRadioButton.AutoSize = true;
-            this.firstQuestionFirstOptionRadioButton.Location = new System.Drawing.Point(6, 104);
-            this.firstQuestionFirstOptionRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.firstQuestionFirstOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstQuestionFirstOptionRadioButton.Location = new System.Drawing.Point(13, 259);
+            this.firstQuestionFirstOptionRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.firstQuestionFirstOptionRadioButton.Name = "firstQuestionFirstOptionRadioButton";
-            this.firstQuestionFirstOptionRadioButton.Size = new System.Drawing.Size(85, 17);
+            this.firstQuestionFirstOptionRadioButton.Size = new System.Drawing.Size(250, 54);
             this.firstQuestionFirstOptionRadioButton.TabIndex = 0;
             this.firstQuestionFirstOptionRadioButton.TabStop = true;
             this.firstQuestionFirstOptionRadioButton.Text = "radioButton1";
@@ -246,45 +254,48 @@ namespace DesktopFacebookAPP
             // 
             // secondQuestionPanel
             // 
+            this.secondQuestionPanel.BackColor = System.Drawing.Color.White;
             this.secondQuestionPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.secondQuestionPanel.Controls.Add(this.questionTwoResultPictureBox);
             this.secondQuestionPanel.Controls.Add(this.secondQuestionLabel);
             this.secondQuestionPanel.Controls.Add(this.secondQuestionThirdOptionRadioButton);
             this.secondQuestionPanel.Controls.Add(this.secondQuestionSecondOptionRadioButton);
             this.secondQuestionPanel.Controls.Add(this.secondQuestionFirstOptionRadioButton);
-            this.secondQuestionPanel.Location = new System.Drawing.Point(12, 144);
-            this.secondQuestionPanel.Margin = new System.Windows.Forms.Padding(1);
+            this.secondQuestionPanel.Location = new System.Drawing.Point(875, 199);
+            this.secondQuestionPanel.Margin = new System.Windows.Forms.Padding(2);
             this.secondQuestionPanel.Name = "secondQuestionPanel";
-            this.secondQuestionPanel.Size = new System.Drawing.Size(310, 107);
+            this.secondQuestionPanel.Size = new System.Drawing.Size(850, 320);
             this.secondQuestionPanel.TabIndex = 48;
             // 
             // questionTwoResultPictureBox
             // 
-            this.questionTwoResultPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.questionTwoResultPictureBox.Location = new System.Drawing.Point(266, 14);
-            this.questionTwoResultPictureBox.Margin = new System.Windows.Forms.Padding(1);
+            this.questionTwoResultPictureBox.Location = new System.Drawing.Point(750, 114);
+            this.questionTwoResultPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.questionTwoResultPictureBox.Name = "questionTwoResultPictureBox";
-            this.questionTwoResultPictureBox.Size = new System.Drawing.Size(34, 30);
+            this.questionTwoResultPictureBox.Size = new System.Drawing.Size(80, 80);
             this.questionTwoResultPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.questionTwoResultPictureBox.TabIndex = 3;
             this.questionTwoResultPictureBox.TabStop = false;
             // 
             // secondQuestionLabel
             // 
-            this.secondQuestionLabel.Location = new System.Drawing.Point(3, 3);
-            this.secondQuestionLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.secondQuestionLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondQuestionLabel.Location = new System.Drawing.Point(8, 10);
+            this.secondQuestionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.secondQuestionLabel.Name = "secondQuestionLabel";
-            this.secondQuestionLabel.Size = new System.Drawing.Size(261, 42);
+            this.secondQuestionLabel.Size = new System.Drawing.Size(682, 213);
             this.secondQuestionLabel.TabIndex = 2;
             this.secondQuestionLabel.Text = "second questionnnnnnnnnnn";
+            this.secondQuestionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // secondQuestionThirdOptionRadioButton
             // 
             this.secondQuestionThirdOptionRadioButton.AutoSize = true;
-            this.secondQuestionThirdOptionRadioButton.Location = new System.Drawing.Point(204, 81);
-            this.secondQuestionThirdOptionRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.secondQuestionThirdOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondQuestionThirdOptionRadioButton.Location = new System.Drawing.Point(592, 259);
+            this.secondQuestionThirdOptionRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.secondQuestionThirdOptionRadioButton.Name = "secondQuestionThirdOptionRadioButton";
-            this.secondQuestionThirdOptionRadioButton.Size = new System.Drawing.Size(85, 17);
+            this.secondQuestionThirdOptionRadioButton.Size = new System.Drawing.Size(250, 54);
             this.secondQuestionThirdOptionRadioButton.TabIndex = 1;
             this.secondQuestionThirdOptionRadioButton.TabStop = true;
             this.secondQuestionThirdOptionRadioButton.Text = "radioButton1";
@@ -293,10 +304,11 @@ namespace DesktopFacebookAPP
             // secondQuestionSecondOptionRadioButton
             // 
             this.secondQuestionSecondOptionRadioButton.AutoSize = true;
-            this.secondQuestionSecondOptionRadioButton.Location = new System.Drawing.Point(102, 79);
-            this.secondQuestionSecondOptionRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.secondQuestionSecondOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondQuestionSecondOptionRadioButton.Location = new System.Drawing.Point(291, 259);
+            this.secondQuestionSecondOptionRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.secondQuestionSecondOptionRadioButton.Name = "secondQuestionSecondOptionRadioButton";
-            this.secondQuestionSecondOptionRadioButton.Size = new System.Drawing.Size(85, 17);
+            this.secondQuestionSecondOptionRadioButton.Size = new System.Drawing.Size(250, 54);
             this.secondQuestionSecondOptionRadioButton.TabIndex = 2;
             this.secondQuestionSecondOptionRadioButton.TabStop = true;
             this.secondQuestionSecondOptionRadioButton.Text = "radioButton1";
@@ -305,10 +317,11 @@ namespace DesktopFacebookAPP
             // secondQuestionFirstOptionRadioButton
             // 
             this.secondQuestionFirstOptionRadioButton.AutoSize = true;
-            this.secondQuestionFirstOptionRadioButton.Location = new System.Drawing.Point(6, 79);
-            this.secondQuestionFirstOptionRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.secondQuestionFirstOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondQuestionFirstOptionRadioButton.Location = new System.Drawing.Point(21, 259);
+            this.secondQuestionFirstOptionRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.secondQuestionFirstOptionRadioButton.Name = "secondQuestionFirstOptionRadioButton";
-            this.secondQuestionFirstOptionRadioButton.Size = new System.Drawing.Size(85, 17);
+            this.secondQuestionFirstOptionRadioButton.Size = new System.Drawing.Size(250, 54);
             this.secondQuestionFirstOptionRadioButton.TabIndex = 3;
             this.secondQuestionFirstOptionRadioButton.TabStop = true;
             this.secondQuestionFirstOptionRadioButton.Text = "radioButton6";
@@ -316,45 +329,48 @@ namespace DesktopFacebookAPP
             // 
             // thirdQuestionPanel
             // 
+            this.thirdQuestionPanel.BackColor = System.Drawing.Color.White;
             this.thirdQuestionPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thirdQuestionPanel.Controls.Add(this.questionThreeResultPictureBox);
             this.thirdQuestionPanel.Controls.Add(this.thirdQuestionLabel);
             this.thirdQuestionPanel.Controls.Add(this.thirdQuestionThirdOptionRadioButton);
             this.thirdQuestionPanel.Controls.Add(this.thirdQuestionSecondOptionRadioButton);
             this.thirdQuestionPanel.Controls.Add(this.thirdQuestionFirstOptionRadioButton);
-            this.thirdQuestionPanel.Location = new System.Drawing.Point(11, 259);
-            this.thirdQuestionPanel.Margin = new System.Windows.Forms.Padding(1);
+            this.thirdQuestionPanel.Location = new System.Drawing.Point(203, 536);
+            this.thirdQuestionPanel.Margin = new System.Windows.Forms.Padding(2);
             this.thirdQuestionPanel.Name = "thirdQuestionPanel";
-            this.thirdQuestionPanel.Size = new System.Drawing.Size(302, 112);
+            this.thirdQuestionPanel.Size = new System.Drawing.Size(850, 320);
             this.thirdQuestionPanel.TabIndex = 49;
             // 
             // questionThreeResultPictureBox
             // 
-            this.questionThreeResultPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.questionThreeResultPictureBox.Location = new System.Drawing.Point(253, 16);
-            this.questionThreeResultPictureBox.Margin = new System.Windows.Forms.Padding(1);
+            this.questionThreeResultPictureBox.Location = new System.Drawing.Point(740, 96);
+            this.questionThreeResultPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.questionThreeResultPictureBox.Name = "questionThreeResultPictureBox";
-            this.questionThreeResultPictureBox.Size = new System.Drawing.Size(34, 27);
+            this.questionThreeResultPictureBox.Size = new System.Drawing.Size(80, 80);
             this.questionThreeResultPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.questionThreeResultPictureBox.TabIndex = 3;
             this.questionThreeResultPictureBox.TabStop = false;
             // 
             // thirdQuestionLabel
             // 
-            this.thirdQuestionLabel.Location = new System.Drawing.Point(2, 12);
-            this.thirdQuestionLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.thirdQuestionLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thirdQuestionLabel.Location = new System.Drawing.Point(18, 30);
+            this.thirdQuestionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.thirdQuestionLabel.Name = "thirdQuestionLabel";
-            this.thirdQuestionLabel.Size = new System.Drawing.Size(232, 42);
+            this.thirdQuestionLabel.Size = new System.Drawing.Size(739, 213);
             this.thirdQuestionLabel.TabIndex = 4;
             this.thirdQuestionLabel.Text = "thirdddddquestionnnnnnnnnnn";
+            this.thirdQuestionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // thirdQuestionThirdOptionRadioButton
             // 
             this.thirdQuestionThirdOptionRadioButton.AutoSize = true;
-            this.thirdQuestionThirdOptionRadioButton.Location = new System.Drawing.Point(194, 83);
-            this.thirdQuestionThirdOptionRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.thirdQuestionThirdOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thirdQuestionThirdOptionRadioButton.Location = new System.Drawing.Point(565, 256);
+            this.thirdQuestionThirdOptionRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.thirdQuestionThirdOptionRadioButton.Name = "thirdQuestionThirdOptionRadioButton";
-            this.thirdQuestionThirdOptionRadioButton.Size = new System.Drawing.Size(85, 17);
+            this.thirdQuestionThirdOptionRadioButton.Size = new System.Drawing.Size(250, 54);
             this.thirdQuestionThirdOptionRadioButton.TabIndex = 1;
             this.thirdQuestionThirdOptionRadioButton.TabStop = true;
             this.thirdQuestionThirdOptionRadioButton.Text = "radioButton1";
@@ -363,10 +379,11 @@ namespace DesktopFacebookAPP
             // thirdQuestionSecondOptionRadioButton
             // 
             this.thirdQuestionSecondOptionRadioButton.AutoSize = true;
-            this.thirdQuestionSecondOptionRadioButton.Location = new System.Drawing.Point(95, 83);
-            this.thirdQuestionSecondOptionRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.thirdQuestionSecondOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thirdQuestionSecondOptionRadioButton.Location = new System.Drawing.Point(303, 256);
+            this.thirdQuestionSecondOptionRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.thirdQuestionSecondOptionRadioButton.Name = "thirdQuestionSecondOptionRadioButton";
-            this.thirdQuestionSecondOptionRadioButton.Size = new System.Drawing.Size(85, 17);
+            this.thirdQuestionSecondOptionRadioButton.Size = new System.Drawing.Size(250, 54);
             this.thirdQuestionSecondOptionRadioButton.TabIndex = 2;
             this.thirdQuestionSecondOptionRadioButton.TabStop = true;
             this.thirdQuestionSecondOptionRadioButton.Text = "radioButton1";
@@ -375,10 +392,11 @@ namespace DesktopFacebookAPP
             // thirdQuestionFirstOptionRadioButton
             // 
             this.thirdQuestionFirstOptionRadioButton.AutoSize = true;
-            this.thirdQuestionFirstOptionRadioButton.Location = new System.Drawing.Point(5, 83);
-            this.thirdQuestionFirstOptionRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.thirdQuestionFirstOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thirdQuestionFirstOptionRadioButton.Location = new System.Drawing.Point(26, 256);
+            this.thirdQuestionFirstOptionRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.thirdQuestionFirstOptionRadioButton.Name = "thirdQuestionFirstOptionRadioButton";
-            this.thirdQuestionFirstOptionRadioButton.Size = new System.Drawing.Size(85, 17);
+            this.thirdQuestionFirstOptionRadioButton.Size = new System.Drawing.Size(250, 54);
             this.thirdQuestionFirstOptionRadioButton.TabIndex = 3;
             this.thirdQuestionFirstOptionRadioButton.TabStop = true;
             this.thirdQuestionFirstOptionRadioButton.Text = "radioButton9";
@@ -387,28 +405,31 @@ namespace DesktopFacebookAPP
             // gamePanel
             // 
             this.gamePanel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.gamePanel.BackgroundImage = global::DesktopFacebookAPP.Properties.Resources.GameBackground;
+            this.gamePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.gamePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.gamePanel.Controls.Add(this.firstQuestionPanel);
             this.gamePanel.Controls.Add(this.playAgainButton);
             this.gamePanel.Controls.Add(this.checkGameResultsButton);
             this.gamePanel.Controls.Add(this.secondQuestionPanel);
             this.gamePanel.Controls.Add(this.thirdQuestionPanel);
-            this.gamePanel.Location = new System.Drawing.Point(303, 123);
-            this.gamePanel.Margin = new System.Windows.Forms.Padding(1);
+            this.gamePanel.Location = new System.Drawing.Point(396, 324);
+            this.gamePanel.Margin = new System.Windows.Forms.Padding(2);
             this.gamePanel.Name = "gamePanel";
-            this.gamePanel.Size = new System.Drawing.Size(336, 430);
+            this.gamePanel.Size = new System.Drawing.Size(1740, 879);
             this.gamePanel.TabIndex = 51;
             this.gamePanel.Visible = false;
+            this.gamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePanel_Paint);
             // 
             // playAgainButton
             // 
-            this.playAgainButton.BackColor = System.Drawing.Color.LightCyan;
+            this.playAgainButton.BackColor = System.Drawing.Color.CornflowerBlue;
             this.playAgainButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.playAgainButton.Font = new System.Drawing.Font("Segoe Print", 10F, System.Drawing.FontStyle.Bold);
-            this.playAgainButton.Location = new System.Drawing.Point(176, 371);
-            this.playAgainButton.Margin = new System.Windows.Forms.Padding(1);
+            this.playAgainButton.Location = new System.Drawing.Point(1079, 696);
+            this.playAgainButton.Margin = new System.Windows.Forms.Padding(2);
             this.playAgainButton.Name = "playAgainButton";
-            this.playAgainButton.Size = new System.Drawing.Size(93, 46);
+            this.playAgainButton.Size = new System.Drawing.Size(258, 129);
             this.playAgainButton.TabIndex = 50;
             this.playAgainButton.Text = "Play again";
             this.playAgainButton.UseVisualStyleBackColor = false;
@@ -416,13 +437,13 @@ namespace DesktopFacebookAPP
             // 
             // checkGameResultsButton
             // 
-            this.checkGameResultsButton.BackColor = System.Drawing.Color.LightCyan;
+            this.checkGameResultsButton.BackColor = System.Drawing.Color.CornflowerBlue;
             this.checkGameResultsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkGameResultsButton.Font = new System.Drawing.Font("Segoe Print", 10F, System.Drawing.FontStyle.Bold);
-            this.checkGameResultsButton.Location = new System.Drawing.Point(45, 371);
-            this.checkGameResultsButton.Margin = new System.Windows.Forms.Padding(1);
+            this.checkGameResultsButton.Location = new System.Drawing.Point(1079, 572);
+            this.checkGameResultsButton.Margin = new System.Windows.Forms.Padding(2);
             this.checkGameResultsButton.Name = "checkGameResultsButton";
-            this.checkGameResultsButton.Size = new System.Drawing.Size(103, 48);
+            this.checkGameResultsButton.Size = new System.Drawing.Size(258, 120);
             this.checkGameResultsButton.TabIndex = 50;
             this.checkGameResultsButton.Text = "Answer!";
             this.checkGameResultsButton.UseVisualStyleBackColor = false;
@@ -436,9 +457,10 @@ namespace DesktopFacebookAPP
             this.loginButton.FlatAppearance.BorderSize = 0;
             this.loginButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginButton.Location = new System.Drawing.Point(58, 467);
+            this.loginButton.Location = new System.Drawing.Point(145, 1168);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(8);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(216, 54);
+            this.loginButton.Size = new System.Drawing.Size(540, 135);
             this.loginButton.TabIndex = 0;
             this.loginButton.TabStop = false;
             this.loginButton.UseVisualStyleBackColor = true;
@@ -452,9 +474,10 @@ namespace DesktopFacebookAPP
             this.cancelPostButton.BackgroundImage = global::DesktopFacebookAPP.Properties.Resources.cancel211;
             this.cancelPostButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cancelPostButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cancelPostButton.Location = new System.Drawing.Point(480, 376);
+            this.cancelPostButton.Location = new System.Drawing.Point(1200, 940);
+            this.cancelPostButton.Margin = new System.Windows.Forms.Padding(8);
             this.cancelPostButton.Name = "cancelPostButton";
-            this.cancelPostButton.Size = new System.Drawing.Size(126, 62);
+            this.cancelPostButton.Size = new System.Drawing.Size(315, 155);
             this.cancelPostButton.TabIndex = 11;
             this.cancelPostButton.UseVisualStyleBackColor = true;
             this.cancelPostButton.Visible = false;
@@ -467,9 +490,10 @@ namespace DesktopFacebookAPP
             this.sendPostButton.BackgroundImage = global::DesktopFacebookAPP.Properties.Resources.post21;
             this.sendPostButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sendPostButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sendPostButton.Location = new System.Drawing.Point(340, 376);
+            this.sendPostButton.Location = new System.Drawing.Point(850, 940);
+            this.sendPostButton.Margin = new System.Windows.Forms.Padding(8);
             this.sendPostButton.Name = "sendPostButton";
-            this.sendPostButton.Size = new System.Drawing.Size(126, 62);
+            this.sendPostButton.Size = new System.Drawing.Size(315, 155);
             this.sendPostButton.TabIndex = 10;
             this.sendPostButton.UseVisualStyleBackColor = true;
             this.sendPostButton.Visible = false;
@@ -483,10 +507,10 @@ namespace DesktopFacebookAPP
             this.secondFeatureButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.secondFeatureButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.secondFeatureButton.Font = new System.Drawing.Font("Segoe Print", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondFeatureButton.Location = new System.Drawing.Point(789, 8);
-            this.secondFeatureButton.Margin = new System.Windows.Forms.Padding(1);
+            this.secondFeatureButton.Location = new System.Drawing.Point(1972, 20);
+            this.secondFeatureButton.Margin = new System.Windows.Forms.Padding(2);
             this.secondFeatureButton.Name = "secondFeatureButton";
-            this.secondFeatureButton.Size = new System.Drawing.Size(120, 120);
+            this.secondFeatureButton.Size = new System.Drawing.Size(300, 300);
             this.secondFeatureButton.TabIndex = 7;
             this.secondFeatureButton.Text = "how well do you know your friends?";
             this.secondFeatureButton.UseVisualStyleBackColor = true;
@@ -501,10 +525,10 @@ namespace DesktopFacebookAPP
             this.fansButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.fansButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fansButton.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fansButton.Location = new System.Drawing.Point(628, 8);
-            this.fansButton.Margin = new System.Windows.Forms.Padding(1);
+            this.fansButton.Location = new System.Drawing.Point(1570, 20);
+            this.fansButton.Margin = new System.Windows.Forms.Padding(2);
             this.fansButton.Name = "fansButton";
-            this.fansButton.Size = new System.Drawing.Size(120, 120);
+            this.fansButton.Size = new System.Drawing.Size(300, 300);
             this.fansButton.TabIndex = 6;
             this.fansButton.Text = "Fans";
             this.fansButton.UseVisualStyleBackColor = true;
@@ -519,10 +543,10 @@ namespace DesktopFacebookAPP
             this.likedPagesButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.likedPagesButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.likedPagesButton.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.likedPagesButton.Location = new System.Drawing.Point(442, 8);
-            this.likedPagesButton.Margin = new System.Windows.Forms.Padding(1);
+            this.likedPagesButton.Location = new System.Drawing.Point(1105, 20);
+            this.likedPagesButton.Margin = new System.Windows.Forms.Padding(2);
             this.likedPagesButton.Name = "likedPagesButton";
-            this.likedPagesButton.Size = new System.Drawing.Size(120, 120);
+            this.likedPagesButton.Size = new System.Drawing.Size(300, 300);
             this.likedPagesButton.TabIndex = 5;
             this.likedPagesButton.Text = "pages";
             this.likedPagesButton.UseVisualStyleBackColor = true;
@@ -537,10 +561,10 @@ namespace DesktopFacebookAPP
             this.upcomingEventsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.upcomingEventsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.upcomingEventsButton.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upcomingEventsButton.Location = new System.Drawing.Point(254, 4);
-            this.upcomingEventsButton.Margin = new System.Windows.Forms.Padding(1);
+            this.upcomingEventsButton.Location = new System.Drawing.Point(635, 10);
+            this.upcomingEventsButton.Margin = new System.Windows.Forms.Padding(2);
             this.upcomingEventsButton.Name = "upcomingEventsButton";
-            this.upcomingEventsButton.Size = new System.Drawing.Size(120, 120);
+            this.upcomingEventsButton.Size = new System.Drawing.Size(300, 300);
             this.upcomingEventsButton.TabIndex = 4;
             this.upcomingEventsButton.Text = "events";
             this.upcomingEventsButton.UseVisualStyleBackColor = true;
@@ -555,10 +579,10 @@ namespace DesktopFacebookAPP
             this.postButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.postButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.postButton.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.postButton.Location = new System.Drawing.Point(58, 4);
-            this.postButton.Margin = new System.Windows.Forms.Padding(1);
+            this.postButton.Location = new System.Drawing.Point(145, 10);
+            this.postButton.Margin = new System.Windows.Forms.Padding(2);
             this.postButton.Name = "postButton";
-            this.postButton.Size = new System.Drawing.Size(120, 120);
+            this.postButton.Size = new System.Drawing.Size(300, 300);
             this.postButton.TabIndex = 3;
             this.postButton.Text = "post";
             this.postButton.UseVisualStyleBackColor = true;
@@ -569,12 +593,12 @@ namespace DesktopFacebookAPP
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::DesktopFacebookAPP.Properties.Resources.welcomeScreen1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(959, 595);
+            this.ClientSize = new System.Drawing.Size(2398, 1488);
             this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.loadingLabel);
             this.Controls.Add(this.loginButton);
@@ -592,6 +616,7 @@ namespace DesktopFacebookAPP
             this.Controls.Add(this.fansListBox);
             this.Controls.Add(this.eventsListBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(8);
             this.Name = "MainWindow";
             this.Text = "Facebook APP";
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
