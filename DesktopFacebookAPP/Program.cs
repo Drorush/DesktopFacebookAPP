@@ -22,8 +22,8 @@ namespace DesktopFacebookAPP
             }
             catch (Exception e)
             {
+                MessageBox.Show(string.Format("An error has occured: {0}", e.Message));
             }
-
         }
     }
 }

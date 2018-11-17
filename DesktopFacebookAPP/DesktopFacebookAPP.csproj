@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NotEnoughFriendsException.cs" />
+    <Compile Include="HowWellDoYouKnowYourFriendsGame.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,7 +62,7 @@
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -98,28 +100,52 @@
     <None Include="Resources\welcomeScreen.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mainScreen.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\optionButton11.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\optionButton21.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\post1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancel1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancel21.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\post21.jpg" />
+    <None Include="Resources\login11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel211.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mainScreen.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mainWindow1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\optionButton21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\optionButton111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\post1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\post21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\V.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\welcomeScreen1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
