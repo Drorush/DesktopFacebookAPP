@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace DesktopFacebookAPP
 {
-    public class RoundButton : Button
+    public class RoundedButton : Button
     {
         protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
         {

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace DesktopFacebookAPP
 {
-    public class RoundedEdgeButton : Button
+    public class RoundedEdgesButton : Button
     {
         private GraphicsPath getRoundPath(RectangleF i_Rect, int i_Radius)
         {

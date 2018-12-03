@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
-using System.Runtime.ExceptionServices;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Windows.Forms;
 using FacebookWrapper;
@@ -127,7 +124,7 @@ namespace DesktopFacebookAPP
                     uiThreadInvoke(() => gamePanel.Visible = true);
                 }).Start();
             }
-            catch (NotEnoughFriendsException e)
+            catch (NotEnoughFriendsException)
             {
                 MessageBox.Show("You don't have enough friends to play the game, sorry :'(");
             }
@@ -139,7 +136,8 @@ namespace DesktopFacebookAPP
 
         private void startGame()
         {
-            m_Game = new HowWellDoYouKnowYourFriendsGame(LoggedInUser);
+            m_Game = HowWellDoYouKnowYourFriendsGame.Instance(LoggedInUser);
+
             uiThreadInvoke(() =>
             {
                 initFirstQuestion();
@@ -150,7 +148,7 @@ namespace DesktopFacebookAPP
 
         private void initThirdQuestion()
         {
-            Question question = m_Game.ThirdQuestion;
+            Question question = m_Game.Questions[2];
 
             thirdQuestionLabel.Text = question.QuestionContent;
 
@@ -161,7 +159,7 @@ namespace DesktopFacebookAPP
 
         private void initSecondQuestion()
         {
-            Question question = m_Game.SecondQuestion;
+            Question question = m_Game.Questions[1];
 
             secondQuestionLabel.Text = question.QuestionContent;
 
@@ -172,7 +170,7 @@ namespace DesktopFacebookAPP
 
         private void initFirstQuestion()
         {
-            Question question = m_Game.FirstQuestion;
+            Question question = m_Game.Questions[0];
 
             firstQuestionLabel.Text = question.QuestionContent;
             firstQuestionPictureBox.LoadAsync(question.Answer.PictureNormalURL);
@@ -412,7 +410,7 @@ namespace DesktopFacebookAPP
                 showAnswerFeedbackPictures();
                 colorAllAnswers();
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 MessageBox.Show("You must answer all the questions!");
             }
@@ -424,16 +422,16 @@ namespace DesktopFacebookAPP
             string secondAnswer = getUserAnswer(secondQuestionPanel);
             string thirdAnswer = getUserAnswer(thirdQuestionPanel);
 
-            ShowAnswerFeedback(questionOneResultPictureBox, firstAnswer, m_Game.FirstQuestion.Answer);
-            ShowAnswerFeedback(questionTwoResultPictureBox, secondAnswer, m_Game.SecondQuestion.Answer);
-            ShowAnswerFeedback(questionThreeResultPictureBox, thirdAnswer, m_Game.ThirdQuestion.Answer);
+            ShowAnswerFeedback(questionOneResultPictureBox, firstAnswer, m_Game.Questions[0].Answer);
+            ShowAnswerFeedback(questionTwoResultPictureBox, secondAnswer, m_Game.Questions[1].Answer);
+            ShowAnswerFeedback(questionThreeResultPictureBox, thirdAnswer, m_Game.Questions[2].Answer);
         }
 
         private void colorAllAnswers()
         {
-            colorQuestionAnswers(firstQuestionPanel, m_Game.FirstQuestion.Answer);
-            colorQuestionAnswers(secondQuestionPanel, m_Game.SecondQuestion.Answer);
-            colorQuestionAnswers(thirdQuestionPanel, m_Game.ThirdQuestion.Answer);
+            colorQuestionAnswers(firstQuestionPanel, m_Game.Questions[0].Answer);
+            colorQuestionAnswers(secondQuestionPanel, m_Game.Questions[1].Answer);
+            colorQuestionAnswers(thirdQuestionPanel, m_Game.Questions[2].Answer);
         }
 
         private void colorQuestionAnswers(Panel i_QuestionPanel, User i_Answer)
