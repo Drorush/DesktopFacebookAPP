@@ -39,26 +39,33 @@ namespace DesktopFacebookAPP
             this.fansListBox = new System.Windows.Forms.ListBox();
             this.loadingLabel = new System.Windows.Forms.Label();
             this.firstQuestionPanel = new System.Windows.Forms.Panel();
+            this.questionOneResultPictureBox = new System.Windows.Forms.PictureBox();
+            this.firstQuestionPictureBox = new System.Windows.Forms.PictureBox();
             this.firstQuestionLabel = new System.Windows.Forms.Label();
             this.firstQuestionThirdOptionRadioButton = new System.Windows.Forms.RadioButton();
             this.firstQuestionSecondOptionRadioButton = new System.Windows.Forms.RadioButton();
             this.firstQuestionFirstOptionRadioButton = new System.Windows.Forms.RadioButton();
             this.secondQuestionPanel = new System.Windows.Forms.Panel();
+            this.questionTwoResultPictureBox = new System.Windows.Forms.PictureBox();
             this.secondQuestionLabel = new System.Windows.Forms.Label();
             this.secondQuestionThirdOptionRadioButton = new System.Windows.Forms.RadioButton();
             this.secondQuestionSecondOptionRadioButton = new System.Windows.Forms.RadioButton();
             this.secondQuestionFirstOptionRadioButton = new System.Windows.Forms.RadioButton();
             this.thirdQuestionPanel = new System.Windows.Forms.Panel();
+            this.questionThreeResultPictureBox = new System.Windows.Forms.PictureBox();
             this.thirdQuestionLabel = new System.Windows.Forms.Label();
             this.thirdQuestionThirdOptionRadioButton = new System.Windows.Forms.RadioButton();
             this.thirdQuestionSecondOptionRadioButton = new System.Windows.Forms.RadioButton();
             this.thirdQuestionFirstOptionRadioButton = new System.Windows.Forms.RadioButton();
             this.gamePanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.FriendsGameHeadlineLabel = new System.Windows.Forms.Label();
+            this.playAgainButton = new DesktopFacebookAPP.RoundButton();
+            this.checkGameResultsButton = new DesktopFacebookAPP.RoundButton();
             this.eventsPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.eventsHeadlineLabel = new System.Windows.Forms.Label();
             this.postButton = new System.Windows.Forms.Button();
             this.upperLinePanel = new System.Windows.Forms.Panel();
+            this.closeButton = new System.Windows.Forms.Button();
             this.optionsPanel = new System.Windows.Forms.Panel();
             this.sidePanel = new System.Windows.Forms.Panel();
             this.homeButton = new System.Windows.Forms.Button();
@@ -67,40 +74,35 @@ namespace DesktopFacebookAPP
             this.likedPagesButton = new System.Windows.Forms.Button();
             this.upcomingEventsButton = new System.Windows.Forms.Button();
             this.profilePicturePanel = new System.Windows.Forms.Panel();
+            this.profilePictureBox = new System.Windows.Forms.PictureBox();
             this.postPanel = new System.Windows.Forms.Panel();
             this.postHeadlineLabel = new System.Windows.Forms.Label();
+            this.sendPostButton = new DesktopFacebookAPP.RoundedEdgeButton();
+            this.cancelPostButton = new DesktopFacebookAPP.RoundedEdgeButton();
             this.likedPagesPanel = new System.Windows.Forms.Panel();
-            this.eventsHeadlineLabel = new System.Windows.Forms.Label();
+            this.likedPagesHeadlineLabel = new System.Windows.Forms.Label();
             this.fansPanel = new System.Windows.Forms.Panel();
             this.fansSecondHeadlineLabel = new System.Windows.Forms.Label();
             this.fansHeadlineLabel = new System.Windows.Forms.Label();
             this.loginPanel = new System.Windows.Forms.Panel();
-            this.profilePictureBox = new System.Windows.Forms.PictureBox();
-            this.questionOneResultPictureBox = new System.Windows.Forms.PictureBox();
-            this.firstQuestionPictureBox = new System.Windows.Forms.PictureBox();
-            this.questionTwoResultPictureBox = new System.Windows.Forms.PictureBox();
-            this.questionThreeResultPictureBox = new System.Windows.Forms.PictureBox();
             this.loginButton = new DesktopFacebookAPP.RoundedEdgeButton();
-            this.sendPostButton = new DesktopFacebookAPP.RoundedEdgeButton();
-            this.cancelPostButton = new DesktopFacebookAPP.RoundedEdgeButton();
-            this.playAgainButton = new DesktopFacebookAPP.RoundButton();
-            this.checkGameResultsButton = new DesktopFacebookAPP.RoundButton();
             this.firstQuestionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.questionOneResultPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firstQuestionPictureBox)).BeginInit();
             this.secondQuestionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.questionTwoResultPictureBox)).BeginInit();
             this.thirdQuestionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.questionThreeResultPictureBox)).BeginInit();
             this.gamePanel.SuspendLayout();
             this.eventsPanel.SuspendLayout();
+            this.upperLinePanel.SuspendLayout();
             this.optionsPanel.SuspendLayout();
             this.profilePicturePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.postPanel.SuspendLayout();
             this.likedPagesPanel.SuspendLayout();
             this.fansPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionOneResultPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.firstQuestionPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionTwoResultPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionThreeResultPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // welcomeLabel
@@ -115,13 +117,12 @@ namespace DesktopFacebookAPP
             this.welcomeLabel.TabIndex = 2;
             this.welcomeLabel.Text = "Welcome !!!";
             this.welcomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.welcomeLabel.Click += new System.EventHandler(this.welcomeLabel_Click_1);
             // 
             // postTextBox
             // 
             this.postTextBox.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.postTextBox.Location = new System.Drawing.Point(75, 187);
-            this.postTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.postTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.postTextBox.Multiline = true;
             this.postTextBox.Name = "postTextBox";
             this.postTextBox.Size = new System.Drawing.Size(822, 361);
@@ -137,7 +138,7 @@ namespace DesktopFacebookAPP
             this.eventsListBox.FormattingEnabled = true;
             this.eventsListBox.ItemHeight = 24;
             this.eventsListBox.Location = new System.Drawing.Point(66, 176);
-            this.eventsListBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.eventsListBox.Margin = new System.Windows.Forms.Padding(1);
             this.eventsListBox.Name = "eventsListBox";
             this.eventsListBox.Size = new System.Drawing.Size(803, 460);
             this.eventsListBox.TabIndex = 41;
@@ -152,7 +153,7 @@ namespace DesktopFacebookAPP
             this.likePagedListBox.FormattingEnabled = true;
             this.likePagedListBox.ItemHeight = 34;
             this.likePagedListBox.Location = new System.Drawing.Point(98, 173);
-            this.likePagedListBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.likePagedListBox.Margin = new System.Windows.Forms.Padding(1);
             this.likePagedListBox.Name = "likePagedListBox";
             this.likePagedListBox.Size = new System.Drawing.Size(822, 514);
             this.likePagedListBox.TabIndex = 42;
@@ -163,7 +164,7 @@ namespace DesktopFacebookAPP
             this.fansListBox.FormattingEnabled = true;
             this.fansListBox.ItemHeight = 34;
             this.fansListBox.Location = new System.Drawing.Point(61, 293);
-            this.fansListBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.fansListBox.Margin = new System.Windows.Forms.Padding(1);
             this.fansListBox.Name = "fansListBox";
             this.fansListBox.Size = new System.Drawing.Size(869, 446);
             this.fansListBox.TabIndex = 43;
@@ -190,503 +191,10 @@ namespace DesktopFacebookAPP
             this.firstQuestionPanel.Controls.Add(this.firstQuestionSecondOptionRadioButton);
             this.firstQuestionPanel.Controls.Add(this.firstQuestionFirstOptionRadioButton);
             this.firstQuestionPanel.Location = new System.Drawing.Point(44, 98);
-            this.firstQuestionPanel.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.firstQuestionPanel.Margin = new System.Windows.Forms.Padding(1);
             this.firstQuestionPanel.Name = "firstQuestionPanel";
             this.firstQuestionPanel.Size = new System.Drawing.Size(991, 188);
             this.firstQuestionPanel.TabIndex = 47;
-            // 
-            // firstQuestionLabel
-            // 
-            this.firstQuestionLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstQuestionLabel.Location = new System.Drawing.Point(3, 3);
-            this.firstQuestionLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.firstQuestionLabel.Name = "firstQuestionLabel";
-            this.firstQuestionLabel.Size = new System.Drawing.Size(636, 120);
-            this.firstQuestionLabel.TabIndex = 1;
-            this.firstQuestionLabel.Text = "first Q text";
-            this.firstQuestionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // firstQuestionThirdOptionRadioButton
-            // 
-            this.firstQuestionThirdOptionRadioButton.AutoSize = true;
-            this.firstQuestionThirdOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstQuestionThirdOptionRadioButton.Location = new System.Drawing.Point(517, 138);
-            this.firstQuestionThirdOptionRadioButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.firstQuestionThirdOptionRadioButton.Name = "firstQuestionThirdOptionRadioButton";
-            this.firstQuestionThirdOptionRadioButton.Size = new System.Drawing.Size(209, 47);
-            this.firstQuestionThirdOptionRadioButton.TabIndex = 0;
-            this.firstQuestionThirdOptionRadioButton.TabStop = true;
-            this.firstQuestionThirdOptionRadioButton.Text = "radioButton1";
-            this.firstQuestionThirdOptionRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // firstQuestionSecondOptionRadioButton
-            // 
-            this.firstQuestionSecondOptionRadioButton.AutoSize = true;
-            this.firstQuestionSecondOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstQuestionSecondOptionRadioButton.Location = new System.Drawing.Point(265, 138);
-            this.firstQuestionSecondOptionRadioButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.firstQuestionSecondOptionRadioButton.Name = "firstQuestionSecondOptionRadioButton";
-            this.firstQuestionSecondOptionRadioButton.Size = new System.Drawing.Size(209, 47);
-            this.firstQuestionSecondOptionRadioButton.TabIndex = 0;
-            this.firstQuestionSecondOptionRadioButton.TabStop = true;
-            this.firstQuestionSecondOptionRadioButton.Text = "radioButton1";
-            this.firstQuestionSecondOptionRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // firstQuestionFirstOptionRadioButton
-            // 
-            this.firstQuestionFirstOptionRadioButton.AutoSize = true;
-            this.firstQuestionFirstOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstQuestionFirstOptionRadioButton.Location = new System.Drawing.Point(13, 138);
-            this.firstQuestionFirstOptionRadioButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.firstQuestionFirstOptionRadioButton.Name = "firstQuestionFirstOptionRadioButton";
-            this.firstQuestionFirstOptionRadioButton.Size = new System.Drawing.Size(209, 47);
-            this.firstQuestionFirstOptionRadioButton.TabIndex = 0;
-            this.firstQuestionFirstOptionRadioButton.TabStop = true;
-            this.firstQuestionFirstOptionRadioButton.Text = "radioButton1";
-            this.firstQuestionFirstOptionRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // secondQuestionPanel
-            // 
-            this.secondQuestionPanel.BackColor = System.Drawing.Color.White;
-            this.secondQuestionPanel.Controls.Add(this.questionTwoResultPictureBox);
-            this.secondQuestionPanel.Controls.Add(this.secondQuestionLabel);
-            this.secondQuestionPanel.Controls.Add(this.secondQuestionThirdOptionRadioButton);
-            this.secondQuestionPanel.Controls.Add(this.secondQuestionSecondOptionRadioButton);
-            this.secondQuestionPanel.Controls.Add(this.secondQuestionFirstOptionRadioButton);
-            this.secondQuestionPanel.Location = new System.Drawing.Point(44, 304);
-            this.secondQuestionPanel.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.secondQuestionPanel.Name = "secondQuestionPanel";
-            this.secondQuestionPanel.Size = new System.Drawing.Size(991, 188);
-            this.secondQuestionPanel.TabIndex = 48;
-            // 
-            // secondQuestionLabel
-            // 
-            this.secondQuestionLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondQuestionLabel.Location = new System.Drawing.Point(6, 7);
-            this.secondQuestionLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.secondQuestionLabel.Name = "secondQuestionLabel";
-            this.secondQuestionLabel.Size = new System.Drawing.Size(634, 116);
-            this.secondQuestionLabel.TabIndex = 2;
-            this.secondQuestionLabel.Text = "second Q text";
-            this.secondQuestionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // secondQuestionThirdOptionRadioButton
-            // 
-            this.secondQuestionThirdOptionRadioButton.AutoSize = true;
-            this.secondQuestionThirdOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondQuestionThirdOptionRadioButton.Location = new System.Drawing.Point(517, 134);
-            this.secondQuestionThirdOptionRadioButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.secondQuestionThirdOptionRadioButton.Name = "secondQuestionThirdOptionRadioButton";
-            this.secondQuestionThirdOptionRadioButton.Size = new System.Drawing.Size(209, 47);
-            this.secondQuestionThirdOptionRadioButton.TabIndex = 1;
-            this.secondQuestionThirdOptionRadioButton.TabStop = true;
-            this.secondQuestionThirdOptionRadioButton.Text = "radioButton1";
-            this.secondQuestionThirdOptionRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // secondQuestionSecondOptionRadioButton
-            // 
-            this.secondQuestionSecondOptionRadioButton.AutoSize = true;
-            this.secondQuestionSecondOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondQuestionSecondOptionRadioButton.Location = new System.Drawing.Point(264, 134);
-            this.secondQuestionSecondOptionRadioButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.secondQuestionSecondOptionRadioButton.Name = "secondQuestionSecondOptionRadioButton";
-            this.secondQuestionSecondOptionRadioButton.Size = new System.Drawing.Size(209, 47);
-            this.secondQuestionSecondOptionRadioButton.TabIndex = 2;
-            this.secondQuestionSecondOptionRadioButton.TabStop = true;
-            this.secondQuestionSecondOptionRadioButton.Text = "radioButton1";
-            this.secondQuestionSecondOptionRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // secondQuestionFirstOptionRadioButton
-            // 
-            this.secondQuestionFirstOptionRadioButton.AutoSize = true;
-            this.secondQuestionFirstOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondQuestionFirstOptionRadioButton.Location = new System.Drawing.Point(11, 134);
-            this.secondQuestionFirstOptionRadioButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.secondQuestionFirstOptionRadioButton.Name = "secondQuestionFirstOptionRadioButton";
-            this.secondQuestionFirstOptionRadioButton.Size = new System.Drawing.Size(209, 47);
-            this.secondQuestionFirstOptionRadioButton.TabIndex = 3;
-            this.secondQuestionFirstOptionRadioButton.TabStop = true;
-            this.secondQuestionFirstOptionRadioButton.Text = "radioButton6";
-            this.secondQuestionFirstOptionRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // thirdQuestionPanel
-            // 
-            this.thirdQuestionPanel.BackColor = System.Drawing.Color.White;
-            this.thirdQuestionPanel.Controls.Add(this.questionThreeResultPictureBox);
-            this.thirdQuestionPanel.Controls.Add(this.thirdQuestionLabel);
-            this.thirdQuestionPanel.Controls.Add(this.thirdQuestionThirdOptionRadioButton);
-            this.thirdQuestionPanel.Controls.Add(this.thirdQuestionSecondOptionRadioButton);
-            this.thirdQuestionPanel.Controls.Add(this.thirdQuestionFirstOptionRadioButton);
-            this.thirdQuestionPanel.Location = new System.Drawing.Point(44, 510);
-            this.thirdQuestionPanel.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.thirdQuestionPanel.Name = "thirdQuestionPanel";
-            this.thirdQuestionPanel.Size = new System.Drawing.Size(991, 188);
-            this.thirdQuestionPanel.TabIndex = 49;
-            // 
-            // thirdQuestionLabel
-            // 
-            this.thirdQuestionLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thirdQuestionLabel.Location = new System.Drawing.Point(1, -1);
-            this.thirdQuestionLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.thirdQuestionLabel.Name = "thirdQuestionLabel";
-            this.thirdQuestionLabel.Size = new System.Drawing.Size(670, 129);
-            this.thirdQuestionLabel.TabIndex = 4;
-            this.thirdQuestionLabel.Text = "third Q text";
-            this.thirdQuestionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // thirdQuestionThirdOptionRadioButton
-            // 
-            this.thirdQuestionThirdOptionRadioButton.AutoSize = true;
-            this.thirdQuestionThirdOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thirdQuestionThirdOptionRadioButton.Location = new System.Drawing.Point(517, 137);
-            this.thirdQuestionThirdOptionRadioButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.thirdQuestionThirdOptionRadioButton.Name = "thirdQuestionThirdOptionRadioButton";
-            this.thirdQuestionThirdOptionRadioButton.Size = new System.Drawing.Size(209, 47);
-            this.thirdQuestionThirdOptionRadioButton.TabIndex = 1;
-            this.thirdQuestionThirdOptionRadioButton.TabStop = true;
-            this.thirdQuestionThirdOptionRadioButton.Text = "radioButton1";
-            this.thirdQuestionThirdOptionRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // thirdQuestionSecondOptionRadioButton
-            // 
-            this.thirdQuestionSecondOptionRadioButton.AutoSize = true;
-            this.thirdQuestionSecondOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thirdQuestionSecondOptionRadioButton.Location = new System.Drawing.Point(265, 137);
-            this.thirdQuestionSecondOptionRadioButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.thirdQuestionSecondOptionRadioButton.Name = "thirdQuestionSecondOptionRadioButton";
-            this.thirdQuestionSecondOptionRadioButton.Size = new System.Drawing.Size(209, 47);
-            this.thirdQuestionSecondOptionRadioButton.TabIndex = 2;
-            this.thirdQuestionSecondOptionRadioButton.TabStop = true;
-            this.thirdQuestionSecondOptionRadioButton.Text = "radioButton1";
-            this.thirdQuestionSecondOptionRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // thirdQuestionFirstOptionRadioButton
-            // 
-            this.thirdQuestionFirstOptionRadioButton.AutoSize = true;
-            this.thirdQuestionFirstOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thirdQuestionFirstOptionRadioButton.Location = new System.Drawing.Point(13, 137);
-            this.thirdQuestionFirstOptionRadioButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.thirdQuestionFirstOptionRadioButton.Name = "thirdQuestionFirstOptionRadioButton";
-            this.thirdQuestionFirstOptionRadioButton.Size = new System.Drawing.Size(209, 47);
-            this.thirdQuestionFirstOptionRadioButton.TabIndex = 3;
-            this.thirdQuestionFirstOptionRadioButton.TabStop = true;
-            this.thirdQuestionFirstOptionRadioButton.Text = "radioButton9";
-            this.thirdQuestionFirstOptionRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // gamePanel
-            // 
-            this.gamePanel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.gamePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.gamePanel.Controls.Add(this.label2);
-            this.gamePanel.Controls.Add(this.firstQuestionPanel);
-            this.gamePanel.Controls.Add(this.playAgainButton);
-            this.gamePanel.Controls.Add(this.checkGameResultsButton);
-            this.gamePanel.Controls.Add(this.secondQuestionPanel);
-            this.gamePanel.Controls.Add(this.thirdQuestionPanel);
-            this.gamePanel.Location = new System.Drawing.Point(650, 52);
-            this.gamePanel.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.gamePanel.Name = "gamePanel";
-            this.gamePanel.Size = new System.Drawing.Size(1084, 837);
-            this.gamePanel.TabIndex = 51;
-            this.gamePanel.Visible = false;
-            this.gamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePanel_Paint);
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(226, 1);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(604, 96);
-            this.label2.TabIndex = 51;
-            this.label2.Text = "How well do you know your friends? Answer the questions to find out!";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // eventsPanel
-            // 
-            this.eventsPanel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.eventsPanel.Controls.Add(this.label1);
-            this.eventsPanel.Controls.Add(this.eventsListBox);
-            this.eventsPanel.Location = new System.Drawing.Point(712, 64);
-            this.eventsPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.eventsPanel.Name = "eventsPanel";
-            this.eventsPanel.Size = new System.Drawing.Size(938, 769);
-            this.eventsPanel.TabIndex = 54;
-            this.eventsPanel.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.label1.Location = new System.Drawing.Point(140, 58);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(663, 90);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Here are your upcoming events, Stay tuned!";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // postButton
-            // 
-            this.postButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.postButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.postButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.postButton.FlatAppearance.BorderSize = 0;
-            this.postButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.postButton.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.postButton.ForeColor = System.Drawing.Color.White;
-            this.postButton.Location = new System.Drawing.Point(5, 175);
-            this.postButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.postButton.Name = "postButton";
-            this.postButton.Size = new System.Drawing.Size(325, 105);
-            this.postButton.TabIndex = 3;
-            this.postButton.Text = "Post";
-            this.postButton.UseVisualStyleBackColor = false;
-            this.postButton.Click += new System.EventHandler(this.postButton_Click);
-            // 
-            // upperLinePanel
-            // 
-            this.upperLinePanel.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.upperLinePanel.Location = new System.Drawing.Point(-1, 0);
-            this.upperLinePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.upperLinePanel.Name = "upperLinePanel";
-            this.upperLinePanel.Size = new System.Drawing.Size(1739, 31);
-            this.upperLinePanel.TabIndex = 52;
-            // 
-            // optionsPanel
-            // 
-            this.optionsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.optionsPanel.Controls.Add(this.sidePanel);
-            this.optionsPanel.Controls.Add(this.homeButton);
-            this.optionsPanel.Controls.Add(this.friendsGameButton);
-            this.optionsPanel.Controls.Add(this.fansButton);
-            this.optionsPanel.Controls.Add(this.likedPagesButton);
-            this.optionsPanel.Controls.Add(this.upcomingEventsButton);
-            this.optionsPanel.Controls.Add(this.postButton);
-            this.optionsPanel.Location = new System.Drawing.Point(-1, 0);
-            this.optionsPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.optionsPanel.Name = "optionsPanel";
-            this.optionsPanel.Size = new System.Drawing.Size(337, 897);
-            this.optionsPanel.TabIndex = 0;
-            this.optionsPanel.Visible = false;
-            // 
-            // sidePanel
-            // 
-            this.sidePanel.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.sidePanel.Location = new System.Drawing.Point(2, 67);
-            this.sidePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.sidePanel.Name = "sidePanel";
-            this.sidePanel.Size = new System.Drawing.Size(16, 105);
-            this.sidePanel.TabIndex = 56;
-            // 
-            // homeButton
-            // 
-            this.homeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.homeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.homeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.homeButton.FlatAppearance.BorderSize = 0;
-            this.homeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.homeButton.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeButton.ForeColor = System.Drawing.Color.White;
-            this.homeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.homeButton.Location = new System.Drawing.Point(5, 67);
-            this.homeButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.homeButton.Name = "homeButton";
-            this.homeButton.Size = new System.Drawing.Size(325, 105);
-            this.homeButton.TabIndex = 8;
-            this.homeButton.Text = "Home";
-            this.homeButton.UseVisualStyleBackColor = false;
-            this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
-            // 
-            // friendsGameButton
-            // 
-            this.friendsGameButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.friendsGameButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.friendsGameButton.FlatAppearance.BorderSize = 0;
-            this.friendsGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.friendsGameButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.friendsGameButton.ForeColor = System.Drawing.Color.White;
-            this.friendsGameButton.Location = new System.Drawing.Point(5, 680);
-            this.friendsGameButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.friendsGameButton.Name = "friendsGameButton";
-            this.friendsGameButton.Size = new System.Drawing.Size(325, 140);
-            this.friendsGameButton.TabIndex = 7;
-            this.friendsGameButton.Text = "How well do you know your friends?";
-            this.friendsGameButton.UseVisualStyleBackColor = true;
-            this.friendsGameButton.Click += new System.EventHandler(this.friendsGameButton_Click);
-            // 
-            // fansButton
-            // 
-            this.fansButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.fansButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fansButton.FlatAppearance.BorderSize = 0;
-            this.fansButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fansButton.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fansButton.ForeColor = System.Drawing.Color.White;
-            this.fansButton.Location = new System.Drawing.Point(5, 552);
-            this.fansButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.fansButton.Name = "fansButton";
-            this.fansButton.Size = new System.Drawing.Size(325, 105);
-            this.fansButton.TabIndex = 6;
-            this.fansButton.Text = "Fans";
-            this.fansButton.UseVisualStyleBackColor = true;
-            this.fansButton.Click += new System.EventHandler(this.fansButton_Click);
-            // 
-            // likedPagesButton
-            // 
-            this.likedPagesButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.likedPagesButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.likedPagesButton.FlatAppearance.BorderSize = 0;
-            this.likedPagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.likedPagesButton.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.likedPagesButton.ForeColor = System.Drawing.Color.White;
-            this.likedPagesButton.Location = new System.Drawing.Point(5, 423);
-            this.likedPagesButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.likedPagesButton.Name = "likedPagesButton";
-            this.likedPagesButton.Size = new System.Drawing.Size(325, 105);
-            this.likedPagesButton.TabIndex = 5;
-            this.likedPagesButton.Text = "Liked Pages";
-            this.likedPagesButton.UseVisualStyleBackColor = true;
-            this.likedPagesButton.Click += new System.EventHandler(this.likedPagesButton_Click);
-            // 
-            // upcomingEventsButton
-            // 
-            this.upcomingEventsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.upcomingEventsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.upcomingEventsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.upcomingEventsButton.FlatAppearance.BorderSize = 0;
-            this.upcomingEventsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.upcomingEventsButton.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upcomingEventsButton.ForeColor = System.Drawing.Color.White;
-            this.upcomingEventsButton.Location = new System.Drawing.Point(5, 303);
-            this.upcomingEventsButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.upcomingEventsButton.Name = "upcomingEventsButton";
-            this.upcomingEventsButton.Size = new System.Drawing.Size(325, 97);
-            this.upcomingEventsButton.TabIndex = 4;
-            this.upcomingEventsButton.Text = " Upcoming events";
-            this.upcomingEventsButton.UseVisualStyleBackColor = false;
-            this.upcomingEventsButton.Click += new System.EventHandler(this.upcomingEventsButton_Click);
-            // 
-            // profilePicturePanel
-            // 
-            this.profilePicturePanel.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.profilePicturePanel.Controls.Add(this.profilePictureBox);
-            this.profilePicturePanel.Controls.Add(this.welcomeLabel);
-            this.profilePicturePanel.Location = new System.Drawing.Point(346, 31);
-            this.profilePicturePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.profilePicturePanel.Name = "profilePicturePanel";
-            this.profilePicturePanel.Size = new System.Drawing.Size(268, 257);
-            this.profilePicturePanel.TabIndex = 0;
-            this.profilePicturePanel.Visible = false;
-            // 
-            // postPanel
-            // 
-            this.postPanel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.postPanel.Controls.Add(this.postHeadlineLabel);
-            this.postPanel.Controls.Add(this.sendPostButton);
-            this.postPanel.Controls.Add(this.cancelPostButton);
-            this.postPanel.Controls.Add(this.postTextBox);
-            this.postPanel.Location = new System.Drawing.Point(678, 80);
-            this.postPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.postPanel.Name = "postPanel";
-            this.postPanel.Size = new System.Drawing.Size(955, 769);
-            this.postPanel.TabIndex = 53;
-            this.postPanel.Visible = false;
-            // 
-            // postHeadlineLabel
-            // 
-            this.postHeadlineLabel.Font = new System.Drawing.Font("Century Gothic", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.postHeadlineLabel.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.postHeadlineLabel.Location = new System.Drawing.Point(88, 56);
-            this.postHeadlineLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.postHeadlineLabel.Name = "postHeadlineLabel";
-            this.postHeadlineLabel.Size = new System.Drawing.Size(746, 90);
-            this.postHeadlineLabel.TabIndex = 12;
-            this.postHeadlineLabel.Text = "What\'s on your mind?";
-            this.postHeadlineLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // likedPagesPanel
-            // 
-            this.likedPagesPanel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.likedPagesPanel.Controls.Add(this.eventsHeadlineLabel);
-            this.likedPagesPanel.Controls.Add(this.likePagedListBox);
-            this.likedPagesPanel.Location = new System.Drawing.Point(731, 52);
-            this.likedPagesPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.likedPagesPanel.Name = "likedPagesPanel";
-            this.likedPagesPanel.Size = new System.Drawing.Size(978, 810);
-            this.likedPagesPanel.TabIndex = 55;
-            this.likedPagesPanel.Visible = false;
-            // 
-            // eventsHeadlineLabel
-            // 
-            this.eventsHeadlineLabel.Font = new System.Drawing.Font("Century Gothic", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventsHeadlineLabel.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.eventsHeadlineLabel.Location = new System.Drawing.Point(140, 58);
-            this.eventsHeadlineLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.eventsHeadlineLabel.Name = "eventsHeadlineLabel";
-            this.eventsHeadlineLabel.Size = new System.Drawing.Size(663, 90);
-            this.eventsHeadlineLabel.TabIndex = 12;
-            this.eventsHeadlineLabel.Text = "Here are all the pages you liked!";
-            this.eventsHeadlineLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // fansPanel
-            // 
-            this.fansPanel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.fansPanel.Controls.Add(this.loadingLabel);
-            this.fansPanel.Controls.Add(this.fansSecondHeadlineLabel);
-            this.fansPanel.Controls.Add(this.fansHeadlineLabel);
-            this.fansPanel.Controls.Add(this.fansListBox);
-            this.fansPanel.Location = new System.Drawing.Point(650, 106);
-            this.fansPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.fansPanel.Name = "fansPanel";
-            this.fansPanel.Size = new System.Drawing.Size(1042, 756);
-            this.fansPanel.TabIndex = 55;
-            this.fansPanel.Visible = false;
-            // 
-            // fansSecondHeadlineLabel
-            // 
-            this.fansSecondHeadlineLabel.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fansSecondHeadlineLabel.Location = new System.Drawing.Point(54, 113);
-            this.fansSecondHeadlineLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.fansSecondHeadlineLabel.Name = "fansSecondHeadlineLabel";
-            this.fansSecondHeadlineLabel.Size = new System.Drawing.Size(883, 58);
-            this.fansSecondHeadlineLabel.TabIndex = 47;
-            this.fansSecondHeadlineLabel.Text = "Here are the friends who liked your pictures the most";
-            // 
-            // fansHeadlineLabel
-            // 
-            this.fansHeadlineLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fansHeadlineLabel.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.fansHeadlineLabel.Location = new System.Drawing.Point(134, 30);
-            this.fansHeadlineLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.fansHeadlineLabel.Name = "fansHeadlineLabel";
-            this.fansHeadlineLabel.Size = new System.Drawing.Size(722, 80);
-            this.fansHeadlineLabel.TabIndex = 12;
-            this.fansHeadlineLabel.Text = "Find out your secert fans!  ";
-            this.fansHeadlineLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.fansHeadlineLabel.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // loginPanel
-            // 
-            this.loginPanel.BackgroundImage = global::DesktopFacebookAPP.Properties.Resources.facebookBG;
-            this.loginPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.loginPanel.Controls.Add(this.loginButton);
-            this.loginPanel.Location = new System.Drawing.Point(-1, 0);
-            this.loginPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.loginPanel.Name = "loginPanel";
-            this.loginPanel.Size = new System.Drawing.Size(1737, 906);
-            this.loginPanel.TabIndex = 0;
-            // 
-            // profilePictureBox
-            // 
-            this.profilePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.profilePictureBox.Location = new System.Drawing.Point(51, 0);
-            this.profilePictureBox.Margin = new System.Windows.Forms.Padding(1);
-            this.profilePictureBox.Name = "profilePictureBox";
-            this.profilePictureBox.Size = new System.Drawing.Size(164, 164);
-            this.profilePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.profilePictureBox.TabIndex = 1;
-            this.profilePictureBox.TabStop = false;
             // 
             // questionOneResultPictureBox
             // 
@@ -708,6 +216,70 @@ namespace DesktopFacebookAPP
             this.firstQuestionPictureBox.TabIndex = 2;
             this.firstQuestionPictureBox.TabStop = false;
             // 
+            // firstQuestionLabel
+            // 
+            this.firstQuestionLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstQuestionLabel.Location = new System.Drawing.Point(3, 3);
+            this.firstQuestionLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.firstQuestionLabel.Name = "firstQuestionLabel";
+            this.firstQuestionLabel.Size = new System.Drawing.Size(636, 120);
+            this.firstQuestionLabel.TabIndex = 1;
+            this.firstQuestionLabel.Text = "first Q text";
+            this.firstQuestionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // firstQuestionThirdOptionRadioButton
+            // 
+            this.firstQuestionThirdOptionRadioButton.AutoSize = true;
+            this.firstQuestionThirdOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstQuestionThirdOptionRadioButton.Location = new System.Drawing.Point(517, 138);
+            this.firstQuestionThirdOptionRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.firstQuestionThirdOptionRadioButton.Name = "firstQuestionThirdOptionRadioButton";
+            this.firstQuestionThirdOptionRadioButton.Size = new System.Drawing.Size(209, 47);
+            this.firstQuestionThirdOptionRadioButton.TabIndex = 0;
+            this.firstQuestionThirdOptionRadioButton.TabStop = true;
+            this.firstQuestionThirdOptionRadioButton.Text = "radioButton1";
+            this.firstQuestionThirdOptionRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // firstQuestionSecondOptionRadioButton
+            // 
+            this.firstQuestionSecondOptionRadioButton.AutoSize = true;
+            this.firstQuestionSecondOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstQuestionSecondOptionRadioButton.Location = new System.Drawing.Point(265, 138);
+            this.firstQuestionSecondOptionRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.firstQuestionSecondOptionRadioButton.Name = "firstQuestionSecondOptionRadioButton";
+            this.firstQuestionSecondOptionRadioButton.Size = new System.Drawing.Size(209, 47);
+            this.firstQuestionSecondOptionRadioButton.TabIndex = 0;
+            this.firstQuestionSecondOptionRadioButton.TabStop = true;
+            this.firstQuestionSecondOptionRadioButton.Text = "radioButton1";
+            this.firstQuestionSecondOptionRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // firstQuestionFirstOptionRadioButton
+            // 
+            this.firstQuestionFirstOptionRadioButton.AutoSize = true;
+            this.firstQuestionFirstOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstQuestionFirstOptionRadioButton.Location = new System.Drawing.Point(13, 138);
+            this.firstQuestionFirstOptionRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.firstQuestionFirstOptionRadioButton.Name = "firstQuestionFirstOptionRadioButton";
+            this.firstQuestionFirstOptionRadioButton.Size = new System.Drawing.Size(209, 47);
+            this.firstQuestionFirstOptionRadioButton.TabIndex = 0;
+            this.firstQuestionFirstOptionRadioButton.TabStop = true;
+            this.firstQuestionFirstOptionRadioButton.Text = "radioButton1";
+            this.firstQuestionFirstOptionRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // secondQuestionPanel
+            // 
+            this.secondQuestionPanel.BackColor = System.Drawing.Color.White;
+            this.secondQuestionPanel.Controls.Add(this.questionTwoResultPictureBox);
+            this.secondQuestionPanel.Controls.Add(this.secondQuestionLabel);
+            this.secondQuestionPanel.Controls.Add(this.secondQuestionThirdOptionRadioButton);
+            this.secondQuestionPanel.Controls.Add(this.secondQuestionSecondOptionRadioButton);
+            this.secondQuestionPanel.Controls.Add(this.secondQuestionFirstOptionRadioButton);
+            this.secondQuestionPanel.Location = new System.Drawing.Point(44, 304);
+            this.secondQuestionPanel.Margin = new System.Windows.Forms.Padding(1);
+            this.secondQuestionPanel.Name = "secondQuestionPanel";
+            this.secondQuestionPanel.Size = new System.Drawing.Size(991, 188);
+            this.secondQuestionPanel.TabIndex = 48;
+            // 
             // questionTwoResultPictureBox
             // 
             this.questionTwoResultPictureBox.Location = new System.Drawing.Point(896, 61);
@@ -717,6 +289,70 @@ namespace DesktopFacebookAPP
             this.questionTwoResultPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.questionTwoResultPictureBox.TabIndex = 3;
             this.questionTwoResultPictureBox.TabStop = false;
+            // 
+            // secondQuestionLabel
+            // 
+            this.secondQuestionLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondQuestionLabel.Location = new System.Drawing.Point(6, 7);
+            this.secondQuestionLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.secondQuestionLabel.Name = "secondQuestionLabel";
+            this.secondQuestionLabel.Size = new System.Drawing.Size(634, 116);
+            this.secondQuestionLabel.TabIndex = 2;
+            this.secondQuestionLabel.Text = "second Q text";
+            this.secondQuestionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // secondQuestionThirdOptionRadioButton
+            // 
+            this.secondQuestionThirdOptionRadioButton.AutoSize = true;
+            this.secondQuestionThirdOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondQuestionThirdOptionRadioButton.Location = new System.Drawing.Point(517, 134);
+            this.secondQuestionThirdOptionRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.secondQuestionThirdOptionRadioButton.Name = "secondQuestionThirdOptionRadioButton";
+            this.secondQuestionThirdOptionRadioButton.Size = new System.Drawing.Size(209, 47);
+            this.secondQuestionThirdOptionRadioButton.TabIndex = 1;
+            this.secondQuestionThirdOptionRadioButton.TabStop = true;
+            this.secondQuestionThirdOptionRadioButton.Text = "radioButton1";
+            this.secondQuestionThirdOptionRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // secondQuestionSecondOptionRadioButton
+            // 
+            this.secondQuestionSecondOptionRadioButton.AutoSize = true;
+            this.secondQuestionSecondOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondQuestionSecondOptionRadioButton.Location = new System.Drawing.Point(264, 134);
+            this.secondQuestionSecondOptionRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.secondQuestionSecondOptionRadioButton.Name = "secondQuestionSecondOptionRadioButton";
+            this.secondQuestionSecondOptionRadioButton.Size = new System.Drawing.Size(209, 47);
+            this.secondQuestionSecondOptionRadioButton.TabIndex = 2;
+            this.secondQuestionSecondOptionRadioButton.TabStop = true;
+            this.secondQuestionSecondOptionRadioButton.Text = "radioButton1";
+            this.secondQuestionSecondOptionRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // secondQuestionFirstOptionRadioButton
+            // 
+            this.secondQuestionFirstOptionRadioButton.AutoSize = true;
+            this.secondQuestionFirstOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondQuestionFirstOptionRadioButton.Location = new System.Drawing.Point(11, 134);
+            this.secondQuestionFirstOptionRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.secondQuestionFirstOptionRadioButton.Name = "secondQuestionFirstOptionRadioButton";
+            this.secondQuestionFirstOptionRadioButton.Size = new System.Drawing.Size(209, 47);
+            this.secondQuestionFirstOptionRadioButton.TabIndex = 3;
+            this.secondQuestionFirstOptionRadioButton.TabStop = true;
+            this.secondQuestionFirstOptionRadioButton.Text = "radioButton6";
+            this.secondQuestionFirstOptionRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // thirdQuestionPanel
+            // 
+            this.thirdQuestionPanel.BackColor = System.Drawing.Color.White;
+            this.thirdQuestionPanel.Controls.Add(this.questionThreeResultPictureBox);
+            this.thirdQuestionPanel.Controls.Add(this.thirdQuestionLabel);
+            this.thirdQuestionPanel.Controls.Add(this.thirdQuestionThirdOptionRadioButton);
+            this.thirdQuestionPanel.Controls.Add(this.thirdQuestionSecondOptionRadioButton);
+            this.thirdQuestionPanel.Controls.Add(this.thirdQuestionFirstOptionRadioButton);
+            this.thirdQuestionPanel.Location = new System.Drawing.Point(44, 510);
+            this.thirdQuestionPanel.Margin = new System.Windows.Forms.Padding(1);
+            this.thirdQuestionPanel.Name = "thirdQuestionPanel";
+            this.thirdQuestionPanel.Size = new System.Drawing.Size(991, 188);
+            this.thirdQuestionPanel.TabIndex = 49;
             // 
             // questionThreeResultPictureBox
             // 
@@ -728,25 +364,339 @@ namespace DesktopFacebookAPP
             this.questionThreeResultPictureBox.TabIndex = 3;
             this.questionThreeResultPictureBox.TabStop = false;
             // 
-            // loginButton
+            // thirdQuestionLabel
             // 
-            this.loginButton.BackColor = System.Drawing.Color.Transparent;
-            this.loginButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.loginButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.loginButton.FlatAppearance.BorderSize = 0;
-            this.loginButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginButton.Font = new System.Drawing.Font("Century Gothic", 26.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.ForeColor = System.Drawing.Color.White;
-            this.loginButton.Location = new System.Drawing.Point(680, 397);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(6);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(398, 121);
-            this.loginButton.TabIndex = 0;
-            this.loginButton.TabStop = false;
-            this.loginButton.Text = "Login";
-            this.loginButton.UseVisualStyleBackColor = false;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.thirdQuestionLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thirdQuestionLabel.Location = new System.Drawing.Point(1, -1);
+            this.thirdQuestionLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.thirdQuestionLabel.Name = "thirdQuestionLabel";
+            this.thirdQuestionLabel.Size = new System.Drawing.Size(670, 129);
+            this.thirdQuestionLabel.TabIndex = 4;
+            this.thirdQuestionLabel.Text = "third Q text";
+            this.thirdQuestionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // thirdQuestionThirdOptionRadioButton
+            // 
+            this.thirdQuestionThirdOptionRadioButton.AutoSize = true;
+            this.thirdQuestionThirdOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thirdQuestionThirdOptionRadioButton.Location = new System.Drawing.Point(517, 137);
+            this.thirdQuestionThirdOptionRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.thirdQuestionThirdOptionRadioButton.Name = "thirdQuestionThirdOptionRadioButton";
+            this.thirdQuestionThirdOptionRadioButton.Size = new System.Drawing.Size(209, 47);
+            this.thirdQuestionThirdOptionRadioButton.TabIndex = 1;
+            this.thirdQuestionThirdOptionRadioButton.TabStop = true;
+            this.thirdQuestionThirdOptionRadioButton.Text = "radioButton1";
+            this.thirdQuestionThirdOptionRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // thirdQuestionSecondOptionRadioButton
+            // 
+            this.thirdQuestionSecondOptionRadioButton.AutoSize = true;
+            this.thirdQuestionSecondOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thirdQuestionSecondOptionRadioButton.Location = new System.Drawing.Point(265, 137);
+            this.thirdQuestionSecondOptionRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.thirdQuestionSecondOptionRadioButton.Name = "thirdQuestionSecondOptionRadioButton";
+            this.thirdQuestionSecondOptionRadioButton.Size = new System.Drawing.Size(209, 47);
+            this.thirdQuestionSecondOptionRadioButton.TabIndex = 2;
+            this.thirdQuestionSecondOptionRadioButton.TabStop = true;
+            this.thirdQuestionSecondOptionRadioButton.Text = "radioButton1";
+            this.thirdQuestionSecondOptionRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // thirdQuestionFirstOptionRadioButton
+            // 
+            this.thirdQuestionFirstOptionRadioButton.AutoSize = true;
+            this.thirdQuestionFirstOptionRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thirdQuestionFirstOptionRadioButton.Location = new System.Drawing.Point(13, 137);
+            this.thirdQuestionFirstOptionRadioButton.Margin = new System.Windows.Forms.Padding(1);
+            this.thirdQuestionFirstOptionRadioButton.Name = "thirdQuestionFirstOptionRadioButton";
+            this.thirdQuestionFirstOptionRadioButton.Size = new System.Drawing.Size(209, 47);
+            this.thirdQuestionFirstOptionRadioButton.TabIndex = 3;
+            this.thirdQuestionFirstOptionRadioButton.TabStop = true;
+            this.thirdQuestionFirstOptionRadioButton.Text = "radioButton9";
+            this.thirdQuestionFirstOptionRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // gamePanel
+            // 
+            this.gamePanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.gamePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gamePanel.Controls.Add(this.FriendsGameHeadlineLabel);
+            this.gamePanel.Controls.Add(this.firstQuestionPanel);
+            this.gamePanel.Controls.Add(this.playAgainButton);
+            this.gamePanel.Controls.Add(this.checkGameResultsButton);
+            this.gamePanel.Controls.Add(this.secondQuestionPanel);
+            this.gamePanel.Controls.Add(this.thirdQuestionPanel);
+            this.gamePanel.Location = new System.Drawing.Point(650, 52);
+            this.gamePanel.Margin = new System.Windows.Forms.Padding(1);
+            this.gamePanel.Name = "gamePanel";
+            this.gamePanel.Size = new System.Drawing.Size(1085, 844);
+            this.gamePanel.TabIndex = 51;
+            this.gamePanel.Visible = false;
+            // 
+            // FriendsGameHeadlineLabel
+            // 
+            this.FriendsGameHeadlineLabel.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FriendsGameHeadlineLabel.Location = new System.Drawing.Point(226, 1);
+            this.FriendsGameHeadlineLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.FriendsGameHeadlineLabel.Name = "FriendsGameHeadlineLabel";
+            this.FriendsGameHeadlineLabel.Size = new System.Drawing.Size(604, 96);
+            this.FriendsGameHeadlineLabel.TabIndex = 51;
+            this.FriendsGameHeadlineLabel.Text = "How well do you know your friends? Answer the questions to find out!";
+            this.FriendsGameHeadlineLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // playAgainButton
+            // 
+            this.playAgainButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.playAgainButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.playAgainButton.Font = new System.Drawing.Font("Segoe Print", 10F, System.Drawing.FontStyle.Bold);
+            this.playAgainButton.Location = new System.Drawing.Point(562, 718);
+            this.playAgainButton.Margin = new System.Windows.Forms.Padding(1);
+            this.playAgainButton.Name = "playAgainButton";
+            this.playAgainButton.Size = new System.Drawing.Size(185, 104);
+            this.playAgainButton.TabIndex = 50;
+            this.playAgainButton.Text = "Play again";
+            this.playAgainButton.UseVisualStyleBackColor = false;
+            this.playAgainButton.Click += new System.EventHandler(this.PlayAgainButton_Click);
+            // 
+            // checkGameResultsButton
+            // 
+            this.checkGameResultsButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.checkGameResultsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkGameResultsButton.Font = new System.Drawing.Font("Segoe Print", 10F, System.Drawing.FontStyle.Bold);
+            this.checkGameResultsButton.Location = new System.Drawing.Point(274, 718);
+            this.checkGameResultsButton.Margin = new System.Windows.Forms.Padding(1);
+            this.checkGameResultsButton.Name = "checkGameResultsButton";
+            this.checkGameResultsButton.Size = new System.Drawing.Size(185, 104);
+            this.checkGameResultsButton.TabIndex = 50;
+            this.checkGameResultsButton.Text = "Answer!";
+            this.checkGameResultsButton.UseVisualStyleBackColor = false;
+            this.checkGameResultsButton.Click += new System.EventHandler(this.checkGameResultsButton_Click);
+            // 
+            // eventsPanel
+            // 
+            this.eventsPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.eventsPanel.Controls.Add(this.eventsHeadlineLabel);
+            this.eventsPanel.Controls.Add(this.eventsListBox);
+            this.eventsPanel.Location = new System.Drawing.Point(712, 64);
+            this.eventsPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.eventsPanel.Name = "eventsPanel";
+            this.eventsPanel.Size = new System.Drawing.Size(938, 769);
+            this.eventsPanel.TabIndex = 54;
+            this.eventsPanel.Visible = false;
+            // 
+            // eventsHeadlineLabel
+            // 
+            this.eventsHeadlineLabel.Font = new System.Drawing.Font("Century Gothic", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventsHeadlineLabel.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.eventsHeadlineLabel.Location = new System.Drawing.Point(131, 65);
+            this.eventsHeadlineLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.eventsHeadlineLabel.Name = "eventsHeadlineLabel";
+            this.eventsHeadlineLabel.Size = new System.Drawing.Size(663, 90);
+            this.eventsHeadlineLabel.TabIndex = 12;
+            this.eventsHeadlineLabel.Text = "Here are your upcoming events, Stay tuned!";
+            this.eventsHeadlineLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // postButton
+            // 
+            this.postButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.postButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.postButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.postButton.FlatAppearance.BorderSize = 0;
+            this.postButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.postButton.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.postButton.ForeColor = System.Drawing.Color.White;
+            this.postButton.Location = new System.Drawing.Point(5, 175);
+            this.postButton.Margin = new System.Windows.Forms.Padding(1);
+            this.postButton.Name = "postButton";
+            this.postButton.Size = new System.Drawing.Size(325, 105);
+            this.postButton.TabIndex = 3;
+            this.postButton.Text = "Post";
+            this.postButton.UseVisualStyleBackColor = false;
+            this.postButton.Click += new System.EventHandler(this.postButton_Click);
+            // 
+            // upperLinePanel
+            // 
+            this.upperLinePanel.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.upperLinePanel.Controls.Add(this.closeButton);
+            this.upperLinePanel.Location = new System.Drawing.Point(-1, 0);
+            this.upperLinePanel.Margin = new System.Windows.Forms.Padding(2);
+            this.upperLinePanel.Name = "upperLinePanel";
+            this.upperLinePanel.Size = new System.Drawing.Size(1739, 31);
+            this.upperLinePanel.TabIndex = 52;
+            // 
+            // closeButton
+            // 
+            this.closeButton.BackgroundImage = global::DesktopFacebookAPP.Properties.Resources.x30;
+            this.closeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Location = new System.Drawing.Point(1697, -2);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(32, 32);
+            this.closeButton.TabIndex = 57;
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
+            // optionsPanel
+            // 
+            this.optionsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.optionsPanel.Controls.Add(this.sidePanel);
+            this.optionsPanel.Controls.Add(this.homeButton);
+            this.optionsPanel.Controls.Add(this.friendsGameButton);
+            this.optionsPanel.Controls.Add(this.fansButton);
+            this.optionsPanel.Controls.Add(this.likedPagesButton);
+            this.optionsPanel.Controls.Add(this.upcomingEventsButton);
+            this.optionsPanel.Controls.Add(this.postButton);
+            this.optionsPanel.Location = new System.Drawing.Point(-1, 0);
+            this.optionsPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.optionsPanel.Name = "optionsPanel";
+            this.optionsPanel.Size = new System.Drawing.Size(337, 903);
+            this.optionsPanel.TabIndex = 0;
+            this.optionsPanel.Visible = false;
+            // 
+            // sidePanel
+            // 
+            this.sidePanel.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.sidePanel.Location = new System.Drawing.Point(2, 67);
+            this.sidePanel.Margin = new System.Windows.Forms.Padding(2);
+            this.sidePanel.Name = "sidePanel";
+            this.sidePanel.Size = new System.Drawing.Size(16, 105);
+            this.sidePanel.TabIndex = 56;
+            // 
+            // homeButton
+            // 
+            this.homeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.homeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.homeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.homeButton.FlatAppearance.BorderSize = 0;
+            this.homeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.homeButton.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeButton.ForeColor = System.Drawing.Color.White;
+            this.homeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.homeButton.Location = new System.Drawing.Point(5, 67);
+            this.homeButton.Margin = new System.Windows.Forms.Padding(1);
+            this.homeButton.Name = "homeButton";
+            this.homeButton.Size = new System.Drawing.Size(325, 105);
+            this.homeButton.TabIndex = 8;
+            this.homeButton.Text = "Home";
+            this.homeButton.UseVisualStyleBackColor = false;
+            this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
+            // 
+            // friendsGameButton
+            // 
+            this.friendsGameButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.friendsGameButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.friendsGameButton.FlatAppearance.BorderSize = 0;
+            this.friendsGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.friendsGameButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.friendsGameButton.ForeColor = System.Drawing.Color.White;
+            this.friendsGameButton.Location = new System.Drawing.Point(5, 680);
+            this.friendsGameButton.Margin = new System.Windows.Forms.Padding(1);
+            this.friendsGameButton.Name = "friendsGameButton";
+            this.friendsGameButton.Size = new System.Drawing.Size(325, 140);
+            this.friendsGameButton.TabIndex = 7;
+            this.friendsGameButton.Text = "How well do you know your friends?";
+            this.friendsGameButton.UseVisualStyleBackColor = true;
+            this.friendsGameButton.Click += new System.EventHandler(this.friendsGameButton_Click);
+            // 
+            // fansButton
+            // 
+            this.fansButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.fansButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fansButton.FlatAppearance.BorderSize = 0;
+            this.fansButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fansButton.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fansButton.ForeColor = System.Drawing.Color.White;
+            this.fansButton.Location = new System.Drawing.Point(5, 552);
+            this.fansButton.Margin = new System.Windows.Forms.Padding(1);
+            this.fansButton.Name = "fansButton";
+            this.fansButton.Size = new System.Drawing.Size(325, 105);
+            this.fansButton.TabIndex = 6;
+            this.fansButton.Text = "Fans";
+            this.fansButton.UseVisualStyleBackColor = true;
+            this.fansButton.Click += new System.EventHandler(this.fansButton_Click);
+            // 
+            // likedPagesButton
+            // 
+            this.likedPagesButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.likedPagesButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.likedPagesButton.FlatAppearance.BorderSize = 0;
+            this.likedPagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.likedPagesButton.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.likedPagesButton.ForeColor = System.Drawing.Color.White;
+            this.likedPagesButton.Location = new System.Drawing.Point(5, 423);
+            this.likedPagesButton.Margin = new System.Windows.Forms.Padding(1);
+            this.likedPagesButton.Name = "likedPagesButton";
+            this.likedPagesButton.Size = new System.Drawing.Size(325, 105);
+            this.likedPagesButton.TabIndex = 5;
+            this.likedPagesButton.Text = "Liked Pages";
+            this.likedPagesButton.UseVisualStyleBackColor = true;
+            this.likedPagesButton.Click += new System.EventHandler(this.likedPagesButton_Click);
+            // 
+            // upcomingEventsButton
+            // 
+            this.upcomingEventsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.upcomingEventsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.upcomingEventsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.upcomingEventsButton.FlatAppearance.BorderSize = 0;
+            this.upcomingEventsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.upcomingEventsButton.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upcomingEventsButton.ForeColor = System.Drawing.Color.White;
+            this.upcomingEventsButton.Location = new System.Drawing.Point(5, 303);
+            this.upcomingEventsButton.Margin = new System.Windows.Forms.Padding(1);
+            this.upcomingEventsButton.Name = "upcomingEventsButton";
+            this.upcomingEventsButton.Size = new System.Drawing.Size(325, 97);
+            this.upcomingEventsButton.TabIndex = 4;
+            this.upcomingEventsButton.Text = " Upcoming events";
+            this.upcomingEventsButton.UseVisualStyleBackColor = false;
+            this.upcomingEventsButton.Click += new System.EventHandler(this.upcomingEventsButton_Click);
+            // 
+            // profilePicturePanel
+            // 
+            this.profilePicturePanel.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.profilePicturePanel.Controls.Add(this.profilePictureBox);
+            this.profilePicturePanel.Controls.Add(this.welcomeLabel);
+            this.profilePicturePanel.Location = new System.Drawing.Point(346, 31);
+            this.profilePicturePanel.Margin = new System.Windows.Forms.Padding(2);
+            this.profilePicturePanel.Name = "profilePicturePanel";
+            this.profilePicturePanel.Size = new System.Drawing.Size(268, 257);
+            this.profilePicturePanel.TabIndex = 0;
+            this.profilePicturePanel.Visible = false;
+            // 
+            // profilePictureBox
+            // 
+            this.profilePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.profilePictureBox.Location = new System.Drawing.Point(51, 0);
+            this.profilePictureBox.Margin = new System.Windows.Forms.Padding(1);
+            this.profilePictureBox.Name = "profilePictureBox";
+            this.profilePictureBox.Size = new System.Drawing.Size(164, 164);
+            this.profilePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profilePictureBox.TabIndex = 1;
+            this.profilePictureBox.TabStop = false;
+            // 
+            // postPanel
+            // 
+            this.postPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.postPanel.Controls.Add(this.postHeadlineLabel);
+            this.postPanel.Controls.Add(this.sendPostButton);
+            this.postPanel.Controls.Add(this.cancelPostButton);
+            this.postPanel.Controls.Add(this.postTextBox);
+            this.postPanel.Location = new System.Drawing.Point(678, 80);
+            this.postPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.postPanel.Name = "postPanel";
+            this.postPanel.Size = new System.Drawing.Size(955, 769);
+            this.postPanel.TabIndex = 53;
+            this.postPanel.Visible = false;
+            // 
+            // postHeadlineLabel
+            // 
+            this.postHeadlineLabel.Font = new System.Drawing.Font("Century Gothic", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.postHeadlineLabel.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.postHeadlineLabel.Location = new System.Drawing.Point(88, 56);
+            this.postHeadlineLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.postHeadlineLabel.Name = "postHeadlineLabel";
+            this.postHeadlineLabel.Size = new System.Drawing.Size(746, 90);
+            this.postHeadlineLabel.TabIndex = 12;
+            this.postHeadlineLabel.Text = "What\'s on your mind?";
+            this.postHeadlineLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // sendPostButton
             // 
@@ -780,33 +730,96 @@ namespace DesktopFacebookAPP
             this.cancelPostButton.UseVisualStyleBackColor = false;
             this.cancelPostButton.Click += new System.EventHandler(this.cancelPostButton_Click);
             // 
-            // playAgainButton
+            // likedPagesPanel
             // 
-            this.playAgainButton.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.playAgainButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.playAgainButton.Font = new System.Drawing.Font("Segoe Print", 10F, System.Drawing.FontStyle.Bold);
-            this.playAgainButton.Location = new System.Drawing.Point(562, 718);
-            this.playAgainButton.Margin = new System.Windows.Forms.Padding(1);
-            this.playAgainButton.Name = "playAgainButton";
-            this.playAgainButton.Size = new System.Drawing.Size(185, 104);
-            this.playAgainButton.TabIndex = 50;
-            this.playAgainButton.Text = "Play again";
-            this.playAgainButton.UseVisualStyleBackColor = false;
-            this.playAgainButton.Click += new System.EventHandler(this.PlayAgainButton_Click);
+            this.likedPagesPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.likedPagesPanel.Controls.Add(this.likedPagesHeadlineLabel);
+            this.likedPagesPanel.Controls.Add(this.likePagedListBox);
+            this.likedPagesPanel.Location = new System.Drawing.Point(731, 52);
+            this.likedPagesPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.likedPagesPanel.Name = "likedPagesPanel";
+            this.likedPagesPanel.Size = new System.Drawing.Size(978, 810);
+            this.likedPagesPanel.TabIndex = 55;
+            this.likedPagesPanel.Visible = false;
             // 
-            // checkGameResultsButton
+            // likedPagesHeadlineLabel
             // 
-            this.checkGameResultsButton.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.checkGameResultsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkGameResultsButton.Font = new System.Drawing.Font("Segoe Print", 10F, System.Drawing.FontStyle.Bold);
-            this.checkGameResultsButton.Location = new System.Drawing.Point(274, 718);
-            this.checkGameResultsButton.Margin = new System.Windows.Forms.Padding(1);
-            this.checkGameResultsButton.Name = "checkGameResultsButton";
-            this.checkGameResultsButton.Size = new System.Drawing.Size(185, 104);
-            this.checkGameResultsButton.TabIndex = 50;
-            this.checkGameResultsButton.Text = "Answer!";
-            this.checkGameResultsButton.UseVisualStyleBackColor = false;
-            this.checkGameResultsButton.Click += new System.EventHandler(this.checkGameResultsButton_Click);
+            this.likedPagesHeadlineLabel.Font = new System.Drawing.Font("Century Gothic", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.likedPagesHeadlineLabel.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.likedPagesHeadlineLabel.Location = new System.Drawing.Point(140, 58);
+            this.likedPagesHeadlineLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.likedPagesHeadlineLabel.Name = "likedPagesHeadlineLabel";
+            this.likedPagesHeadlineLabel.Size = new System.Drawing.Size(663, 90);
+            this.likedPagesHeadlineLabel.TabIndex = 12;
+            this.likedPagesHeadlineLabel.Text = "Here are all the pages you liked!";
+            this.likedPagesHeadlineLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // fansPanel
+            // 
+            this.fansPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.fansPanel.Controls.Add(this.loadingLabel);
+            this.fansPanel.Controls.Add(this.fansSecondHeadlineLabel);
+            this.fansPanel.Controls.Add(this.fansHeadlineLabel);
+            this.fansPanel.Controls.Add(this.fansListBox);
+            this.fansPanel.Location = new System.Drawing.Point(650, 106);
+            this.fansPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.fansPanel.Name = "fansPanel";
+            this.fansPanel.Size = new System.Drawing.Size(1042, 756);
+            this.fansPanel.TabIndex = 55;
+            this.fansPanel.Visible = false;
+            // 
+            // fansSecondHeadlineLabel
+            // 
+            this.fansSecondHeadlineLabel.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fansSecondHeadlineLabel.Location = new System.Drawing.Point(54, 113);
+            this.fansSecondHeadlineLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.fansSecondHeadlineLabel.Name = "fansSecondHeadlineLabel";
+            this.fansSecondHeadlineLabel.Size = new System.Drawing.Size(883, 58);
+            this.fansSecondHeadlineLabel.TabIndex = 47;
+            this.fansSecondHeadlineLabel.Text = "Here are the friends who liked your pictures the most";
+            // 
+            // fansHeadlineLabel
+            // 
+            this.fansHeadlineLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fansHeadlineLabel.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.fansHeadlineLabel.Location = new System.Drawing.Point(134, 30);
+            this.fansHeadlineLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.fansHeadlineLabel.Name = "fansHeadlineLabel";
+            this.fansHeadlineLabel.Size = new System.Drawing.Size(722, 80);
+            this.fansHeadlineLabel.TabIndex = 12;
+            this.fansHeadlineLabel.Text = "Find out your secert fans!  ";
+            this.fansHeadlineLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // loginPanel
+            // 
+            this.loginPanel.BackgroundImage = global::DesktopFacebookAPP.Properties.Resources.facebookBG;
+            this.loginPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.loginPanel.Controls.Add(this.loginButton);
+            this.loginPanel.Location = new System.Drawing.Point(-1, 0);
+            this.loginPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.loginPanel.Name = "loginPanel";
+            this.loginPanel.Size = new System.Drawing.Size(1734, 897);
+            this.loginPanel.TabIndex = 0;
+            // 
+            // loginButton
+            // 
+            this.loginButton.BackColor = System.Drawing.Color.Transparent;
+            this.loginButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.loginButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loginButton.FlatAppearance.BorderSize = 0;
+            this.loginButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginButton.Font = new System.Drawing.Font("Century Gothic", 26.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginButton.ForeColor = System.Drawing.Color.White;
+            this.loginButton.Location = new System.Drawing.Point(680, 397);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(6);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(398, 121);
+            this.loginButton.TabIndex = 0;
+            this.loginButton.TabStop = false;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // MainWindow
             // 
@@ -816,7 +829,6 @@ namespace DesktopFacebookAPP
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1732, 897);
-            this.Controls.Add(this.loginPanel);
             this.Controls.Add(this.eventsPanel);
             this.Controls.Add(this.postPanel);
             this.Controls.Add(this.fansPanel);
@@ -825,32 +837,33 @@ namespace DesktopFacebookAPP
             this.Controls.Add(this.upperLinePanel);
             this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.likedPagesPanel);
+            this.Controls.Add(this.loginPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Facebook APP";
-            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.firstQuestionPanel.ResumeLayout(false);
             this.firstQuestionPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.questionOneResultPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firstQuestionPictureBox)).EndInit();
             this.secondQuestionPanel.ResumeLayout(false);
             this.secondQuestionPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.questionTwoResultPictureBox)).EndInit();
             this.thirdQuestionPanel.ResumeLayout(false);
             this.thirdQuestionPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.questionThreeResultPictureBox)).EndInit();
             this.gamePanel.ResumeLayout(false);
             this.eventsPanel.ResumeLayout(false);
+            this.upperLinePanel.ResumeLayout(false);
             this.optionsPanel.ResumeLayout(false);
             this.profilePicturePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             this.postPanel.ResumeLayout(false);
             this.postPanel.PerformLayout();
             this.likedPagesPanel.ResumeLayout(false);
             this.fansPanel.ResumeLayout(false);
             this.loginPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionOneResultPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.firstQuestionPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionTwoResultPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionThreeResultPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -900,15 +913,16 @@ namespace DesktopFacebookAPP
         private Panel loginPanel;
         private Panel postPanel;
         private Label postHeadlineLabel;
-        private Label label1;
-        private Panel eventsPanel;
-        private Label label2;
-        private Panel likedPagesPanel;
         private Label eventsHeadlineLabel;
+        private Panel eventsPanel;
+        private Label FriendsGameHeadlineLabel;
+        private Panel likedPagesPanel;
+        private Label likedPagesHeadlineLabel;
         private Panel fansPanel;
         private Label fansHeadlineLabel;
         private Label fansSecondHeadlineLabel;
         private Button homeButton;
         private Panel sidePanel;
+        private Button closeButton;
     }
 }

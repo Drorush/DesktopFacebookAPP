@@ -16,7 +16,9 @@ namespace DesktopFacebookAPP
         }
 
         public Question FirstQuestion { get; private set; }
+
         public Question SecondQuestion { get; private set; }
+
         public Question ThirdQuestion { get; private set; }
 
         public HowWellDoYouKnowYourFriendsGame(User i_LoggedInUser)
@@ -45,6 +47,7 @@ namespace DesktopFacebookAPP
             public List<string> PossibleAnswers { get; set; }
 
             public FacebookObjectCollection<User> Friends { get; set; }
+
             public string QuestionContent { get; set; }
 
             public Question(eQuestionType i_QuestionType, FacebookObjectCollection<User> i_Friends)
@@ -102,18 +105,21 @@ namespace DesktopFacebookAPP
                         {
                             friendToReturn = randomizeFriend();
                         }
+
                         break;
                     case eQuestionType.IdentifyByBirthDate:
                         while (string.IsNullOrEmpty(friendToReturn.Birthday))
                         {
                             friendToReturn = randomizeFriend();
                         }
+
                         break;
                     case eQuestionType.IdentifyByLastPost:
                         while (friendToReturn.Posts == null || !friendToReturn.Posts.Any())
                         {
                             friendToReturn = randomizeFriend();
                         }
+
                         break;
                 }
 
@@ -131,7 +137,6 @@ namespace DesktopFacebookAPP
                 string FriendLastPost = Answer.Posts[0].Message;
                 QuestionContent = string.Format(
                     $"Which of the following friends shared the post: \"{FriendLastPost}\"?");
-
             }
 
             private void generatePictureIdentificationQuestion()

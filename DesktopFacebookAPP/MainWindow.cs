@@ -13,7 +13,7 @@ using static DesktopFacebookAPP.HowWellDoYouKnowYourFriendsGame;
 
 namespace DesktopFacebookAPP
 {
-    enum eState
+    public enum eState
     {
         Login,
         MainState,
@@ -46,7 +46,8 @@ namespace DesktopFacebookAPP
 
         private void loginAndInit()
         {
-            LoginResult result = FacebookService.Login(r_GuyAppID,
+            LoginResult result = FacebookService.Login(
+                r_GuyAppID,
                 "publish_to_groups",
                 "public_profile",
                 "user_birthday",
@@ -66,13 +67,11 @@ namespace DesktopFacebookAPP
             if (!string.IsNullOrEmpty(result.AccessToken))
             {
                 LoggedInUser = result.LoggedInUser;
-                // do something with user info
             }
             else
             {
                 MessageBox.Show(result.ErrorMessage);
             }
-
         }
 
         private void loginButton_Click(object sender, System.EventArgs e)
@@ -81,7 +80,6 @@ namespace DesktopFacebookAPP
             m_CurrentState = eState.MainState;
             handleState();
         }
-
 
         private void handleState()
         {
@@ -236,9 +234,8 @@ namespace DesktopFacebookAPP
 
         private void uiThreadInvoke(Action action)
         {
-            Invoke((MethodInvoker) delegate() { action(); });
+            Invoke(action);
         }
-
 
         private void handleLikedPagesState()
         {
@@ -261,7 +258,8 @@ namespace DesktopFacebookAPP
             }
             catch(Exception ex)
             {
-                MessageBox.Show(string.Format("Couldn't show liked pages{0}{1}",
+                MessageBox.Show(string.Format(
+                    "Couldn't show liked pages{0}{1}",
                     Environment.NewLine,
                     ex.Message));
             }
@@ -288,7 +286,8 @@ namespace DesktopFacebookAPP
             }
             catch(Exception ex)
             {
-                MessageBox.Show(string.Format("Couldn't show events{0}{1}",
+                MessageBox.Show(string.Format(
+                    "Couldn't show events{0}{1}",
                     Environment.NewLine,
                     ex.Message));
             }
@@ -297,12 +296,10 @@ namespace DesktopFacebookAPP
         private void handlePostState()
         {
             postPanel.Visible = true;
-
         }
 
         private void handleMainState()
         {
-
             profilePictureBox.LoadAsync(LoggedInUser.PictureNormalURL);
 
             List<Control> controlsToShow = new List<Control>()
@@ -320,25 +317,10 @@ namespace DesktopFacebookAPP
             welcomeLabel.Text = string.Format("Welcome {0}!", LoggedInUser.Name);
         }
 
-        private void loginButton_MouseEnter(object sender, System.EventArgs e)
-        {
-            this.loginButton.FlatAppearance.BorderSize = 0;
-            this.loginButton.FlatStyle = FlatStyle.Flat;
-            this.loginButton.TabStop = false;
-            loginButton.BackgroundImage = Properties.Resources.login21;
-        }
-
-        private void loginButton_MouseLeave(object sender, System.EventArgs e)
-        {
-            loginButton.BackgroundImage = Properties.Resources.login111;
-        }
-
         private void postButton_Click(object sender, System.EventArgs e)
         {
             m_CurrentState = eState.Post;
-            sidePanel.Height = postButton.Height;
-            sidePanel.Top = postButton.Top;
-            handleState();
+            handleOptionClick(sender, e);
         }
 
         private void sendPostButton_Click(object sender, System.EventArgs e)
@@ -350,19 +332,17 @@ namespace DesktopFacebookAPP
             }
             catch(Exception ex)
             {
-                MessageBox.Show(string.Format("Couldn't post{0}{1}",
+                MessageBox.Show(string.Format(
+                    "Couldn't post{0}{1}",
                     Environment.NewLine,
                     ex.Message));
             }
-
         }
 
         private void upcomingEventsButton_Click(object sender, System.EventArgs e)
         {
             m_CurrentState = eState.Events;
-            sidePanel.Height = upcomingEventsButton.Height;
-            sidePanel.Top = upcomingEventsButton.Top;
-            handleState();
+            handleOptionClick(sender, e);
         }
 
         /// <summary>
@@ -390,21 +370,16 @@ namespace DesktopFacebookAPP
         private void likedPagesButton_Click(object sender, System.EventArgs e)
         {
             m_CurrentState = eState.LikedPages;
-            sidePanel.Height = likedPagesButton.Height;
-            sidePanel.Top = likedPagesButton.Top;
-            handleState();
+            handleOptionClick(sender, e);
         }
 
         private void fansButton_Click(object sender, System.EventArgs e)
         {
             m_CurrentState = eState.FirstFeature;
-            sidePanel.Height = fansButton.Height;
-            sidePanel.Top = fansButton.Top;
-            handleState();
+            handleOptionClick(sender, e);
         }
 
-        private void updateDictionary(FacebookObjectCollection<User> i_PhotoLikedBy,
-            Dictionary<string, int> i_UsersToLikes)
+        private void updateDictionary(FacebookObjectCollection<User> i_PhotoLikedBy, Dictionary<string, int> i_UsersToLikes)
         {
             foreach (User user in i_PhotoLikedBy)
             {
@@ -422,15 +397,7 @@ namespace DesktopFacebookAPP
         private void friendsGameButton_Click(object sender, System.EventArgs e)
         {
             m_CurrentState = eState.HowWellDoYouKnowYourFriendsGame;
-            sidePanel.Height = friendsGameButton.Height;
-            sidePanel.Top = friendsGameButton.Top;
-            handleState();
-        }
-
-
-        private void welcomeLabel_Click(object sender, EventArgs e)
-        {
-            sendPostButton.BackgroundImage = Properties.Resources.post1;
+            handleOptionClick(sender, e);
         }
 
         private void cancelPostButton_Click(object sender, EventArgs e)
@@ -449,7 +416,6 @@ namespace DesktopFacebookAPP
             {
                 MessageBox.Show("You must answer all the questions!");
             }
-
         }
 
         private void showAnswerFeedbackPictures()
@@ -485,7 +451,7 @@ namespace DesktopFacebookAPP
 
         private void ShowAnswerFeedback(PictureBox i_PictureBox, string i_UserAnswer, User i_ExpectedAnswer)
         {
-            i_PictureBox.Image = (i_UserAnswer.Equals(i_ExpectedAnswer.Name))
+            i_PictureBox.Image = i_UserAnswer.Equals(i_ExpectedAnswer.Name)
                 ? Properties.Resources.V
                 : Properties.Resources.X;
 
@@ -536,129 +502,22 @@ namespace DesktopFacebookAPP
             questionThreeResultPictureBox.Visible = false;
         }
 
-        private void gamePanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void MainWindow_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void welcomeLabel_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cancelPostButton_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cancelPostButton_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void sendPostButton_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void sendPostButton_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void secondFeatureButton_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void secondFeatureButton_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fansButton_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fansButton_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void likedPagesButton_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void likedPagesButton_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void homeButton_Click(object sender, EventArgs e)
         {
-            sidePanel.Top = homeButton.Top;
-            sidePanel.Height = homeButton.Height;
             m_CurrentState = eState.Home;
+            handleOptionClick(sender, e);
+        }
+
+        private void handleOptionClick(object sender, EventArgs e)
+        {
+            sidePanel.Top = (sender as Button).Top;
+            sidePanel.Height = (sender as Button).Height;
             handleState();
         }
-    }
 
-    public class RoundButton : Button
-    {
-        protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
+        private void closeButton_Click(object sender, EventArgs e)
         {
-            GraphicsPath grPath = new GraphicsPath();
-            grPath.AddEllipse(1, 1, this.Width - 4 , this.Height - 4);
-            this.Region = new System.Drawing.Region(grPath);
-            base.OnPaint(e);
-        }
-    }
-
-    public class RoundedEdgeButton : Button
-    {
-        GraphicsPath GetRoundPath(RectangleF Rect, int radius)
-        {
-            float r2 = radius / 2f;
-            GraphicsPath GraphPath = new GraphicsPath();
-
-            GraphPath.AddArc(Rect.X, Rect.Y, radius, radius, 180, 90);
-            GraphPath.AddLine(Rect.X + r2, Rect.Y, Rect.Width - r2, Rect.Y);
-            GraphPath.AddArc(Rect.X + Rect.Width - radius, Rect.Y, radius, radius, 270, 90);
-            GraphPath.AddLine(Rect.Width, Rect.Y + r2, Rect.Width, Rect.Height - r2);
-            GraphPath.AddArc(Rect.X + Rect.Width - radius,
-                             Rect.Y + Rect.Height - radius, radius, radius, 0, 90);
-            GraphPath.AddLine(Rect.Width - r2, Rect.Height, Rect.X + r2, Rect.Height);
-            GraphPath.AddArc(Rect.X, Rect.Y + Rect.Height - radius, radius, radius, 90, 90);
-            GraphPath.AddLine(Rect.X, Rect.Height - r2, Rect.X, Rect.Y + r2);
-
-            GraphPath.CloseFigure();
-            return GraphPath;
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-            RectangleF Rect = new RectangleF(0, 0, this.Width, this.Height);
-            GraphicsPath GraphPath = GetRoundPath(Rect, 50);
-
-            this.Region = new Region(GraphPath);
-            using (Pen pen = new Pen(Color.WhiteSmoke, 3f))
-            {
-                pen.Alignment = PenAlignment.Inset;
-                e.Graphics.DrawPath(pen, GraphPath);
-            }
+            Close();
         }
     }
 }

@@ -48,6 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="NotEnoughFriendsException.cs" />
     <Compile Include="HowWellDoYouKnowYourFriendsGame.cs" />
     <Compile Include="MainWindow.cs">
@@ -58,19 +66,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoundedEdgeButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils.cs" />
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -85,85 +92,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="first.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="second.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\login1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\login2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\welcomeScreen.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\optionButton11.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancel21.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\login11.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancel1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancel211.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\login21.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\login111.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mainScreen.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mainWindow1.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\optionButton21.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\optionButton111.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\post1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\post21.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\V.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\welcomeScreen1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\X.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\GameBackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\homeIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\homeIcon1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\homeIcon2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\facebookback.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\facebookBG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
