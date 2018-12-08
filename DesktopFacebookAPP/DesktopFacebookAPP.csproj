@@ -70,10 +70,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Facebook">
-      <HintPath>..\..\..\..\..\Facebook.dll</HintPath>
+      <HintPath>bin\Debug\Facebook.dll</HintPath>
     </Reference>
     <Reference Include="FbGraphApiWrapper">
-      <HintPath>..\..\..\..\..\FbGraphApiWrapper.dll</HintPath>
+      <HintPath>bin\Debug\FbGraphApiWrapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -110,6 +110,12 @@
     <Compile Include="RoundedEdgeButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="VisualQuestion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VisualQuestion.Designer.cs">
+      <DependentUpon>VisualQuestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -118,6 +124,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualQuestion.resx">
+      <DependentUpon>VisualQuestion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Question.datasource" />
     <None Include="Properties\Settings.settings">

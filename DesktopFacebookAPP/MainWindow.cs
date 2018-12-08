@@ -34,6 +34,8 @@ namespace DesktopFacebookAPP
 
         private HowWellDoYouKnowYourFriendsGame m_Game;
 
+        private List<VisualQuestion> m_VisualQuestions = new List<VisualQuestion>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -100,7 +102,7 @@ namespace DesktopFacebookAPP
                     handleLikedPagesState();
                     break;
                 case eState.FirstFeature:
-                    handleFirstFeature();
+                    handleFansState();
                     break;
                 case eState.HowWellDoYouKnowYourFriendsGame:
                     handleGameState();
@@ -137,50 +139,26 @@ namespace DesktopFacebookAPP
         private void startGame()
         {
             m_Game = HowWellDoYouKnowYourFriendsGame.Instance(LoggedInUser);
+            m_VisualQuestions = new List<VisualQuestion> {
+                visualQuestion1,
+            visualQuestion2,
+            visualQuestion3,
+            };
 
-            uiThreadInvoke(() =>
+        uiThreadInvoke(() =>
             {
-                initFirstQuestion();
-                initSecondQuestion();
-                initThirdQuestion();
+                initQuestions();
             });
         }
 
-        private void initThirdQuestion()
+        private void initQuestions()
         {
-            Question question = m_Game.Questions[2];
-
-            thirdQuestionLabel.Text = question.QuestionContent;
-
-            thirdQuestionFirstOptionRadioButton.Text = question.PossibleAnswers[0];
-            thirdQuestionSecondOptionRadioButton.Text = question.PossibleAnswers[1];
-            thirdQuestionThirdOptionRadioButton.Text = question.PossibleAnswers[2];
+                visualQuestion1.initQuestion(m_Game.Questions[0]);
+                visualQuestion2.initQuestion(m_Game.Questions[1]);
+                visualQuestion3.initQuestion(m_Game.Questions[2]);
         }
 
-        private void initSecondQuestion()
-        {
-            Question question = m_Game.Questions[1];
-
-            secondQuestionLabel.Text = question.QuestionContent;
-
-            secondQuestionFirstOptionRadioButton.Text = question.PossibleAnswers[0];
-            secondQuestionSecondOptionRadioButton.Text = question.PossibleAnswers[1];
-            secondQuestionThirdOptionRadioButton.Text = question.PossibleAnswers[2];
-        }
-
-        private void initFirstQuestion()
-        {
-            Question question = m_Game.Questions[0];
-
-            firstQuestionLabel.Text = question.QuestionContent;
-            firstQuestionPictureBox.LoadAsync(question.Answer.PictureNormalURL);
-
-            firstQuestionFirstOptionRadioButton.Text = question.PossibleAnswers[0];
-            firstQuestionSecondOptionRadioButton.Text = question.PossibleAnswers[1];
-            firstQuestionThirdOptionRadioButton.Text = question.PossibleAnswers[2];
-        }
-
-        private void handleFirstFeature()
+        private void handleFansState()
         {
             fansListBox.Items.Clear();
             fansPanel.Visible = true;
@@ -418,86 +396,49 @@ namespace DesktopFacebookAPP
 
         private void showAnswerFeedbackPictures()
         {
-            string firstAnswer = getUserAnswer(firstQuestionPanel);
-            string secondAnswer = getUserAnswer(secondQuestionPanel);
-            string thirdAnswer = getUserAnswer(thirdQuestionPanel);
+            foreach (VisualQuestion visualQuestion in m_VisualQuestions)
+            {
+                string userAnswer = visualQuestion.getUserAnswer();
+                string expectedAnswer = visualQuestion.getRightAnswer();
 
-            ShowAnswerFeedback(questionOneResultPictureBox, firstAnswer, m_Game.Questions[0].Answer);
-            ShowAnswerFeedback(questionTwoResultPictureBox, secondAnswer, m_Game.Questions[1].Answer);
-            ShowAnswerFeedback(questionThreeResultPictureBox, thirdAnswer, m_Game.Questions[2].Answer);
+                visualQuestion.resultPictureBox.Image = userAnswer.Equals(expectedAnswer)
+                    ? Properties.Resources.V
+                    : Properties.Resources.X;
+
+                visualQuestion.resultPictureBox.Visible = true;
+            }
         }
 
         private void colorAllAnswers()
         {
-            colorQuestionAnswers(firstQuestionPanel, m_Game.Questions[0].Answer);
-            colorQuestionAnswers(secondQuestionPanel, m_Game.Questions[1].Answer);
-            colorQuestionAnswers(thirdQuestionPanel, m_Game.Questions[2].Answer);
-        }
-
-        private void colorQuestionAnswers(Panel i_QuestionPanel, User i_Answer)
-        {
-            foreach (Control control in i_QuestionPanel.Controls)
+            foreach (VisualQuestion visualQuestion in m_VisualQuestions)
             {
-                if (control is RadioButton)
+                string rightAnswer = visualQuestion.getRightAnswer();
+                foreach (Control control in visualQuestion.QuestionPanel.Controls)
                 {
-                    control.ForeColor = control.Text.Equals(i_Answer.Name)
-                        ? Color.Green
-                        : Color.Red;
-                }
-            }
-        }
-
-        private void ShowAnswerFeedback(PictureBox i_PictureBox, string i_UserAnswer, User i_ExpectedAnswer)
-        {
-            i_PictureBox.Image = i_UserAnswer.Equals(i_ExpectedAnswer.Name)
-                ? Properties.Resources.V
-                : Properties.Resources.X;
-
-            i_PictureBox.Visible = true;
-        }
-
-        private string getUserAnswer(Panel i_QuestionPanel)
-        {
-            foreach (Control control in i_QuestionPanel.Controls)
-            {
-                if (control is RadioButton)
-                {
-                    if ((control as RadioButton).Checked)
+                    if (control is RadioButton)
                     {
-                        return control.Text;
+                        control.ForeColor = control.Text.Equals(rightAnswer)
+                            ? Color.Green
+                            : Color.Red;
                     }
                 }
             }
-
-            throw new Exception();
         }
 
         private void PlayAgainButton_Click(object sender, EventArgs e)
         {
-            clearGamePanel();
+            //clearGamePanel();
             handleGameState();
+
         }
 
         private void clearGamePanel()
         {
-            foreach (Control control in gamePanel.Controls)
+            foreach (VisualQuestion visualQuestion in m_VisualQuestions)
             {
-                if (control is Panel)
-                {
-                    foreach (Control ctrl in control.Controls)
-                    {
-                        if (ctrl is RadioButton)
-                        {
-                            (ctrl as RadioButton).Checked = false;
-                            ctrl.ForeColor = Color.Black;
-                        }
-                    }
-                }
+                visualQuestion.clear();
             }
-
-            questionOneResultPictureBox.Visible = false;
-            questionTwoResultPictureBox.Visible = false;
-            questionThreeResultPictureBox.Visible = false;
         }
 
         private void homeButton_Click(object sender, EventArgs e)
