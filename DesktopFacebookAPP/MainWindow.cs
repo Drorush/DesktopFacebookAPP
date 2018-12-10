@@ -160,7 +160,6 @@ namespace DesktopFacebookAPP
 
         private void handleFansState()
         {
-            fansListBox.Items.Clear();
             fansPanel.Visible = true;
             
             try
@@ -175,37 +174,36 @@ namespace DesktopFacebookAPP
 
         private void findFans()
         {
-                uiThreadInvoke(() => loadingLabel.Visible = true);
-                FacebookObjectCollection<Album> albums = LoggedInUser.Albums;
-                List<Photo> photos = new List<Photo>();
-                foreach (Album album in albums)
+            uiThreadInvoke(() => loadingLabel.Visible = true);
+            FacebookObjectCollection<Album> albums = LoggedInUser.Albums;
+            List<Photo> photos = new List<Photo>();
+            foreach (Album album in albums)
+            {
+                foreach (Photo photo in album.Photos)
                 {
-                    foreach (Photo photo in album.Photos)
+                    if (photo.LikedBy.Count > 0)
                     {
-                        if (photo.LikedBy.Count > 0)
-                        {
                         photos.Add(photo);
-                        }
                     }
                 }
+            }
 
-                Dictionary<string, int> usersToLikes = new Dictionary<string, int>();
-                foreach (Photo photo in photos)
-                {
-                    updateDictionary(photo.LikedBy, usersToLikes);
-                }
+            Dictionary<User, int> usersToLikes = new Dictionary<User, int>();
+            foreach (Photo photo in photos)
+            {
+                updateDictionary(photo.LikedBy, usersToLikes);
+            }
 
-                List<KeyValuePair<string, int>> listToSort = usersToLikes.ToList();
+            List<KeyValuePair<User, int>> listToSort = usersToLikes.ToList();
 
-                listToSort.Sort((pair1, pair2) => pair2.Value.CompareTo(pair1.Value));
+            listToSort.Sort((pair1, pair2) => pair2.Value.CompareTo(pair1.Value));
 
-                foreach (KeyValuePair<string, int> pair in listToSort)
-                {
-                    uiThreadInvoke(() =>
-                        fansListBox.Items.Add(string.Format("{0} - {1} Likes", pair.Key, pair.Value)));
-                }
-
-            uiThreadInvoke(() => loadingLabel.Visible = false);
+            uiThreadInvoke(() =>
+            {
+                fanBindingSource.DataSource = listToSort.Select(kvp => new Fan(kvp.Key, kvp.Value));
+                fanDisplayPanel.Visible = true;
+                loadingLabel.Visible = false;
+            });
         }
 
         private void uiThreadInvoke(Action action)
@@ -355,17 +353,17 @@ namespace DesktopFacebookAPP
             handleOptionClick(sender, e);
         }
 
-        private void updateDictionary(FacebookObjectCollection<User> i_PhotoLikedBy, Dictionary<string, int> i_UsersToLikes)
+        private void updateDictionary(FacebookObjectCollection<User> i_PhotoLikedBy, Dictionary<User, int> i_UsersToLikes)
         {
             foreach (User user in i_PhotoLikedBy)
             {
-                if (!i_UsersToLikes.ContainsKey(user.Name))
+                if (!i_UsersToLikes.ContainsKey(user))
                 {
-                    i_UsersToLikes.Add(user.Name, 1);
+                    i_UsersToLikes.Add(user, 1);
                 }
                 else
                 {
-                    i_UsersToLikes[user.Name]++;
+                    i_UsersToLikes[user]++;
                 }
             }
         }

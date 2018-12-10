@@ -87,6 +87,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fan.cs" />
     <Compile Include="IQuestionFactory.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -128,7 +129,7 @@
     <EmbeddedResource Include="VisualQuestion.resx">
       <DependentUpon>VisualQuestion.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Properties\DataSources\Question.datasource" />
+    <None Include="Properties\DataSources\Fan.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
