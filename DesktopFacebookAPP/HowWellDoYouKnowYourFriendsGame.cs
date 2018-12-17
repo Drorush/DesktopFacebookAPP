@@ -9,14 +9,13 @@ namespace DesktopFacebookAPP
 {
     public class HowWellDoYouKnowYourFriendsGame
     {
-
-        private List<IQuestionFactory> QuestionFactories { get; set; }
+        private static object s_LockObj = new object();
 
         private static HowWellDoYouKnowYourFriendsGame s_Game;
 
-        public FacebookObjectCollection<User> Friends { get; private set; }
+        private List<IQuestionFactory> m_QuestionFactories;
 
-        private static object s_LockObj = new object();
+        public FacebookObjectCollection<User> Friends { get; private set; }
 
         public List<Question> Questions { get; private set; }
 
@@ -30,7 +29,7 @@ namespace DesktopFacebookAPP
                     {
                         s_Game = new HowWellDoYouKnowYourFriendsGame(i_LoggedInUser);
                         s_Game.Friends = i_LoggedInUser.Friends;
-                        s_Game.QuestionFactories = new List<IQuestionFactory>
+                        s_Game.m_QuestionFactories = new List<IQuestionFactory>
                         {
                             new QuestionFactoryIdentifyByProfilePicture(),
                             new QuestionFactoryIdentifyByBirthday(),
@@ -55,7 +54,7 @@ namespace DesktopFacebookAPP
         private void generateQuestions()
         {
             Questions = new List<Question>();
-            foreach(IQuestionFactory factory in QuestionFactories)
+            foreach (IQuestionFactory factory in m_QuestionFactories)
             {
                 Questions.Add(factory.CreateQuestion(Friends));
             }

@@ -39,8 +39,19 @@ namespace DesktopFacebookAPP
         public MainWindow()
         {
             InitializeComponent();
+            InitializeCollections();
             m_CurrentState = eState.Login;
             this.AutoScaleMode = AutoScaleMode.Dpi;
+        }
+
+        private void InitializeCollections()
+        {
+            m_VisualQuestions = new List<VisualQuestion>
+            {
+                firstVisualQuestion,
+                secondVisualQuestion,
+                thirdVisualQuestion,
+            };
         }
 
         private void loginAndInit()
@@ -139,11 +150,6 @@ namespace DesktopFacebookAPP
         private void startGame()
         {
             m_Game = HowWellDoYouKnowYourFriendsGame.Instance(LoggedInUser);
-            m_VisualQuestions = new List<VisualQuestion> {
-                visualQuestion1,
-            visualQuestion2,
-            visualQuestion3,
-            };
 
         uiThreadInvoke(() =>
             {
@@ -153,9 +159,11 @@ namespace DesktopFacebookAPP
 
         private void initQuestions()
         {
-                visualQuestion1.initQuestion(m_Game.Questions[0]);
-                visualQuestion2.initQuestion(m_Game.Questions[1]);
-                visualQuestion3.initQuestion(m_Game.Questions[2]);
+            int i = 0;
+            foreach (VisualQuestion visualQuestion in m_VisualQuestions)
+            {
+                visualQuestion.InitQuestion(m_Game.Questions[i++]);
+            }
         }
 
         private void handleFansState()
@@ -230,7 +238,7 @@ namespace DesktopFacebookAPP
                     MessageBox.Show("No liked pages");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(string.Format(
                     "Couldn't show liked pages{0}{1}",
@@ -258,7 +266,7 @@ namespace DesktopFacebookAPP
                     MessageBox.Show("No events found");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(string.Format(
                     "Couldn't show events{0}{1}",
@@ -304,7 +312,7 @@ namespace DesktopFacebookAPP
                 Status postedStatus = LoggedInUser.PostStatus(postTextBox.Text);
                 MessageBox.Show("Status Posted! ID: " + postedStatus.Id);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(string.Format(
                     "Couldn't post{0}{1}",
@@ -396,14 +404,7 @@ namespace DesktopFacebookAPP
         {
             foreach (VisualQuestion visualQuestion in m_VisualQuestions)
             {
-                string userAnswer = visualQuestion.getUserAnswer();
-                string expectedAnswer = visualQuestion.getRightAnswer();
-
-                visualQuestion.resultPictureBox.Image = userAnswer.Equals(expectedAnswer)
-                    ? Properties.Resources.V
-                    : Properties.Resources.X;
-
-                visualQuestion.resultPictureBox.Visible = true;
+                visualQuestion.ShowAnswerFeedbackPicture();
             }
         }
 
@@ -411,31 +412,20 @@ namespace DesktopFacebookAPP
         {
             foreach (VisualQuestion visualQuestion in m_VisualQuestions)
             {
-                string rightAnswer = visualQuestion.getRightAnswer();
-                foreach (Control control in visualQuestion.QuestionPanel.Controls)
-                {
-                    if (control is RadioButton)
-                    {
-                        control.ForeColor = control.Text.Equals(rightAnswer)
-                            ? Color.Green
-                            : Color.Red;
-                    }
-                }
+                visualQuestion.ColorAnswer();
             }
         }
 
         private void PlayAgainButton_Click(object sender, EventArgs e)
         {
-            //clearGamePanel();
             handleGameState();
-
         }
 
         private void clearGamePanel()
         {
             foreach (VisualQuestion visualQuestion in m_VisualQuestions)
             {
-                visualQuestion.clear();
+                visualQuestion.Clear();
             }
         }
 

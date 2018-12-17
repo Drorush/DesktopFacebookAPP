@@ -42,7 +42,6 @@ namespace DesktopFacebookAPP
 
         public abstract User getRandomFriend();
 
-
         protected User randomizeFriend()
         {
             Random rnd = new Random();
@@ -82,7 +81,8 @@ namespace DesktopFacebookAPP
             do
             {
                 friendToReturn = randomizeFriend();
-            } while (string.IsNullOrEmpty(friendToReturn.PictureNormalURL));
+            }
+            while (string.IsNullOrEmpty(friendToReturn.PictureNormalURL));
 
             return friendToReturn;
         }

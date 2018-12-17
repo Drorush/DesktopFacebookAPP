@@ -7,7 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopFacebookAPP", "Deskt
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{42201570-D7FA-4017-9322-64074A67DE24}"
 	ProjectSection(SolutionItems) = preProject
-		..\A19 Ex01 Dror 307968339 Omer 205882855.docx = ..\A19 Ex01 Dror 307968339 Omer 205882855.docx
 		Excercise Checking Report.txt = Excercise Checking Report.txt
 	EndProjectSection
 EndProject

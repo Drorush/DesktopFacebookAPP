@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace DesktopFacebookAPP
 {
-    partial class VisualQuestion
+    public partial class VisualQuestion
     {
         /// <summary> 
         /// Required designer variable.
@@ -21,6 +21,7 @@ namespace DesktopFacebookAPP
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -32,180 +33,118 @@ namespace DesktopFacebookAPP
         /// </summary>
         private void InitializeComponent()
         {
-            this.QuestionPanel = new System.Windows.Forms.Panel();
-            this.resultPictureBox = new System.Windows.Forms.PictureBox();
-            this.profilePictureBox = new System.Windows.Forms.PictureBox();
-            this.questionDescriptionLabel = new System.Windows.Forms.Label();
-            this.firstAnswerRadioButton = new System.Windows.Forms.RadioButton();
-            this.secondAnswerRadioButton = new System.Windows.Forms.RadioButton();
-            this.thirdAnswerRadioButton = new System.Windows.Forms.RadioButton();
-            this.QuestionPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.resultPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
+            this.m_QuestionPanel = new System.Windows.Forms.Panel();
+            this.m_ResultPictureBox = new System.Windows.Forms.PictureBox();
+            this.m_ProfilePictureBox = new System.Windows.Forms.PictureBox();
+            this.m_QuestionDescriptionLabel = new System.Windows.Forms.Label();
+            this.m_FirstAnswerRadioButton = new System.Windows.Forms.RadioButton();
+            this.m_SecondAnswerRadioButton = new System.Windows.Forms.RadioButton();
+            this.m_ThirdAnswerRadioButton = new System.Windows.Forms.RadioButton();
+            this.m_QuestionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_ResultPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_ProfilePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // QuestionPanel
             // 
-            this.QuestionPanel.BackColor = System.Drawing.Color.White;
-            this.QuestionPanel.Controls.Add(this.resultPictureBox);
-            this.QuestionPanel.Controls.Add(this.profilePictureBox);
-            this.QuestionPanel.Controls.Add(this.questionDescriptionLabel);
-            this.QuestionPanel.Controls.Add(this.firstAnswerRadioButton);
-            this.QuestionPanel.Controls.Add(this.secondAnswerRadioButton);
-            this.QuestionPanel.Controls.Add(this.thirdAnswerRadioButton);
-            this.QuestionPanel.Location = new System.Drawing.Point(2, 2);
-            this.QuestionPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.QuestionPanel.Name = "QuestionPanel";
-            this.QuestionPanel.Size = new System.Drawing.Size(990, 187);
-            this.QuestionPanel.TabIndex = 48;
+            this.m_QuestionPanel.BackColor = System.Drawing.Color.White;
+            this.m_QuestionPanel.Controls.Add(this.m_ResultPictureBox);
+            this.m_QuestionPanel.Controls.Add(this.m_ProfilePictureBox);
+            this.m_QuestionPanel.Controls.Add(this.m_QuestionDescriptionLabel);
+            this.m_QuestionPanel.Controls.Add(this.m_FirstAnswerRadioButton);
+            this.m_QuestionPanel.Controls.Add(this.m_SecondAnswerRadioButton);
+            this.m_QuestionPanel.Controls.Add(this.m_ThirdAnswerRadioButton);
+            this.m_QuestionPanel.Location = new System.Drawing.Point(2, 2);
+            this.m_QuestionPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.m_QuestionPanel.Name = "QuestionPanel";
+            this.m_QuestionPanel.Size = new System.Drawing.Size(990, 187);
+            this.m_QuestionPanel.TabIndex = 48;
             // 
             // questionOneResultPictureBox
             // 
-            this.resultPictureBox.Location = new System.Drawing.Point(896, 60);
-            this.resultPictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.resultPictureBox.Name = "questionOneResultPictureBox";
-            this.resultPictureBox.Size = new System.Drawing.Size(56, 56);
-            this.resultPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.resultPictureBox.TabIndex = 3;
-            this.resultPictureBox.TabStop = false;
+            this.m_ResultPictureBox.Location = new System.Drawing.Point(896, 60);
+            this.m_ResultPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.m_ResultPictureBox.Name = "questionOneResultPictureBox";
+            this.m_ResultPictureBox.Size = new System.Drawing.Size(56, 56);
+            this.m_ResultPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.m_ResultPictureBox.TabIndex = 3;
+            this.m_ResultPictureBox.TabStop = false;
             // 
             // firstQuestionPictureBox
             // 
-            this.profilePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.profilePictureBox.Location = new System.Drawing.Point(732, 12);
-            this.profilePictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.profilePictureBox.Name = "firstQuestionPictureBox";
-            this.profilePictureBox.Size = new System.Drawing.Size(151, 138);
-            this.profilePictureBox.TabIndex = 2;
-            this.profilePictureBox.TabStop = false;
+            this.m_ProfilePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_ProfilePictureBox.Location = new System.Drawing.Point(732, 12);
+            this.m_ProfilePictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.m_ProfilePictureBox.Name = "firstQuestionPictureBox";
+            this.m_ProfilePictureBox.Size = new System.Drawing.Size(151, 138);
+            this.m_ProfilePictureBox.TabIndex = 2;
+            this.m_ProfilePictureBox.TabStop = false;
             // 
             // firstQuestionLabel
             // 
-            this.questionDescriptionLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.questionDescriptionLabel.Location = new System.Drawing.Point(4, 4);
-            this.questionDescriptionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.questionDescriptionLabel.Name = "firstQuestionLabel";
-            this.questionDescriptionLabel.Size = new System.Drawing.Size(635, 121);
-            this.questionDescriptionLabel.TabIndex = 1;
-            this.questionDescriptionLabel.Text = "first Q text";
-            this.questionDescriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.m_QuestionDescriptionLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_QuestionDescriptionLabel.Location = new System.Drawing.Point(4, 4);
+            this.m_QuestionDescriptionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_QuestionDescriptionLabel.Name = "firstQuestionLabel";
+            this.m_QuestionDescriptionLabel.Size = new System.Drawing.Size(635, 121);
+            this.m_QuestionDescriptionLabel.TabIndex = 1;
+            this.m_QuestionDescriptionLabel.Text = "first Q text";
+            this.m_QuestionDescriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // firstQuestionThirdOptionRadioButton
             // 
-            this.firstAnswerRadioButton.AutoSize = true;
-            this.firstAnswerRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstAnswerRadioButton.Location = new System.Drawing.Point(516, 138);
-            this.firstAnswerRadioButton.Margin = new System.Windows.Forms.Padding(2);
-            this.firstAnswerRadioButton.Name = "firstQuestionThirdOptionRadioButton";
-            this.firstAnswerRadioButton.Size = new System.Drawing.Size(209, 47);
-            this.firstAnswerRadioButton.TabIndex = 0;
-            this.firstAnswerRadioButton.TabStop = true;
-            this.firstAnswerRadioButton.Text = "radioButton1";
-            this.firstAnswerRadioButton.UseVisualStyleBackColor = true;
+            this.m_FirstAnswerRadioButton.AutoSize = true;
+            this.m_FirstAnswerRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_FirstAnswerRadioButton.Location = new System.Drawing.Point(516, 138);
+            this.m_FirstAnswerRadioButton.Margin = new System.Windows.Forms.Padding(2);
+            this.m_FirstAnswerRadioButton.Name = "firstQuestionThirdOptionRadioButton";
+            this.m_FirstAnswerRadioButton.Size = new System.Drawing.Size(209, 47);
+            this.m_FirstAnswerRadioButton.TabIndex = 0;
+            this.m_FirstAnswerRadioButton.TabStop = true;
+            this.m_FirstAnswerRadioButton.Text = "radioButton1";
+            this.m_FirstAnswerRadioButton.UseVisualStyleBackColor = true;
             // 
             // firstQuestionSecondOptionRadioButton
             // 
-            this.secondAnswerRadioButton.AutoSize = true;
-            this.secondAnswerRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondAnswerRadioButton.Location = new System.Drawing.Point(264, 138);
-            this.secondAnswerRadioButton.Margin = new System.Windows.Forms.Padding(2);
-            this.secondAnswerRadioButton.Name = "firstQuestionSecondOptionRadioButton";
-            this.secondAnswerRadioButton.Size = new System.Drawing.Size(209, 47);
-            this.secondAnswerRadioButton.TabIndex = 0;
-            this.secondAnswerRadioButton.TabStop = true;
-            this.secondAnswerRadioButton.Text = "radioButton1";
-            this.secondAnswerRadioButton.UseVisualStyleBackColor = true;
+            this.m_SecondAnswerRadioButton.AutoSize = true;
+            this.m_SecondAnswerRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_SecondAnswerRadioButton.Location = new System.Drawing.Point(264, 138);
+            this.m_SecondAnswerRadioButton.Margin = new System.Windows.Forms.Padding(2);
+            this.m_SecondAnswerRadioButton.Name = "firstQuestionSecondOptionRadioButton";
+            this.m_SecondAnswerRadioButton.Size = new System.Drawing.Size(209, 47);
+            this.m_SecondAnswerRadioButton.TabIndex = 0;
+            this.m_SecondAnswerRadioButton.TabStop = true;
+            this.m_SecondAnswerRadioButton.Text = "radioButton1";
+            this.m_SecondAnswerRadioButton.UseVisualStyleBackColor = true;
             // 
             // firstQuestionFirstOptionRadioButton
             // 
-            this.thirdAnswerRadioButton.AutoSize = true;
-            this.thirdAnswerRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thirdAnswerRadioButton.Location = new System.Drawing.Point(12, 138);
-            this.thirdAnswerRadioButton.Margin = new System.Windows.Forms.Padding(2);
-            this.thirdAnswerRadioButton.Name = "firstQuestionFirstOptionRadioButton";
-            this.thirdAnswerRadioButton.Size = new System.Drawing.Size(209, 47);
-            this.thirdAnswerRadioButton.TabIndex = 0;
-            this.thirdAnswerRadioButton.TabStop = true;
-            this.thirdAnswerRadioButton.Text = "radioButton1";
-            this.thirdAnswerRadioButton.UseVisualStyleBackColor = true;
+            this.m_ThirdAnswerRadioButton.AutoSize = true;
+            this.m_ThirdAnswerRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_ThirdAnswerRadioButton.Location = new System.Drawing.Point(12, 138);
+            this.m_ThirdAnswerRadioButton.Margin = new System.Windows.Forms.Padding(2);
+            this.m_ThirdAnswerRadioButton.Name = "firstQuestionFirstOptionRadioButton";
+            this.m_ThirdAnswerRadioButton.Size = new System.Drawing.Size(209, 47);
+            this.m_ThirdAnswerRadioButton.TabIndex = 0;
+            this.m_ThirdAnswerRadioButton.TabStop = true;
+            this.m_ThirdAnswerRadioButton.Text = "radioButton1";
+            this.m_ThirdAnswerRadioButton.UseVisualStyleBackColor = true;
             // 
             // VisualQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.QuestionPanel);
+            this.Controls.Add(this.m_QuestionPanel);
             this.Name = "VisualQuestion";
             this.Size = new System.Drawing.Size(995, 192);
-            this.QuestionPanel.ResumeLayout(false);
-            this.QuestionPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.resultPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
+            this.m_QuestionPanel.ResumeLayout(false);
+            this.m_QuestionPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_ResultPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_ProfilePictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        internal Question Question;
-        internal System.Windows.Forms.Panel QuestionPanel { get; set; }
-        internal System.Windows.Forms.PictureBox resultPictureBox { get; set; }
-        internal System.Windows.Forms.PictureBox profilePictureBox { get; set; }
-        internal System.Windows.Forms.Label questionDescriptionLabel { get; set; }
-        internal System.Windows.Forms.RadioButton firstAnswerRadioButton { get; set; }
-        internal System.Windows.Forms.RadioButton secondAnswerRadioButton { get; set; }
-        internal System.Windows.Forms.RadioButton thirdAnswerRadioButton { get; set; }
-
-        public void initQuestion(Question i_Question)
-        {
-            this.Question = i_Question;
-            questionDescriptionLabel.Text = Question.QuestionContent;
-            firstAnswerRadioButton.Text = Question.PossibleAnswers[0];
-            secondAnswerRadioButton.Text = Question.PossibleAnswers[1];
-            thirdAnswerRadioButton.Text = Question.PossibleAnswers[2];
-
-            if(i_Question is QuestionIdentifyByProfilePicture)
-            {
-                profilePictureBox.LoadAsync(Question.Answer.PictureNormalURL);
-            }
-            else
-            {
-                profilePictureBox.Visible = false;
-            }      
-        }
-
-        public string getUserAnswer()
-        {
-            foreach (Control control in QuestionPanel.Controls)
-            {
-                if (control is RadioButton)
-                {
-                    if ((control as RadioButton).Checked)
-                    {
-                        return control.Text;
-                    }
-                }
-            }
-
-            throw new Exception();
-        }
-
-        public string getRightAnswer()
-        {
-            return Question.Answer.Name;
-        }
-
-        public void clear()
-        {
-            foreach (Control control in QuestionPanel.Controls)
-            {
-                if (control is RadioButton)
-                {
-                    (control as RadioButton).Checked = false;
-                    control.ForeColor = Color.Black;
-                }
-            }
-
-            resultPictureBox.Visible = false;
-        }
-    }
+    }    
 }
