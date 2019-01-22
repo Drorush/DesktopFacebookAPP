@@ -8,23 +8,12 @@ namespace DesktopFacebookAPP
 {
     public class QuestionIdentifyByLastPost : Question
     {
-        public QuestionIdentifyByLastPost(FacebookObjectCollection<User> i_Friends) : base(i_Friends)
+        public QuestionIdentifyByLastPost(FacebookObjectCollection<User> i_Friends) : base(i_Friends,
+            user => user.Posts == null || !user.Posts.Any())
         {
             string FriendLastPost = Answer.Posts[0].Message;
             QuestionContent = string.Format(
                 $"Which of the following friends shared the post: \"{FriendLastPost}\"?");
-        }
-
-        public override User getRandomFriend()
-        {
-            User friendToReturn;
-            do
-            {
-                friendToReturn = randomizeFriend();
-            }
-            while (friendToReturn.Posts == null || !friendToReturn.Posts.Any());
-
-            return friendToReturn;
         }
     }
 }

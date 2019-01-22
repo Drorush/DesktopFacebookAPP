@@ -16,10 +16,13 @@ namespace DesktopFacebookAPP
 
         public string QuestionContent { get; protected set; }
 
-        public Question(FacebookObjectCollection<User> i_Friends)
+        public Predicate<User> RandomizeFriendStrategy { get; set; }
+
+        public Question(FacebookObjectCollection<User> i_Friends, Predicate<User> i_RandomizeFriendStrategy)
         {
             PossibleAnswers = new List<string>();
             Friends = i_Friends;
+            RandomizeFriendStrategy = i_RandomizeFriendStrategy;
             Answer = getRandomFriend();
             addTwoAnswerOptions();
         }
@@ -40,7 +43,17 @@ namespace DesktopFacebookAPP
             PossibleAnswers.Shuffle();
         }
 
-        public abstract User getRandomFriend();
+        public User getRandomFriend()
+        {
+            User friendToReturn;
+            do
+            {
+                friendToReturn = randomizeFriend();
+            }
+            while (RandomizeFriendStrategy(friendToReturn));
+
+            return friendToReturn;
+        }
 
         protected User randomizeFriend()
         {

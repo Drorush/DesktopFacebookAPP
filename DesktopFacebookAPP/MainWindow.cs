@@ -10,18 +10,6 @@ using static DesktopFacebookAPP.HowWellDoYouKnowYourFriendsGame;
 
 namespace DesktopFacebookAPP
 {
-    public enum eState
-    {
-        Login,
-        MainState,
-        Home,
-        Post,
-        Events,
-        LikedPages,
-        FirstFeature,
-        HowWellDoYouKnowYourFriendsGame
-    }
-
     public partial class MainWindow : Form
     {
         private readonly string r_AppID = "1168955353252324";
@@ -29,8 +17,6 @@ namespace DesktopFacebookAPP
         private readonly string r_GuyAppID = "1450160541956417";
 
         private User LoggedInUser { get; set; }
-
-        private eState m_CurrentState;
 
         private HowWellDoYouKnowYourFriendsGame m_Game;
 
@@ -40,7 +26,6 @@ namespace DesktopFacebookAPP
         {
             InitializeComponent();
             InitializeCollections();
-            m_CurrentState = eState.Login;
             this.AutoScaleMode = AutoScaleMode.Dpi;
         }
 
@@ -87,38 +72,8 @@ namespace DesktopFacebookAPP
         private void loginButton_Click(object sender, System.EventArgs e)
         {
             loginAndInit();
-            m_CurrentState = eState.MainState;
-            handleState();
-        }
-
-        private void handleState()
-        {
             clearScreen();
-
-            switch (m_CurrentState)
-            {
-                case eState.MainState:
-                    handleMainState();
-                    break;
-                case eState.Home:
-                    handleHomeState();
-                    break;
-                case eState.Post:
-                    handlePostState();
-                    break;
-                case eState.Events:
-                    handleEventsState();
-                    break;
-                case eState.LikedPages:
-                    handleLikedPagesState();
-                    break;
-                case eState.FirstFeature:
-                    handleFansState();
-                    break;
-                case eState.HowWellDoYouKnowYourFriendsGame:
-                    handleGameState();
-                    break;
-            }
+            handleMainState();
         }
 
         private void handleHomeState()
@@ -151,10 +106,10 @@ namespace DesktopFacebookAPP
         {
             m_Game = HowWellDoYouKnowYourFriendsGame.Instance(LoggedInUser);
 
-        uiThreadInvoke(() =>
-            {
-                initQuestions();
-            });
+            uiThreadInvoke(() =>
+                {
+                    initQuestions();
+                });
         }
 
         private void initQuestions()
@@ -169,7 +124,7 @@ namespace DesktopFacebookAPP
         private void handleFansState()
         {
             fansPanel.Visible = true;
-            
+
             try
             {
                 new Thread(findFans).Start();
@@ -299,12 +254,6 @@ namespace DesktopFacebookAPP
             welcomeLabel.Text = string.Format("Welcome {0}!", LoggedInUser.Name);
         }
 
-        private void postButton_Click(object sender, System.EventArgs e)
-        {
-            m_CurrentState = eState.Post;
-            handleOptionClick(sender, e);
-        }
-
         private void sendPostButton_Click(object sender, System.EventArgs e)
         {
             try
@@ -319,12 +268,6 @@ namespace DesktopFacebookAPP
                     Environment.NewLine,
                     ex.Message));
             }
-        }
-
-        private void upcomingEventsButton_Click(object sender, System.EventArgs e)
-        {
-            m_CurrentState = eState.Events;
-            handleOptionClick(sender, e);
         }
 
         /// <summary>
@@ -349,18 +292,6 @@ namespace DesktopFacebookAPP
             }
         }
 
-        private void likedPagesButton_Click(object sender, System.EventArgs e)
-        {
-            m_CurrentState = eState.LikedPages;
-            handleOptionClick(sender, e);
-        }
-
-        private void fansButton_Click(object sender, System.EventArgs e)
-        {
-            m_CurrentState = eState.FirstFeature;
-            handleOptionClick(sender, e);
-        }
-
         private void updateDictionary(FacebookObjectCollection<User> i_PhotoLikedBy, Dictionary<User, int> i_UsersToLikes)
         {
             foreach (User user in i_PhotoLikedBy)
@@ -374,12 +305,6 @@ namespace DesktopFacebookAPP
                     i_UsersToLikes[user]++;
                 }
             }
-        }
-
-        private void friendsGameButton_Click(object sender, System.EventArgs e)
-        {
-            m_CurrentState = eState.HowWellDoYouKnowYourFriendsGame;
-            handleOptionClick(sender, e);
         }
 
         private void cancelPostButton_Click(object sender, EventArgs e)
@@ -429,22 +354,71 @@ namespace DesktopFacebookAPP
             }
         }
 
-        private void homeButton_Click(object sender, EventArgs e)
-        {
-            m_CurrentState = eState.Home;
-            handleOptionClick(sender, e);
-        }
-
-        private void handleOptionClick(object sender, EventArgs e)
-        {
-            sidePanel.Top = (sender as Button).Top;
-            sidePanel.Height = (sender as Button).Height;
-            handleState();
-        }
-
         private void closeButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        public abstract class MainItemClickCommand : ICommand {
+            public MainWindow Client;
+
+            public void Execute()
+            {
+                Client.clearScreen();
+
+                operation();
+
+            }
+
+            public abstract void operation();
+        }
+
+        public class HomeClickCommand : MainItemClickCommand
+        {
+            public override void operation()
+            {
+                Client.handleHomeState();
+            }
+        }
+
+        public class PostClickCommand : MainItemClickCommand
+        {
+            public override void operation()
+            {
+                Client.handlePostState();
+            }
+        }
+
+        public class EventsClickCommand : MainItemClickCommand
+        {
+            public override void operation()
+            {
+                Client.handleEventsState();
+            }
+        }
+
+        public class LikedPagesClickCommand : MainItemClickCommand
+        {
+            public override void operation()
+            {
+                Client.handleLikedPagesState();
+            }
+        }
+
+        public class FansClickCommand : MainItemClickCommand
+        {
+            public override void operation()
+            {
+                Client.handleFansState();
+            }
+        }
+
+        public class GameClickCommand : MainItemClickCommand
+        {
+            public override void operation()
+            {
+                Client.handleGameState();
+            }
         }
     }
 }

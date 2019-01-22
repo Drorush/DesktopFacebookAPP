@@ -38,6 +38,7 @@ namespace DesktopFacebookAPP
             System.Windows.Forms.Label linkLabel;
             System.Windows.Forms.Label nameLabel;
             System.Windows.Forms.Label birthdayLabel;
+            this.sidePanel = new System.Windows.Forms.Panel();
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.postTextBox = new System.Windows.Forms.TextBox();
             this.eventsListBox = new System.Windows.Forms.ListBox();
@@ -55,16 +56,15 @@ namespace DesktopFacebookAPP
             this.FriendsGameHeadlineLabel = new System.Windows.Forms.Label();
             this.eventsPanel = new System.Windows.Forms.Panel();
             this.eventsHeadlineLabel = new System.Windows.Forms.Label();
-            this.postButton = new System.Windows.Forms.Button();
+            this.postButton = new MenuItemButton(sidePanel, new PostClickCommand { Client = this});
             this.upperLinePanel = new System.Windows.Forms.Panel();
             this.closeButton = new System.Windows.Forms.Button();
             this.optionsPanel = new System.Windows.Forms.Panel();
-            this.sidePanel = new System.Windows.Forms.Panel();
-            this.homeButton = new System.Windows.Forms.Button();
-            this.friendsGameButton = new System.Windows.Forms.Button();
-            this.fansButton = new System.Windows.Forms.Button();
-            this.likedPagesButton = new System.Windows.Forms.Button();
-            this.upcomingEventsButton = new System.Windows.Forms.Button();
+            this.homeButton = new MenuItemButton(sidePanel, new HomeClickCommand { Client = this });
+            this.friendsGameButton = new MenuItemButton(sidePanel, new GameClickCommand { Client = this });
+            this.fansButton = new MenuItemButton(sidePanel, new FansClickCommand { Client = this });
+            this.likedPagesButton = new MenuItemButton(sidePanel, new LikedPagesClickCommand { Client = this });
+            this.upcomingEventsButton = new MenuItemButton(sidePanel, new EventsClickCommand { Client = this });
             this.profilePicturePanel = new System.Windows.Forms.Panel();
             this.profilePictureBox = new System.Windows.Forms.PictureBox();
             this.postPanel = new System.Windows.Forms.Panel();
@@ -354,7 +354,6 @@ namespace DesktopFacebookAPP
             this.postButton.TabIndex = 3;
             this.postButton.Text = "Post";
             this.postButton.UseVisualStyleBackColor = false;
-            this.postButton.Click += new System.EventHandler(this.postButton_Click);
             // 
             // upperLinePanel
             // 
@@ -423,7 +422,6 @@ namespace DesktopFacebookAPP
             this.homeButton.TabIndex = 8;
             this.homeButton.Text = "Home";
             this.homeButton.UseVisualStyleBackColor = false;
-            this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
             // 
             // friendsGameButton
             // 
@@ -440,7 +438,6 @@ namespace DesktopFacebookAPP
             this.friendsGameButton.TabIndex = 7;
             this.friendsGameButton.Text = "How well do you know your friends?";
             this.friendsGameButton.UseVisualStyleBackColor = true;
-            this.friendsGameButton.Click += new System.EventHandler(this.friendsGameButton_Click);
             // 
             // fansButton
             // 
@@ -457,7 +454,6 @@ namespace DesktopFacebookAPP
             this.fansButton.TabIndex = 6;
             this.fansButton.Text = "Fans";
             this.fansButton.UseVisualStyleBackColor = true;
-            this.fansButton.Click += new System.EventHandler(this.fansButton_Click);
             // 
             // likedPagesButton
             // 
@@ -474,7 +470,6 @@ namespace DesktopFacebookAPP
             this.likedPagesButton.TabIndex = 5;
             this.likedPagesButton.Text = "Liked Pages";
             this.likedPagesButton.UseVisualStyleBackColor = true;
-            this.likedPagesButton.Click += new System.EventHandler(this.likedPagesButton_Click);
             // 
             // upcomingEventsButton
             // 
@@ -492,7 +487,6 @@ namespace DesktopFacebookAPP
             this.upcomingEventsButton.TabIndex = 4;
             this.upcomingEventsButton.Text = " Upcoming events";
             this.upcomingEventsButton.UseVisualStyleBackColor = false;
-            this.upcomingEventsButton.Click += new System.EventHandler(this.upcomingEventsButton_Click);
             // 
             // profilePicturePanel
             // 
@@ -785,11 +779,11 @@ namespace DesktopFacebookAPP
         private RoundedEdgesButton loginButton;
         private System.Windows.Forms.PictureBox profilePictureBox;
         private System.Windows.Forms.Label welcomeLabel;
-        private Button postButton;
-        private Button upcomingEventsButton;
-        private Button likedPagesButton;
-        private Button fansButton;
-        private Button friendsGameButton;
+        private MenuItemButton postButton;
+        private MenuItemButton upcomingEventsButton;
+        private MenuItemButton likedPagesButton;
+        private MenuItemButton fansButton;
+        private MenuItemButton friendsGameButton;
         private TextBox postTextBox;
         private RoundedEdgesButton sendPostButton;
         private RoundedEdgesButton cancelPostButton;
@@ -814,7 +808,7 @@ namespace DesktopFacebookAPP
         private Panel fansPanel;
         private Label fansHeadlineLabel;
         private Label fansSecondHeadlineLabel;
-        private Button homeButton;
+        private MenuItemButton homeButton;
         private Panel sidePanel;
         private Button closeButton;
         private BindingSource userBindingSource;
