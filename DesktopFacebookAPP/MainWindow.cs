@@ -366,16 +366,16 @@ namespace DesktopFacebookAPP
             {
                 Client.clearScreen();
 
-                operation();
+                handleState();
 
             }
 
-            public abstract void operation();
+            public abstract void handleState();
         }
 
         public class HomeClickCommand : MainItemClickCommand
         {
-            public override void operation()
+            public override void handleState()
             {
                 Client.handleHomeState();
             }
@@ -383,7 +383,7 @@ namespace DesktopFacebookAPP
 
         public class PostClickCommand : MainItemClickCommand
         {
-            public override void operation()
+            public override void handleState()
             {
                 Client.handlePostState();
             }
@@ -391,7 +391,7 @@ namespace DesktopFacebookAPP
 
         public class EventsClickCommand : MainItemClickCommand
         {
-            public override void operation()
+            public override void handleState()
             {
                 Client.handleEventsState();
             }
@@ -399,7 +399,7 @@ namespace DesktopFacebookAPP
 
         public class LikedPagesClickCommand : MainItemClickCommand
         {
-            public override void operation()
+            public override void handleState()
             {
                 Client.handleLikedPagesState();
             }
@@ -407,7 +407,7 @@ namespace DesktopFacebookAPP
 
         public class FansClickCommand : MainItemClickCommand
         {
-            public override void operation()
+            public override void handleState()
             {
                 Client.handleFansState();
             }
@@ -415,7 +415,7 @@ namespace DesktopFacebookAPP
 
         public class GameClickCommand : MainItemClickCommand
         {
-            public override void operation()
+            public override void handleState()
             {
                 Client.handleGameState();
             }

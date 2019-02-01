@@ -27,13 +27,15 @@ namespace DesktopFacebookAPP
                 {
                     if (s_Game == null)
                     {
-                        s_Game = new HowWellDoYouKnowYourFriendsGame(i_LoggedInUser);
-                        s_Game.Friends = i_LoggedInUser.Friends;
-                        s_Game.m_QuestionFactories = new List<IQuestionFactory>
+                        s_Game = new HowWellDoYouKnowYourFriendsGame(i_LoggedInUser)
+                        {
+                            Friends = i_LoggedInUser.Friends,
+                            m_QuestionFactories = new List<IQuestionFactory>
                         {
                             new QuestionFactoryIdentifyByProfilePicture(),
                             new QuestionFactoryIdentifyByBirthday(),
                             new QuestionFactoryIdentifyByLastPost()
+                        }
                         };
                     }
                 }
